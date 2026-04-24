@@ -99,20 +99,6 @@ We welcome additions, corrections, and suggestions. Please follow these guidelin
 
 ---
 
-## 📝 Citation
-
-If you find `SnowSurvey4EfficientLLM` useful for your research, please cite:
-
-```bibtex
-@misc{snowsurvey4efficientllm2026,
-  author = {Your Name (Snow)},
-  title = {SnowSurvey4EfficientLLM: A Curated Literature Collection for Efficient Large Language Models},
-  year = {2026},
-  publisher = {GitHub},
-  url = {https://github.com/yourusername/SnowSurvey4EfficientLLM}
-}
-```
-
 ## 📄 License
 The metadata (paper titles, authors, links, organization) of this repository is licensed under the MIT License.
 Paper copyrights and content belong to their respective authors and publishers.
@@ -120,6 +106,7 @@ Paper copyrights and content belong to their respective authors and publishers.
 ## 🙏 Acknowledgements
 - All researchers who have contributed to the efficient LLM field.
 - Open‑source communities: Hugging Face, vLLM, MLC-LLM, TensorRT-LLM, and many others.
+- https://github.com/horseee/Awesome-Efficient-LLM
 
 ## 📧 Contact
 For questions, suggestions, or collaboration, please open an Issue or contact a1311965600@gmial.com.
