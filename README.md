@@ -24,6 +24,12 @@ This repository is designed for:
 
 ---
 
+## 🔗 Full List
+- [Surveys](001_efficiency-surveys.md)
+
+
+---
+
 ## 📂 Repository Structure
 
 ```text
