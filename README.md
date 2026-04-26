@@ -25,7 +25,7 @@ This repository is designed for:
 ---
 
 ## 🔗 Full List
-- [Surveys](001_efficiency-surveys.md)
+- [Surveys](001_general-surveys.md)
 
 
 ---
