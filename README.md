@@ -25,7 +25,7 @@ This repository is designed for:
 ---
 
 ## 🔗 Full List
-- [Surveys](00_Surveys.md)
+- [Surveys](00-Surveys.md)
 
 
 ---
