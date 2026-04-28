@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/dynamic/json?color=brightgreen&label=%F0%9F%93%9A%20Papers&query=count&url=https%3A%2F%2Fapi.count.com%2Fv1" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-2-orange?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-brightgreen?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-blue?style=flat-square" alt="PRs Welcome">
 </p>
 
-# 📚 Awesome LLM Efficiency & Multimodal Surveys
+# 📚 Awesome-Efficient-LLM-Surveys
 
-> 一份高质量、持续更新的**大语言模型（LLM）效率优化**与**多模态大模型**综述导航。  
+> 一份高质量、持续更新的**大语言模型（LLM）效率优化**综述导航。  
 > 按**通用综述**与**领域特化**两大类别组织，每篇论文附带核心分类方式、覆盖方向、关键洞察及代码资源，便于研究者快速定位。
 
 ---
@@ -15,7 +15,13 @@
 
 - [001 通用综述 (General Surveys)](#001-general-surveys)
 - [002 领域特化综述 (Domain-Specific)](#002-domain-specific)
-  - [VLLM (视觉大语言模型)](#vllm)
+  - [架构级优化 (Architecture Optimization)](#架构级优化)
+  - [模型压缩 (Model Compression)](#模型压缩)
+  - [推理阶段优化 (Inference Optimization)](#推理阶段优化)
+  - [训练阶段优化 (Training Optimization)](#训练阶段优化)
+  - [多模态 (Multimodal / VLLM)](#多模态-vllm)
+  - [路由与级联 (Routing and Cascade)](#路由与级联)
+  - [评测基准 (Benchmarks and Evaluation)](#评测基准)
 
 ---
 
@@ -23,12 +29,12 @@
 
 > **说明**：本部分聚焦 LLM 效率优化的通用方法，涵盖模型压缩、高效架构、推理训练加速等。
 
-| # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
-|---|---------|:----:|------|----------|----------------|
-| 1 | **Towards Efficient Language Giants: A Comprehensive Survey on Structural Optimizations and Compression Techniques for Large Language Models** | ⭐⭐⭐⭐ | *Lee et al., Neural Networks, 2026* <br> `IF=6.3` | `高效模块设计` + `模型压缩` 双维度 | 混合方案（KD+量化、剪枝+量化）是突破单一技术瓶颈的关键；需根据场景（长上下文/边缘/高精度）选择不同技术组合。 |
-| 2 | **Efficient Large Language Models: A Survey** | ⭐⭐⭐ | *Wan et al., arXiv, 2023 (持续更新)* | `模型中心` / `数据中心` / `框架中心` | 算法-硬件-框架协同设计是进一步提升 LLM 效率的关键，单一维度优化已接近瓶颈。 |
 
-> 点击 ▶ 展开查看每篇论文的详细覆盖方向与资源。
+| # | 论文标题 | 评级 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
+|:--:|---------|:----:|:----:|------|-------------|--------------|
+| 1 | **Towards Efficient Language Giants** | 3.5 | 2026 | Neural Networks `IF=6.3` | `高效模块设计` ↔ `模型压缩` 双维度 | 混合方案（KD+量化/剪枝+量化）是突破单一技术瓶颈的关键 |
+| 2 | **Efficient Large Language Models: A Survey** | 3 | 2023 | arXiv (持续更新) | `数据中心` · `模型中心` · `框架中心` | 算法-硬件-框架协同设计是进一步提效的关键 |
+| 3 | *待添加* | — | — | — | — | — |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -71,9 +77,121 @@
 
 ## 002-Domain-Specific
 
-### 🎨 VLLM (视觉大语言模型)
+> **说明**：按细分技术方向组织的领域综述，每个方向聚焦一类特定优化技术或应用场景。
 
-> **说明**：聚焦多模态（视觉-语言）大模型的训练效率、集成范式与优化策略。
+---
+
+### 🏗️ 架构级优化
+> `01-Architecture-Optimization` | 注意力机制 · FFN优化 · 替代架构 · MoE · 推理模型优化
+
+| # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
+|---|---------|:----:|------|----------|----------------|
+| 1 | *待添加* | — | — | `注意力机制` / `替代架构` / `MoE` 等 | — |
+
+<details>
+<summary><b>📄 展开详情</b></summary>
+<br>
+
+*本子方向涵盖以下细分领域：*
+- `Attention-Mechanisms`：GQA, MQA, Sliding Window 等高效注意力
+- `FFN-Optimization`：SwiGLU, Parallel FFN 等
+- `Alternative-Architectures`：Mamba, RWKV, Hyena 等非Transformer架构
+- `Mixture-of-Experts`：MoE路由、负载均衡
+- `Reasoning-Model-Optimization`：CoT, ToT, 长推理链效率优化
+
+<br>
+</details>
+
+---
+
+### 📦 模型压缩
+> `02-Model-Compression` | 量化 · 剪枝 · 知识蒸馏 · 低秩分解 · NAS
+
+| # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
+|---|---------|:----:|------|----------|----------------|
+| 1 | *待添加* | — | — | `量化` / `剪枝` / `蒸馏` / `低秩分解` 等 | — |
+
+<details>
+<summary><b>📄 展开详情</b></summary>
+<br>
+
+*本子方向涵盖以下细分领域：*
+- `Quantization`：GPTQ, AWQ, SmoothQuant, LLM.int8() 等
+- `Pruning-Sparsity`：SparseGPT, Wanda, 半结构化稀疏等
+- `Knowledge-Distillation`：MiniLLM, GKD, 上下文蒸馏等
+- `Low-Rank-Decomposition`：LoRA及其变体, SVD等
+- `Neural-Architecture-Search`：(可选) LLM专用NAS
+
+<br>
+</details>
+
+---
+
+### ⚡ 推理阶段优化
+> `03-Inference-Optimization` | KV缓存压缩 · 投机解码 · FlashAttention · 系统级服务 · 文本压缩
+
+| # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
+|---|---------|:----:|------|----------|----------------|
+| 1 | *待添加* | — | — | `KV-Cache` / `投机解码` / `FlashAttention` / `系统服务` 等 | — |
+
+<details>
+<summary><b>📄 展开详情</b></summary>
+<br>
+
+*本子方向涵盖以下细分领域：*
+- `KV-Cache-Compression`：PagedAttention, RadixAttention, KV缓存压缩
+- `Speculative-Decoding`：Medusa, Eagle, Lookahead 等
+- `FlashAttention`：FA1/2/3, 高效注意力内核
+- `System-Level-Serving`：vLLM, TensorRT-LLM, SGLang, 调度优化
+- `Text-Compression`：提示压缩, Prompt压缩
+
+<br>
+</details>
+
+---
+
+### 🏋️ 训练阶段优化
+> `04-Training-Optimization` | 高效预训练 · 高效微调
+
+| # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
+|---|---------|:----:|------|----------|----------------|
+| 1 | *待添加* | — | — | `高效预训练` / `高效微调` 等 | — |
+
+<details>
+<summary><b>📄 展开详情</b></summary>
+<br>
+
+*本子方向涵盖以下细分领域：*
+- `Efficient-Pretraining`：数据筛选, 模型并行, MeZO等
+- `Efficient-Finetuning`：LoRA, Prefix Tuning, P-Tuning, QLoRA等
+
+<br>
+</details>
+
+---
+
+### 🔀 路由与级联
+> `05-Routing-and-Cascade` | 模型路由 · 级联早期退出
+
+| # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
+|---|---------|:----:|------|----------|----------------|
+| 1 | *待添加* | — | — | `模型路由` / `级联退出` 等 | — |
+
+<details>
+<summary><b>📄 展开详情</b></summary>
+<br>
+
+*本子方向涵盖以下细分领域：*
+- `Model-Routing`：选择最佳模型（Router）
+- `Cascade-Exit`：级联早期退出, LoRAExit等
+
+<br>
+</details>
+
+---
+
+### 🎨 多模态 (VLLM)
+> `06-Multimodal` | 视觉-语言大模型训练效率与集成范式
 
 | # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
 |---|---------|:----:|------|----------|----------------|
