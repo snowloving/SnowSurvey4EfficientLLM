@@ -64,13 +64,8 @@ Efficient-LLM-Literature/
 │   └── Efficient-Finetuning/        # LoRA, Prefix Tuning, P-Tuning, QLoRA
 │
 ├── 05-Routing-and-Cascade/          # 多模型路由与级联
-│   ├── Model-Routing/               # 选择最佳模型（Router）
-│   └── Cascade-Exit/                # 级联早期退出, LoRAExit等
 │
-├── 06-Benchmarks-and-Evaluation/    # 评测基准与方法
-│   ├── Efficiency-Benchmarks/       # BALI, SPEED-Bench, HELM延迟
-│   ├── Evaluation-Efficiency/       # LEGO-IRT, 评测样本采样优化
-│   └── Fairness-Energy/             # BRACE, 能耗与精度平衡
+├── 06-Multimodal/    # 多模态
 │
 └── 07-Code-and-Tools/               # 开源代码与工具库
     ├── Inference-Engines/           # vLLM, TensorRT-LLM, llama.cpp
