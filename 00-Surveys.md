@@ -15,14 +15,12 @@
 
 - [001 通用综述 (General Surveys)](#001-general-surveys)
 - [002 领域特化综述 (Domain-Specific)](#002-domain-specific)
-  - [架构级优化 (Architecture Optimization)](#架构级优化)
-  - [模型压缩 (Model Compression)](#模型压缩)
-  - [推理阶段优化 (Inference Optimization)](#推理阶段优化)
-  - [训练阶段优化 (Training Optimization)](#训练阶段优化)
-  - [多模态 (Multimodal / VLLM)](#多模态-vllm)
-  - [路由与级联 (Routing and Cascade)](#路由与级联)
-  - [评测基准 (Benchmarks and Evaluation)](#评测基准)
-
+  - [架构级优化 (Architecture Optimization)](#arch-opt)
+  - [模型压缩 (Model Compression)](#model-compress)
+  - [推理阶段优化 (Inference Optimization)](#infer-opt)
+  - [训练阶段优化 (Training Optimization)](#train-opt)
+  - [路由与级联 (Routing and Cascade)](#routing-cascade)
+  - [多模态 (Multimodal)](#multimodal)
 ---
 
 ## 001-General-Surveys
@@ -81,6 +79,7 @@
 
 ---
 
+<a id="arch-opt"></a>
 ### 🏗️ 架构级优化
 > `01-Architecture-Optimization` | 注意力机制 · FFN优化 · 替代架构 · MoE · 推理模型优化
 
@@ -104,6 +103,7 @@
 
 ---
 
+<a id="model-compress"></a>
 ### 📦 模型压缩
 > `02-Model-Compression` | 量化 · 剪枝 · 知识蒸馏 · 低秩分解 · NAS
 
@@ -127,6 +127,7 @@
 
 ---
 
+<a id="infer-opt"></a>
 ### ⚡ 推理阶段优化
 > `03-Inference-Optimization` | KV缓存压缩 · 投机解码 · FlashAttention · 系统级服务 · 文本压缩
 
@@ -150,6 +151,7 @@
 
 ---
 
+<a id="train-opt"></a>
 ### 🏋️ 训练阶段优化
 > `04-Training-Optimization` | 高效预训练 · 高效微调
 
@@ -170,6 +172,7 @@
 
 ---
 
+<a id="routing-cascade"></a>
 ### 🔀 路由与级联
 > `05-Routing-and-Cascade` | 模型路由 · 级联早期退出
 
@@ -190,7 +193,8 @@
 
 ---
 
-### 🎨 多模态 (VLLM)
+<a id="multimodal"></a>
+### 🎨 多模态 (Multimodal)
 > `06-Multimodal` | 视觉-语言大模型训练效率与集成范式
 
 | # | 论文标题 | 评级 | 出处 | 分类视角 | 一句话核心洞察 |
