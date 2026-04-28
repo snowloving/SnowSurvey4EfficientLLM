@@ -1,4 +1,4 @@
-# A Comprehensive Survey on Efficient Large Language Models: From Architecture Design to Inference Systems
+# 📚 Awesome Efficient Large Language Models: From Architecture Design to Inference Systems
 
 <div align="center">
 
