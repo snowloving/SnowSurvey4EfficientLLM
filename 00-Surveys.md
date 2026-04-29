@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-15-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-16-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -37,6 +37,7 @@
 | 4 | 🏆 **A Comprehensive Overview of Large Language Models** | 2025 | ACM TIST `IF=6.6` | `LLM全景`：架构/预训练/微调/增效/多模态/智能体/应用/评估 | 覆盖面最广的LLM综述之一；系统汇总50+预训练LLM架构细节与训练配置，含7大类评估基准全览 |
 | 5 | 🏆 **Towards Efficient Generative LLM Serving: A Survey from Algorithms to Systems** | 2025 | ACM Comput. Surv. `IF=28.0` | `算法创新`：解码/架构/压缩 + `系统优化`：量化/并行/内存/调度/内核 | 首篇覆盖LLM推理服务全栈的综述；系统对比10+框架的架构设计与优化取舍 |
 | 6 | 📖 **A Survey on Efficient Inference for Large Language Models** | 2024 | arXiv | `三级优化`：数据层(压缩/编排) + 模型层(量化/稀疏/结构/蒸馏) + 系统层(引擎/服务/硬件) | 覆盖最广的LLM推理综述之一；独创数据-模型-系统三级分类，含PTQ/推测解码/服务框架的对比实验 |
+| 7 | 🔥 **A Survey of Resource-Efficient LLM and Multimodal Foundation Models** | 2024 | arXiv | `模型覆盖`：LLM/ViT/扩散/多模态 + `优化层级`：架构/算法/系统 + `生命周期`：预训练/微调/推理/服务 | 覆盖四大基础模型的全栈效率综述；含联邦学习、边缘部署、LLMaaS等新兴话题 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -159,6 +160,24 @@
 
 <br>
 
+
+### 7. A Survey of Resource-Efficient LLM and Multimodal Foundation Models (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[A Survey of Resource-Efficient LLM and Multimodal Foundation Models](https://arxiv.org/pdf/2401.08092)
+
+- **分类方式**：按 **基础模型类型**（LLM/ViT/扩散模型/多模态）+ **优化层级**（高效架构/高效算法/高效系统）+ **生命周期阶段**（预训练/微调/推理/服务）三维交叉组织
+- **覆盖子方向**：
+  - `高效架构` → 高效注意力（稀疏：Longformer/ETC/BIGBIRD/HEPOS；近似：Linformer/Reformer/Performer/Luna/Deformable Attention；无注意力：Hyena/H3/Mamba/RWKV/RetNet）、动态网络（MoE：Switch Transformer/GLaM/V-MoE/LIMoE/MoEfication；早退：FREE/SkipDecode/PABEE/DeeBERT/LGViT）、扩散优化（高效采样：DDIM/PNDM/DPM-Solver/ReDi/Nirvana；潜在空间：LDM/LD-ZNet/SALAD；架构变体：SnapFusion/ScaleCrafter/ERNIE-ViLG）、ViT优化（LeViT/PoolFormer/MobileViT/EfficientFormer/EfficientViT）
+  - `高效预训练` → 数据缩减（文本去重/MAE掩码自编码/MixMAE/COPA/PatchDropout/TPS）、NAS（Zero-Shot NAS/ZICO/PASHA/RankNAS/PreNAS/ElasticViT）、渐进学习（stackingBERT/CompoundGrow/Staged Training/LiGO）、混合精度训练（Mesa/GACT）
+  - `高效微调` → 加法（Adapter：ADA/MetaTroll/ST-Adapter/HiWi/AdaMix/MEFT/PEMA；Prompt Tuning：PromptTuning/ATTEMPT/BioInstruct/DualPL/MPrompt/DPT；Prefix Tuning：UAPT/Prefix-diffusion/DOP/DAPA/PIP）、选择性（SAM/SmartFRZ/FiSH-DiP/Token Mixing/VL-PET/SPT/GreenTrainer）、重参数化（LoRA及其衍生：EfficientDM/QLoRA/PEQA/QALoRA/LoftQ/GLoRA/LongLoRA/LOMO/MeZO/Delta-LoRA/PiSSA/DoRA/LoRA+）
+  - `高效推理` → 推测解码（SpecInfer/Medusa/Lookahead Decoding/LLMCad）、提示压缩（LLMLingua/EntropyRank/LLMZip/AutoCompressors/ICAE/Nugget 2D/CoT-Max）、Token剪枝（PoWER-BERT/Length-Adaptive/TRBERT/DynamicViT/AdaViT/SPViT/PuMer）、KV Cache优化（H2O/Scissorhands/Landmark Attention/MLA/vLLM PagedAttention/vAttention/Mooncake/CacheGen/InfiniGen/CachedAttention）、长上下文（Transformer-XL/RMT/Block-Recurrent/LM-Infinite/StreamingLLM/PCW/LongNet/SLED）
+  - `模型压缩` → 剪枝（结构化：LLM-Pruner/Sheared LLaMA/CoFi/SIMPLE/SpAtten；非结构化：SparseGPT/Wanda/UPop；上下文：DejaVu/PowerInfer/PowerInfer-2）、KD（黑盒：Lion/LaMini-LM/Distilling Step-by-Step/SOCRATIC CoT/SCOTT/SCoTD/PaD；白盒：MiniLLM/GKD/KPTD/TED/MixKD/DIME-FM）、量化（QAT：LLM-QAT/BitNet/EfficientQAT/QLoRA/PEQA；PTQ：GPTQ/AWQ/OWQ/SqueezeLLM/SmoothQuant/RPTQ/OliVe/OS+/Atom/I-LLM/FlexRound/QuaRot/SpinQuant；权重：GPTQ/SpQR/LLM.int8/QuIP；权重-激活：ZeroQuant/LLM-FP4/QLLM）、低秩分解（LoRD/TensorGPT/LoSparse/LPLR/ViTALiTy）
+  - `高效系统` → 分布式训练（弹性：Varuna/Gemini/Bamboo/Oobleck；并行：DeepSpeed ZeRO/Megatron-TP/Galvatron/Sequence Parallelism；MoE：MegaBlocks/Tutel/FlexMoE/SmartMoE/Janus）、联邦学习（FwdLLM/FedBFFT/FedOBD/SplitLoRA/FedKSeed/FedBBPT）、云端服务（FlashAttention-2/Orca/vLLM PagedAttention/S-LoRA/Splitwise/SARATHI/SpotServe/HexGen）、边缘服务（EdgeFM/EdgeMoE/PC-MoE/LLMCad/PowerInfer-2/STI/LLM in a flash/mllmNPL/LMS/ELMS）
+- **核心洞察补充**：Scaling Law仍是驱动大模型成功的核心规律，但也是轻量化模型的根本限制；DejaVu发现密集训练的非MoE模型也存在运行时稀疏性，可大幅减少推理计算；Mamba实现5×推理加速并线性缩放；FlashAttention通过算子融合减少HBM访问；vLLM PagedAttention通过虚拟内存管理消除KV Cache碎片化；推测解码在保持输出分布一致性前提下实现2-3×加速；Apple/Google正将LLM嵌入移动操作系统（LLM as a System Service）；未来云-边混合部署、模型稀疏性、Agent全栈优化、隐私保护大模型、Scaling Law理解是六大核心方向
+- **附带资源**：论文Figure 4分析LLM各组件的存储与FLOPs成本分布，Figure 5展示GPT-2在不同token长度下的推理FLOPs，Figure 6对比多模态模型各模块成本，Figure 7剖析Stable Diffusion 2.1的U-Net/VAE/CLIP参数与FLOPs分布，Table 4对比Transformer及变体的时间复杂度与空间复杂度，Table 5汇总30+开源LLM训练/推理框架及其功能对比；配套[Github仓库](https://github.com/UbiquitousLearning/Efficient_Foundation_Model_Survey)
+
+<br>
 </details>
 ---
 
