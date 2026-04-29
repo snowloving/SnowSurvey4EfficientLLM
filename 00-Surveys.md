@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-18-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-19-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -38,6 +38,7 @@
 | 5 | 🏆 **Towards Efficient Generative LLM Serving: A Survey from Algorithms to Systems** | 2025 | ACM Comput. Surv. `IF=28.0` | `算法创新`：解码/架构/压缩 + `系统优化`：量化/并行/内存/调度/内核 | 首篇覆盖LLM推理服务全栈的综述；系统对比10+框架的架构设计与优化取舍 |
 | 6 | 📖 **A Survey on Efficient Inference for Large Language Models** | 2024 | arXiv | `三级优化`：数据层(压缩/编排) + 模型层(量化/稀疏/结构/蒸馏) + 系统层(引擎/服务/硬件) | 覆盖最广的LLM推理综述之一；独创数据-模型-系统三级分类，含PTQ/推测解码/服务框架的对比实验 |
 | 7 | 🔥 **A Survey of Resource-Efficient LLM and Multimodal Foundation Models** | 2024 | arXiv | `模型覆盖`：LLM/ViT/扩散/多模态 + `优化层级`：架构/算法/系统 + `生命周期`：预训练/微调/推理/服务 | 覆盖四大基础模型的全栈效率综述；含联邦学习、边缘部署、LLMaaS等新兴话题 |
+| 8 | 🏆 **Model Compression and Efficient Inference for Large Language Models: A Survey** | 2024 | arXiv | `五维压缩`：量化/剪枝/蒸馏/紧凑架构/动态网络 + `模型分层`：中型(≤1B) vs 真·大型(>1B) | 独创中型vs真·LLM分层方法论；LLM压缩两大核心：免重训练+通用性保持 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -176,6 +177,25 @@
   - `高效系统` → 分布式训练（弹性：Varuna/Gemini/Bamboo/Oobleck；并行：DeepSpeed ZeRO/Megatron-TP/Galvatron/Sequence Parallelism；MoE：MegaBlocks/Tutel/FlexMoE/SmartMoE/Janus）、联邦学习（FwdLLM/FedBFFT/FedOBD/SplitLoRA/FedKSeed/FedBBPT）、云端服务（FlashAttention-2/Orca/vLLM PagedAttention/S-LoRA/Splitwise/SARATHI/SpotServe/HexGen）、边缘服务（EdgeFM/EdgeMoE/PC-MoE/LLMCad/PowerInfer-2/STI/LLM in a flash/mllmNPL/LMS/ELMS）
 - **核心洞察补充**：Scaling Law仍是驱动大模型成功的核心规律，但也是轻量化模型的根本限制；DejaVu发现密集训练的非MoE模型也存在运行时稀疏性，可大幅减少推理计算；Mamba实现5×推理加速并线性缩放；FlashAttention通过算子融合减少HBM访问；vLLM PagedAttention通过虚拟内存管理消除KV Cache碎片化；推测解码在保持输出分布一致性前提下实现2-3×加速；Apple/Google正将LLM嵌入移动操作系统（LLM as a System Service）；未来云-边混合部署、模型稀疏性、Agent全栈优化、隐私保护大模型、Scaling Law理解是六大核心方向
 - **附带资源**：论文Figure 4分析LLM各组件的存储与FLOPs成本分布，Figure 5展示GPT-2在不同token长度下的推理FLOPs，Figure 6对比多模态模型各模块成本，Figure 7剖析Stable Diffusion 2.1的U-Net/VAE/CLIP参数与FLOPs分布，Table 4对比Transformer及变体的时间复杂度与空间复杂度，Table 5汇总30+开源LLM训练/推理框架及其功能对比；配套[Github仓库](https://github.com/UbiquitousLearning/Efficient_Foundation_Model_Survey)
+
+<br>
+
+
+### 8. Model Compression and Efficient Inference for Large Language Models: A Survey (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)](https://arxiv.org/pdf/2402.09748)
+
+[Model Compression and Efficient Inference for Large Language Models: A Survey]()
+
+- **分类方式**：按 **五维压缩技术**（量化/剪枝/蒸馏/紧凑架构/动态网络）组织，并创新性地按 **模型规模分层**（中型模型≤1B vs 真·大型模型>1B），突出LLM的两大独特挑战
+- **覆盖子方向**：
+  - `量化` → 基础概念（均匀/非均匀/对称/非对称/粒度/校准/STE）、中型模型QAT（Q-BERT/TernaryBERT/BinaryBERT/BiBERT→全二值化）、中型模型PTQ（GOBO/I-BERT整数/组级4-bit）、生成式量化（Token级对比蒸馏+动态缩放）、LLM PTQ权重（GPTQ/QuIP/LDLQ→OBQ优化/AWQ激活感知/OWQ混合精度/SqueezeLLM敏感度K-means/QLoRA NF4/SpQR离群分离）、LLM PTQ权重+激活（LLM.int8离群维度分解/RPTQ聚类重排/SmoothQuant diag(s)平滑迁移/Outlier Suppression γ放大/FPTQ对数均衡/OmniQuant可学习裁剪/QLLM通道拆分/NormalFormat/FP8 vs INT8）、LLM QAT（LLM-QAT数据免蒸馏+KV Cache量化/ZeroQuant层蒸馏/QLoRA NF4+LoRA/QA-LoRA组级/LoftQ SVD初始化/INT2.1/AlphaTuning缩放因子/PEQA）、量化专题（离群值源头分析/4-bit最优性/scaling law/硬件协同内核LUT-GEMM）
+  - `剪枝` → 基础概念（非结构化vs结构化/度量：幅度vs损失一阶二阶vs正则化/迭代vs一次性/全局vs局部/上游vs下游）、中型非结构化（幅度：GMP/GMP*；损失一阶：Movement Pruning/PLATON/PST/LoRAPrune；损失二阶：OBD/OBS/Optimal BERT Surgeon；正则化：L0硬混凝土分布/FLOP）、中型结构化（幅度：L2聚合；损失：DSP Gumbel-Softmax/Block Movement；正则化：CoFi联合粗细/L0注意力头+FFN/SIMPLE；其他：LayerDrop/Token Pruning/SNIP）、LLM非结构化（Wanda→权重×激活范数/RIA→相对重要性+通道置换/E-Sparse→信息熵/SparseGPT→OBS掩码+重构/ISC→OBS+OBD混合/GBLM-Pruner/PGZ）、LLM结构化（FLAP→波动度/LLM-Pruner→耦合结构+Fisher/LoRAShear→LHSPG渐进/Sheared LLaMA→目标架构+动态批次/Compresso→协作Prompt剪枝/SliceGPT→PCA截断/LLM Surgeon→通用OBS）
+  - `知识蒸馏` → 基础（Logit/特征/关系/黑盒KD）、中型预训练蒸馏（DistilBERT余弦/MiniLM自注意力值-关系/MobileBERT瓶颈+HomoBERT剪枝/TinyBERT双阶段/TED任务感知过滤）、中型微调蒸馏（Distilled BiLSTM/PKD Skip-Last/DynaBERT宽深自适应/Metadistil/AD-KD归因/AdaBERT NAS/MixKD/Meta-KD/ReAugKD）、LLM黑盒KD（IF：Self-Instruct/Alpaca/Vicuna/LaMini-LM/Lion/PERsD；CoT：Distilling Step-by-Step/Fine-tune-CoT/SOCRATIC CoT/SCOTT/KARD/PaD/DOCTOR；ICL：Meta-ICT/Multitask-ICT/LLM-R）、LLM白盒KD（MiniLLM→反向KL+策略梯度/GKD→on-policy+JS散度/MiniMA→40%大小最优/TSLD→Token级Logit缩放）
+  - `紧凑架构设计` → 稀疏注意力（步幅：Sparse Transformer/自适应span/α-entmax；窗口：BlockBERT/Longformer滑动+全局/BigBird随机+全局/BP-Transformer二分树/Combiner条件期望；数据驱动：Reformer LSH/Routing Transformer k-means/SAC LSTM边缘预测/SSA排序）、线性近似注意力（结合律：Linear Transformer elu+1/Performer FAVOR+/Nyströmformer聚类/HyperAttention Hamming LSH/双softmax；低秩：Linformer投影/VQ向量量化）、FlashAttention（Tiling分块+Online Softmax增量/FlashAttention-2序列维度并行+减少写回）、NAS（HAT硬件感知搜索→延迟预测器+Super Transformer+ARM vs GPU偏好差异）
+  - `动态网络` → MoE（路由：Sparsely-Gated/GShard/Switch/Expert Choice/BASE线性分配/Hash/RL路由/DSelect-k/X-MoE低维路由/ST-MoE z-loss；架构：DeepSpeed-MoE金字塔/Brainformer NAS搜索；训练：StableMoE两阶段/EvoMoE演化/Expert Dropout/Gating Dropout）、MoE+压缩（蒸馏：Switch蒸馏→保留30%增益；剪枝：Z-code/渐进专家剪枝/MPOE张量分解共享/MoEfication→MoE化）、MoE+PEFT（AdaMix适配器混合/Sparse Mixers/SMLP）、早退（DeeBERT/FastBERT/PABEE/SkipBERT/LeeBERT/TR-BERT）、级联推理（Tabi/FrugalGPT/EcoAssistant/Mixture-of-Thoughts）
+  - `推理框架` → 通用（DNNFusion算子融合/DeepSpeed Inference多GPU+异构内存）、专用（TurboTransformer序列感知内存/ByteTransformer无填充/ FlexGen Zig-Zag并行离线吞吐/PowerInfer热神经元GPU+冷神经元CPU混合）
+- **核心洞察补充**：LLM压缩面临两大核心挑战：(1)**免重训**——微调成本随参数规模剧增，推动PTQ/一次性剪枝/免微调蒸馏成为主流；(2)**通用性保持**——LLM强调多任务泛化和涌现能力，压缩后需仔细验证零样本/少样本/推理能力；2-bit量化模型涌现能力严重退化，4-bit几乎无损；Wanda（权重×激活范数）在不需任何微调和二阶信息下接近SparseGPT性能；SmoothQuant通过数学等价变换diag(s)实现激活→权重量化难度迁移，首个成功W8A8；GPTQ可在4小时内在单A100上量化175B模型；MoE成为LLM高效扩展的主流范式（GPT-4/Mixtral/DeepSeekMoE）；FlashAttention通过Tiling+增量Softmax实现精确注意力计算且大幅减少HBM访问
+- **附带资源**：论文TABLE 1从9个维度系统对比AWQ/GPTQ/LLM.int8/SmoothQuant/LLM-QAT等主流量化方法的特征（位宽/粒度/均匀性/对称性/静态vs动态/重训/零样本/整数运算），TABLE 3从8个维度对比LLM剪枝方法（单元/度量/迭代/一次性/微调/全局/局部），TABLE 4对比14种BERT蒸馏方法（训练阶段/知识来源/损失函数），TABLE 5总结8种代表性MoE方法（基座模型/稀疏性/最大规模/负载均衡），TABLE 6对比6种推理框架（通用性/方法），Figure 10展示Adapter模块与Transformer集成的架构图
 
 <br>
 </details>
