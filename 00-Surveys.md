@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-24-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-25-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -393,15 +393,18 @@
 | 4 | 📖 **Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey** | 2024 | arXiv | `压缩维度`：语义压缩/PLM压缩/检索器压缩 + `RAG评估`：三元组(上下文+答案+接地)+四能力 | 首篇聚焦RAG上下文压缩的综述；覆盖AutoCompressor/ICAE/RECOMP/LongNet等核心方法 |
 | 5 | 📖 **Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding** | 2024 | arXiv | `推测解码`：模型中心(Draft设计) + Draft中心(验证策略) + `部署挑战`：吞吐/长上下文/并行/硬件/泛化 | 首篇推测解码系统综述；独创模型中心vs Draft中心二分法，覆盖Medusa/EAGLE-2/Hydra等前沿方法 |
 | 6 | 📖 **Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison** | 2024 | arXiv | `FPGA` / `ASIC` / `In-Memory` / `GPU` | 首个跨平台硬件加速器全面对比，统一工艺外推实现FPGA/ASIC/存内计算的公平性能比较 |
+| 7 | 🏆 **A Comprehensive Survey of Accelerated Generation Techniques in LLMs** | 2024 | arXiv | `投机解码` / `早退机制` / `非自回归解码` 三类 | 系统梳理三大约束解码范式，投机解码凭"草稿-验证"框架成为当前最主流加速路线 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
 <br>
 
 *本子方向涵盖以下细分领域：*
+- `Speculative-Decoding`：Medusa, Eagle, 草稿-验证框架等
+- `Early-Exiting`：CALM, FREE, LayerSkip等
+- `Non-Autoregressive`：NAT, Mask-Predict, CLLMs, Jacobi解码等
 - `KV-Cache-Compression`：PagedAttention, RadixAttention, KV缓存压缩
-- `Speculative-Decoding`：Medusa, Eagle, Lookahead 等
-- `FlashAttention`：FA1/2/3, 高效注意力内核
+- `Hardware-Accelerators`：FPGA/ASIC/In-Memory/GPU加速器对比
 - `System-Level-Serving`：vLLM, TensorRT-LLM, SGLang, 调度优化
 - `Text-Compression`：提示压缩, Prompt压缩
 
@@ -520,6 +523,28 @@
   4. **FPGA灵活性优势**：FPGA在稀疏模式支持（BETA 174 GOPs/W）、近似计算（TransAxx）、算法-硬件协同（STA, FTRANS）方面表现突出，适合定制化场景。
   5. **GPU系统级优化不可忽视**：FlexGen（40x吞吐量）、vLLM（PagedAttention）等通过内存管理和KV缓存优化在商用硬件上取得显著收益。
 - **附带资源**：表I：LLM硬件加速器全览（年份/框架/平台/工艺/性能GOPs/能效GOPs/W）、表II：FPGA加速器统一外推到16nm性能对比、表III：VHDL矩阵乘法IP核跨工艺频率实测结果、表IV：实测外推频率与性能（STA/BETA/ViA/Me-ViT/Swin）、图1-6：性能/能效跨工艺、跨平台可视化对比，该综述为LLM硬件加速领域首个系统性的跨平台（FPGA/ASIC/In-Memory/GPU）定量对比工作，统一工艺外推方法具有重要方法论价值。
+<br>
+
+
+### 7. A Comprehensive Survey of Accelerated Generation Techniques in LLMs (2024)
+[![Paper](https://img.shields.io/badge/Paper-arXiv'24-b31b1b?style=flat-square)]()
+
+[A Comprehensive Survey of Accelerated Generation Techniques in Large Language Models](https://arxiv.org/abs/xxxx.xxxxx)
+
+- **分类方式**：按**三大加速范式**（Speculative Decoding / Early Exiting / Non-Autoregressive Methods）+ 各范式内部子方向
+- **覆盖子方向**：
+  - `投机解码(Speculative Decoding)` → 核心三步骤（Predict预测 → Verify验证 → Accept接受）；**草稿阶段方法**：Blockwise Parallel Decoding（并行评分预测k个token）、SpecDec（Spec-Drafter + relaxed验证策略，5x加速）、独立Draft Model训练（2-3x加速，Chinchilla 70B）、Self-Speculative Decoding（单模型跳过中间层自草稿，贝叶斯优化选层）、Online Speculative Decoding（在线持续蒸馏更新草稿模型，1.22-3.06x延迟降低）、DistillSpec（知识蒸馏对齐草稿-目标模型，10-45%额外加速）、REST（检索式非参数草稿，2.12-2.36x加速）、Cascade Speculative Drafting（垂直级联多级草稿+水平级联调整分配，额外81%加速）、Medusa（多头并行预测，Vicuna上~2x加速）、EAGLE（特征级自回归草稿+提前一步token融入）、PaSS（单模型并行采样，30%解码提升）、Staged Speculative Decoding（树形批次+两级推测，3.16x加速）；**验证阶段方法**：Speculative Sampling（拒绝采样保分布）、SpecInfer（Token Tree验证+树注意力，1.5-3.5x加速）、BiLD（Fallback+Rollback策略）、SpecTr（最优传输OTM框架，2.13x vs AR，1.37x vs SD）、Optimal Block-Level Draft Verification（块级OT验证）、Multi-Candidate Speculative Decoding（多候选批验证+无放回采样）；**集成方法**：与批处理协同（自适应推测长度，9%延迟降低）、BiTA（双向调优SAR解码，plug-and-play）、SPACE（SAR-SFT自草稿自验证，2.7-4.0x加速）、LLMA（前缀匹配检索参考文本，2x加速）、Lookahead（Trie多分支检索+VA验证，5.03x加速）、SCD（推测+对比解码联合）、SARATHI（分块预填充+解码混合批处理，10x解码吞吐量）、SPEED（推测执行+循环参数共享，3x延迟降低）、TriForce（检索式分层推测+StreamingLLM缓存，2.31x for LLaMA2-7B-128K）
+  - `早退机制(Early Exiting)` → **置信度函数**：Softmax Response / Hidden-state Saturation / Early Exit Classifier + LTT校准阈值；CALM（自适应计算分配框架）；FREE（浅-深模块+同步并行解码+Beta混合模型自适应阈值）；HASH EE（哈希函数分配退出层，免内部分类器）；MPEE（垂直层退出+水平Token退出双维度统一）；PPD（预测性流水线解码，中间层预测下一token分布并并发子进程）；ConsistentEE（强化学习策略网络+记忆层衡量实例难度）；SkipDecode（批处理兼容+KV缓存跳过，2-5x加速）；EE-LLM（Megatron-LM上3D并行训练早退LLM，管道并行解决梯度同步和KV丢失）；**自推测解码结合**：LayerSkip（训练阶段层Dropout+早退损失+旋转/渐进课程 → 推理早退 → 自验证纠正，1.86x加速）
+  - `非自回归解码(NAR)` → **基础模型**：NAT（繁殖度预测+噪声并行解码NPD，10x延迟降低）；增强Decoder输入（短语表/嵌入映射提供目标端信息）；**潜变量方法**：Latent Transformer（离散潜变量+DVQ分解向量量化，10x加速）、FlowSeq（生成流建模token依赖，常数解码时间）；**迭代精炼**：条件去噪自编码器+每步掩码低置信token重预测；**语法引导**：SynST（分块选区分析树预测→目标句生成）；**AR到NAR知识迁移**：课程学习/DePA前向后向依赖建模预训练；**BERT基础NAR**：动态[EOS]终止+ratio-first解码+上下文感知目标防重复；**半自回归SAT**：组级链式法则+松弛因果掩码；**结构化解码**：线性链CRF融入NAR解码器（低秩/束近似）；**Mask-Predict**：CMLM条件掩码语言模型+迭代掩码预测（~3x加速）；**Jacobi解码**：并行定点迭代（PJ/PGJ/HGJ算法，38%加速）；**CLLMs**：一致性训练（一致性损失+AR损失），Jacobi轨迹任意点一步映射到定点，2.4-3.4x加速；**Skeleton-of-Thought**：骨架-扩展两阶段并行解码，2.4x加速
+- **核心结论/洞察**：
+  1. **投机解码是当前最主流加速路线**：通过"小模型草稿+大模型验证"的范式，保持输出分布无损的同时实现2-5x加速；Medusa/EAGLE等自草稿方案消除辅助模型依赖成为新趋势。
+  2. **验证策略从Greedy Match走向概率宽松**：SpecTr（最优传输）和Multi-Candidate验证通过放松匹配条件显著提升Token接受率；拒绝采样（Speculative Sampling）理论上保证分布无损。
+  3. **早退机制面临KV缓存断裂核心挑战**：SkipDecode（跳过代替退出）、FREE（同步并行解码）、EE-LLM（KV重计算/新型管道并行）从不同角度解决上下文丢失问题。
+  4. **LayerSkip开创早退+自推测解码融合范式**：训练阶段层Dropout+早退损失→推理早退草稿→自验证，1.86x加速，实现单一模型内完整加速流水线。
+  5. **NAR模型在翻译领域成熟但通用生成受限**：Jacobi解码（CLLMs）通过一致性训练突破传统NAR质量瓶颈，实现2.4-3.4x加速同时保证AR级质量，有望向通用生成扩展。
+  6. **检索增强与推测解码融合成为新方向**：REST/Lookahead/LLMA利用检索数据库替代草稿模型，避免额外训练开销。
+- **附带资源**：图1：三大加速技术完整分类体系（树状结构）、图2：投机解码Predict-Verify-Accept三步流程可视化，详细算法描述：SpecTr的OTM框架、CALM退出公式、Jacobi/Gauss-Seidel定点迭代系统等，覆盖突破性方法的关键实验数据（加速比/Token接受率/质量评估），该综述为LLM推理加速领域提供了迄今最完整的生成端优化方法论梳理，是理解从传统AR解码到并行加速技术演进路径的核心参考文献。
+<br>
 
 </details>
 
