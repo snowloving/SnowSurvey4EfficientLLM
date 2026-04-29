@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-21-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-22-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -363,6 +363,7 @@
 | 3 | 🔥 **Prompt Compression for Large Language Models: A Survey** | 2025 | NAACL-HLT | `压缩范式`：硬提示(过滤/改写) + 软提示(编码器-解码器) + `理解视角`：注意力优化/PEFT/模态集成/合成语言 | 首篇Prompt压缩系统综述；独特解读软提示为"LLM新合成语言"，硬软结合是未来方向 |
 | 4 | 📖 **Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference** | 2024 | arXiv | `CIM器件`：SRAM/ReRAM/PCM/FeFET/MRAM + `加速策略`：算法增强/容错/硬件感知训练/异构计算 | 首篇聚焦存内计算加速LLM推理的综述；模拟CIM可突破冯·诺依曼瓶颈，实现数倍至数百倍能效提升 |
 | 5 | 📖 **Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey** | 2024 | arXiv | `压缩维度`：语义压缩/PLM压缩/检索器压缩 + `RAG评估`：三元组(上下文+答案+接地)+四能力 | 首篇聚焦RAG上下文压缩的综述；覆盖AutoCompressor/ICAE/RECOMP/LongNet等核心方法 |
+| 6 | 📖 **Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding** | 2024 | arXiv | `推测解码`：模型中心(Draft设计) + Draft中心(验证策略) + `部署挑战`：吞吐/长上下文/并行/硬件/泛化 | 首篇推测解码系统综述；独创模型中心vs Draft中心二分法，覆盖Medusa/EAGLE-2/Hydra等前沿方法 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -453,6 +454,23 @@
 - **附带资源**：论文Figure 1提供上下文压缩方法的完整分类体系思维导图（语义压缩→PLM→检索器三叉树），Figure 10展示RAG三元组评估框架（上下文相关性/接地性/答案相关性），配套Github仓库持续更新 [https://github.com/SrGrace/Contextual-Compression](https://github.com/SrGrace/Contextual-Compression)
 
 <br>
+
+
+### 6. Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding](https://arxiv.org/pdf/2411.13157?)
+
+- **分类方式**：首创 **Draft-模型中心**（Draft模型设计→独立/依赖）与 **Draft-Draft中心**（验证策略→概率/搜索优化/树图/混合自适应）双维度分类体系，并覆盖五类实际部署挑战
+- **覆盖子方向**：
+  - `Draft阶段-模型中心` → 独立Draft模型（Speculative Sampling同系列/Chimera Trigram+全上下文编码器/S2D Sorted Fine-tuning子模型自适应选择/Direct Alignment蒸馏对齐/Online Speculative Decoding查询分布动态调整）、依赖Draft模型（Medusa多头预测/Hydra序列依赖头/EAGLE特征层预测+自回归头/SpecDec++自适应候选长度/EESD早退+知识蒸馏/LayerSkip早退+损失函数引导/S3D中间层跳过+多Token预测+Draft验证同体）
+  - `验证阶段-Draft中心` → 概率方法（Nucleus Sampling截断低概率尾/HASS训练-推理概率对齐→提高接受率）、搜索优化（LazyLLM动态Token剪枝→KV逐步计算/SLiM假设缩减→轻量验证前置过滤/BPD分块并行+重打分机制）、树图方法（GSD DAG合并公共Token序列+剪枝/RSD递归+无放回采样→GumbelTop-k+Stochastic Beam Search）、混合自适应（EAGLE-2置信度分数→接受率近似+动态调整树结构/OPT-Tree最大化期望接受长度/ProPD早剪枝+动态树生成→实时自适应）
+  - `部署挑战` → 吞吐（MagicDec自适应稀疏KV Cache解决长上下文高batch瓶颈/BASS批量优化注意力+GPU高利用率→15.8%利用率10×于基线）、长上下文生成（MagicDec稀疏Cache管理/TriForce层次推测+Attention稀疏+重要Token淘汰→支持120K Token）、模型并行（BASS KV Padding+拆分/EMS-SD Unpad KV Cache处理变长序列→batch size 16仍2.85×加速）、硬件限制（PPD硬件感知动态稀疏树→0.004%内存开销/S3D跳层+多Token预测→8.06GB VRAM低于EAGLE 9.63GB/参数卸载+量化开销7×减速）、泛化性（SpecBench多任务基准→EAGLE在翻译/摘要/QA/数学推理/多轮对话上普遍最优，但尚无全任务统一最优方案）
+- **核心洞察补充**：有效解码长度(EDL)是衡量推测解码效率的核心指标——接受Token数越多则加速越大；同系列草稿模型（如OPT-125M+OPT-7B）效果好→相似预训练→相似预测行为→高接受率；EAGLE创新性地在特征层而非Token层做预测，结合自回归头，在多项任务上达SOTA；Medusa多头并行解码无需独立Draft模型，简化了部署；树结构（GSD有向无环图/RSD递归/OPT-Tree自适应）比单序列Draft显著提升验证吞吐；Nucleus Sampling通过截断低概率尾解决Beam Search导致的文本退化问题
+- **附带资源**：论文Figure 1提供推测解码方法的完整分类体系树形图（模型中心→独立/依赖；Draft中心→概率/搜索/树图/混合），Figure 3为各方法发布时间线图（2023.05-2024.06），Algorithm 1给出标准并行推测解码伪代码；文中对比了多种方法在SpecBench基准上的加速比
+
+<br>
+
 </details>
 
 ---
