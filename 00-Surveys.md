@@ -115,7 +115,7 @@
 
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
-| 1 | *待添加* | — | — | `量化` / `剪枝` / `蒸馏` / `低秩分解` 等 | — |
+| 1 | 🔥 **A Survey on Model Compression for Transformer-Based LLMs** | 2026 | IEEE TETCI `IF=11.8` | `压缩方法`：剪枝/量化/蒸馏/低秩分解 + `新视角`：KV Cache压缩/NAS | 首篇将KV Cache压缩与NAS纳入LLM模型压缩统一框架的综述；混合压缩是工业落地主流范式 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -127,8 +127,39 @@
 - `Knowledge-Distillation`：MiniLLM, GKD, 上下文蒸馏等
 - `Low-Rank-Decomposition`：LoRA及其变体, SVD等
 - `Neural-Architecture-Search`：(可选) LLM专用NAS
-
 <br>
+
+
+### 1. A Survey on Model Compression for Transformer-Based LLMs (2026)
+[![Paper](https://img.shields.io/badge/Journal-IEEE_TETCI'26-blue)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=11.8-important)]()
+
+[A Survey on Model Compression for Transformer-Based Large Language Models](https://ieeexplore.ieee.org/document/11408261)
+
+- **分类方式**：按 **压缩技术类型**（剪枝/量化/知识蒸馏/低秩分解/KV Cache压缩/NAS）六大类组织，并进一步细分：
+  - `剪枝` → 结构化（层级式/组件式）、非结构化（幅度/损失）、半结构化（N:M稀疏）
+  - `量化` → QAT（BitNet系列/LLM-QAT/BitDistiller）、PTQ（仅权重/权重+激活）
+  - `知识蒸馏` → 黑盒（CoT蒸馏/ICL蒸馏）、白盒（特征/响应/关系）
+  - `低秩分解` → SVD变体（FWSVD/EoRA/ASVD）、张量分解（TensorGPT）
+  - `KV Cache压缩` → 层级/头数/序列长度/特征维度四维度
+  - `NAS` → One-Shot NAS/Zero-Shot NAS/硬件感知NAS
+- **覆盖子方向**：
+  - `结构化剪枝` → LLM-Pruner, LoSparse, Sheared LLaMA, SliceGPT, DISP-LLM, LoRAPrune, TransAct
+  - `非结构化剪枝` → SparseGPT, Wanda, RIA, SPP
+  - `半结构化剪枝` → AST, MaskLLM, 4:2稀疏模式
+  - `QAT` → BitNet b1.58, LLM-QAT, BitDistiller, Efficient QAT, OneBit
+  - `权重PTQ` → GPTQ, AWQ, OWQ, SpQR, SqueezeLLM, QLoRA, LoftQ
+  - `权重+激活PTQ` → SmoothQuant, OmniQuant, QuaRot, ASER, MobileQuant
+  - `黑盒KD` → CoT蒸馏（Magister/PaD/ELLM-MKD）、ICL蒸馏（SeCoKD/MEND/AICD）
+  - `白盒KD` → 特征（TinyBERT/MINILMv2）、响应（MiniLLM/SWITCH）、关系（MGSKD）
+  - `低秩分解` → FWSVD, EoRA, LPAF, MoDeGPT, ASVD, TensorGPT
+  - `KV Cache` → Cross-Layer Attention, MLKV, GQA, HeadKV-R2, KVQuant, TokenSelect, KVMerger, GEAR, MatryoshkaKV
+  - `NAS` → LLaMA-NAS, NAS-BERT, Puzzle, HAT
+- **核心洞察补充**：结构化剪枝比通常不超过30%，过高会导致性能急剧退化；非结构化剪枝可在50%稀疏度下保持优良性能，但破坏模型结构难以硬件加速；QAT性能优于PTQ但训练成本更高；混合精度是处理离群值的最常用策略；混合压缩（如Apple的2-bit量化+8-bit KV Cache量化）是工业落地主流路径；Scaling Law在模型压缩中可能失效——权重压缩至1 bit、激活压缩至8 bit时性能骤降。
+- **附带资源**：无公开GitHub库，但论文Table III提供了六大类压缩方法的压缩目标、微调需求、硬件兼容性、典型压缩比的一览对比表，Table I-II分别给出代表性剪枝和量化方法的实验数据，极具横向对比参考价值。
+<br>
+
 </details>
 
 ---
