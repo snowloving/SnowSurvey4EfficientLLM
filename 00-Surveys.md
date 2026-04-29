@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-27-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-28-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -321,6 +321,8 @@
 | 1 | 🔥 **A Survey on Model Compression for Transformer-Based LLMs** | 2026 | IEEE TETCI `IF=11.8` | `压缩方法`：剪枝/量化/蒸馏/低秩分解 + `新视角`：KV Cache压缩/NAS | 首篇将KV Cache压缩与NAS纳入LLM模型压缩统一框架的综述；混合压缩是工业落地主流范式 |
 | 2 | 🔥 **Survey on Knowledge Distillation for LLMs: Methods, Evaluation, and Application** | 2025 | ACM TIST `IF=6.5` | `KD范式`：白盒(Logits/Hint) + 黑盒(ICL/CoT/Instruction Following) + `鲁棒性评估` | 首次提出白盒/黑盒二分法用于LLM KD分类，清晰区分了可访问内部参数（白盒）和仅可访问API输出（黑盒）的两类方法；首篇从鲁棒性视角统一评估LLM蒸馏算法的综述；MiniLLM在GPT-2上对抗及OOD鲁棒性最优 |
 | 3 | 📖 **Art and Science of Quantizing Large-Scale Models: A Comprehensive Overview** | 2024 | arXiv | `量化范式`：PTQ(30+算法) + QAT(4类) + KV Cache压缩 + KD + 极端低比特 | 量化领域最深度的综述之一；详尽推导LLM-QAT/SmoothQuant/AWQ/GPTQ等核心公式，覆盖从二值网络到LLM量化的完整演进 |
+| 4 | 🔥 **A Survey on Model Compression for Large Language Models** | 2024 | TACL `IF=6.9`| `量化(QAT/PTQ)` / `剪枝(非结构化/结构化/半结构化)` / `KD(黑盒/白盒)` / `低秩分解` | 聚焦压缩技术本身，按压缩类型（量化/剪枝/KD/低秩）系统梳理，附带标准化指标与基准评估体系 |
+
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -405,6 +407,33 @@
 - **附带资源**：论文Table I汇总17+种量化算法的核心技术特征（对称MinMax/NF4/BCQ/OVP等），Table II-IV从激活量化/离群值处理/重要性加权/内存对齐等多维度系统对比各类算法，Figure 2-3展示L4Q与基线对比及KV Cache压缩方法分类树；论文还提供从BinaryConnect到LLM-QAT的完整QAT-QNN演进时间线
 
 <br>
+
+### 4. A Survey on Model Compression for Large Language Models (2024)
+[![Paper](https://img.shields.io/badge/Journal-TACL'24-blue?style=flat-square)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=6.9-important)]()
+
+
+[A Survey on Model Compression for Large Language Models](https://aclanthology.org/2024.tacl-1.85.pdf)
+
+- **分类方式**：按**压缩技术类型**（量化/剪枝/知识蒸馏/低秩分解）四大类 + 评估体系（指标与基准）双维度组织
+- **覆盖子方向**：
+  - `量化(Quantization)` → **QAT**：LLM-QAT（自产数据蒸馏+输出对齐）、BitDistiller（QAT+自蒸馏，置信度感知KL散度）、OneBit（1-bit权重量化+参数初始化方案）；**PTQ → Weight-Only**：LUT-GEMM（BCQ二进制+缩放因子）、GPTQ（层序OBQ+Hessian逆，3-4bit）、QuIP（LDL分解+Kronecker随机正交矩阵2-bit）、AWQ（1%显著权重高精度+逐通道缩放）、OWQ（激活离群值感知权重保护）、SpQR（L2误差灵敏度+k-means质心3-bit，2.4x加速）、SqueezeLLM（Hessian灵敏度+稀疏格式3-bit，2x加速）；**PTQ → Weight-Activation**：ZeroQuant（首篇W8A8 LLM量化）、LLM.int8()（离群特征维度FP16+向量量化INT8）、SmoothQuant（逐通道缩放平滑离群值，W8A8 1.56x）、RPTQ（通道重排序+聚类，W4A4）、OliVe（离群-受害者对量化OVP 4.5x）、OS+（通道移位+缩放消除非对称）、LLM-FP4（FP8/FP4浮点格式+指数偏置搜索）、OmniQuant（等效转移+裁剪阈值优化）；**KV Cache量化**：KVQuant（百万级上下文长度推理）、KIVI（Key逐通道/Value逐Token 2-bit免微调）、WKVQuant（过去仅量化+二维量化+跨块重建正则化）
+  - `剪枝(Pruning)` → **非结构化**：SparseGPT（单次大规模稀疏回归，50%+稀疏度）、Wanda（权重×输入范数免更新）、SAMSP（Hessian灵敏度+动态稀疏分配）、DSNoT（迭代剪枝-生长，高稀疏率90%）；**结构化**：LLM-Pruner（梯度+依赖检测+LoRA恢复，20%压缩）、Shortened LLaMA（深度剪枝Transformer块）、FLAP（波动度量+自适应结构搜索+偏置补偿免微调）、SliceGPT（PCA计算不变性+删除行列，30%压缩1.87x）、Sheared LLaMA（拉格朗日乘数约束优化+动态批加载）；**半结构化N:M**：E-Sparse（信息熵重要性+全局/局部shuffle）、SparseGPT/Wanda扩展至2:4模式、A100 Ampere 2:4稀疏硬件支持
+  - `知识蒸馏(KD)` → **黑盒KD → CoT蒸馏**：Distilling Step-by-Step（多任务学习框架+解释生成）、Fine-tune-CoT（零样本CoT生成多样推理链+丰富蒸馏集）、SCOTT（对比解码+反事实推理）、PaD（PoT替代CoT程序辅助）、DRA（多轮交互+自反思学习）、负样本引导（从负例中也蒸馏推理知识）；**黑盒KD → ICL蒸馏**：In-Context Learning Distillation（Meta-ICT/Multitask-ICT两阶段）、AICD（自回归-上下文元教师强制）；**黑盒KD → IF蒸馏**：Lion（识别"Hard"指令）、LaMini-LM（258万指令集+多模型微调）、SELF-INSTRUCT（学生自产指令自微调）、Selective Reflection-Tuning（教师反思+学生筛选）；**白盒KD**：MINILLM（反向KL散度防止低估高概率区）、GKD（自生成输出+教师反馈+灵活损失）、TED（任务感知逐层蒸馏+隐藏表示对齐）
+  - `低秩分解(Low-Rank Factorization)` → LPLR（随机sketch列空间+低精度低秩因子）、ASVD（激活分布感知缩放+奇异值分布自适应压缩比分配）、LASER（层选择性秩缩减，提升稀有样本处理+抗问题改写）
+  - `评估体系` → **指标**：模型大小/FLOPs/MFU(Mean FLOPs Utilization)/推理时间/加速比/压缩比；**基准**：WikiText-2/C4/PTB（困惑度）、LAMBADA/PIQA/OpenBookQA（零样本）、GSM8K/CommonsenseQA/StrategyQA（推理）、BIG-Bench（200+任务）、Vicuna-Instructions（80题9类）、User-Oriented-Instructions（252指令）、EleutherAI LM Harness（60+基准统一测试）
+- **核心结论/洞察**：
+  1. **首次专门聚焦LLM模型压缩综述**：区别于此前覆盖PLM或通用DNN的压缩综述，本工作专为LLM定制，系统化梳理量化/剪枝/KD/低秩四大类技术的LLM特化方案。
+  2. **三大PTQ子类清晰划分**：首次明确区分Weight-Only量化(高压缩比但有反量化开销)、Weight-Activation量化(激活离群值是核心挑战)、KV Cache量化(长上下文场景内存瓶颈)的不同适用场景和权衡。
+  3. **黑盒蒸馏是LLM时代KD主流**：利用ChatGPT/GPT-4等闭源LLM生成蒸馏数据（CoT推理链/指令对）微调小模型，支持涌现能力（推理/ICL/指令遵循）迁移，白盒蒸馏受限于开源LLM性能较弱。
+  4. **剪枝粒度-硬件加速三角权衡**：非结构化剪枝精度保持好但需特殊软硬件支持（如Flash-LLM利用Tensor Core）；结构化剪枝硬件友好但精度损失大需KD+LoRA恢复；N:M半结构化剪枝在A100上2:4可原生加速。
+  5. **校准数据质量影响显著**：Williams & Aletras (2023)实验证明不同校准数据选择可导致下游任务性能显著差异，高质量校准数据集对PTQ和剪枝至关重要。
+  6. **压缩技术整合+AutoML是趋势**：结构化剪枝+KD结合、PEFT+QAT结合、AutoML自动化选择最优压缩策略（架构/超参数/压缩率）是提升压缩效率的可行路径。
+  7. **扩展律对压缩构成根本性挑战**（§7.4）：模型大小-性能的缩放关系意味着压缩必然伴随性能损失，需深入理解其机理以突破限制。
+- **附带资源**：图1：LLM模型压缩方法分类体系（量化/剪枝/KD/低秩分解）、图2：各类压缩方法基本流程示意（QAT-KD为任务相关，其余为任务无关）、Table 1：代表性量化方法性能总览（13种方法×Bit Width×Perplexity Difference×Speedup）、Table 2：代表性剪枝方法性能总览（11种方法×压缩率×加速比×Perplexity Difference）、§2：标准化压缩评估指标定义与基准数据集汇总、§7：八大未来方向（更先进方法/扩展经典压缩技术/推理部署/Roofline模型/扩展律/AutoML/可解释性/校准数据优化），该综述是LLM模型压缩领域首篇专门性综述，以压缩技术类型为主线构建清晰分类体系，结合标准化评估框架，为后续压缩研究奠定了系统性参考基础。
+
+
 </details>
 
 ---
