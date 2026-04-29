@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-23-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-24-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -392,6 +392,7 @@
 | 3 | 📖 **Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference** | 2024 | arXiv | `CIM器件`：SRAM/ReRAM/PCM/FeFET/MRAM + `加速策略`：算法增强/容错/硬件感知训练/异构计算 | 首篇聚焦存内计算加速LLM推理的综述；模拟CIM可突破冯·诺依曼瓶颈，实现数倍至数百倍能效提升 |
 | 4 | 📖 **Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey** | 2024 | arXiv | `压缩维度`：语义压缩/PLM压缩/检索器压缩 + `RAG评估`：三元组(上下文+答案+接地)+四能力 | 首篇聚焦RAG上下文压缩的综述；覆盖AutoCompressor/ICAE/RECOMP/LongNet等核心方法 |
 | 5 | 📖 **Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding** | 2024 | arXiv | `推测解码`：模型中心(Draft设计) + Draft中心(验证策略) + `部署挑战`：吞吐/长上下文/并行/硬件/泛化 | 首篇推测解码系统综述；独创模型中心vs Draft中心二分法，覆盖Medusa/EAGLE-2/Hydra等前沿方法 |
+| 6 | 📖 **Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison** | 2024 | arXiv | `FPGA` / `ASIC` / `In-Memory` / `GPU` | 首个跨平台硬件加速器全面对比，统一工艺外推实现FPGA/ASIC/存内计算的公平性能比较 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -496,8 +497,29 @@
   - `部署挑战` → 吞吐（MagicDec自适应稀疏KV Cache解决长上下文高batch瓶颈/BASS批量优化注意力+GPU高利用率→15.8%利用率10×于基线）、长上下文生成（MagicDec稀疏Cache管理/TriForce层次推测+Attention稀疏+重要Token淘汰→支持120K Token）、模型并行（BASS KV Padding+拆分/EMS-SD Unpad KV Cache处理变长序列→batch size 16仍2.85×加速）、硬件限制（PPD硬件感知动态稀疏树→0.004%内存开销/S3D跳层+多Token预测→8.06GB VRAM低于EAGLE 9.63GB/参数卸载+量化开销7×减速）、泛化性（SpecBench多任务基准→EAGLE在翻译/摘要/QA/数学推理/多轮对话上普遍最优，但尚无全任务统一最优方案）
 - **核心洞察补充**：有效解码长度(EDL)是衡量推测解码效率的核心指标——接受Token数越多则加速越大；同系列草稿模型（如OPT-125M+OPT-7B）效果好→相似预训练→相似预测行为→高接受率；EAGLE创新性地在特征层而非Token层做预测，结合自回归头，在多项任务上达SOTA；Medusa多头并行解码无需独立Draft模型，简化了部署；树结构（GSD有向无环图/RSD递归/OPT-Tree自适应）比单序列Draft显著提升验证吞吐；Nucleus Sampling通过截断低概率尾解决Beam Search导致的文本退化问题
 - **附带资源**：论文Figure 1提供推测解码方法的完整分类体系树形图（模型中心→独立/依赖；Draft中心→概率/搜索/树图/混合），Figure 3为各方法发布时间线图（2023.05-2024.06），Algorithm 1给出标准并行推测解码伪代码；文中对比了多种方法在SpecBench基准上的加速比
+<br>
+
 
 <br>
+
+### 6. Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison (2024)
+[![Paper](https://img.shields.io/badge/Paper-arXiv'24-b31b1b?style=flat-square)]()
+
+[Hardware Acceleration of LLMs: A comprehensive survey and comparison](https://arxiv.org/pdf/2409.03384?)
+
+- **分类方式**：按**硬件平台**（FPGA/GPU/ASIC/In-Memory）四类 + **工艺外推归一化对比**
+- **覆盖子方向**：
+  - `FPGA加速器` → FTRANS（BCM压缩，81x加速vs GPU）、MHA加速器（14.6x vs V100）、NPE（4-6x能效提升vs CPU/GPU）、Column Balanced Block Pruning（11x vs CPU）、Compressed Block Row（38x vs GPU）、ViA（60x vs V100，309.6 GOPs）、DFX（3.8x吞吐量，4x能效vs GPU）、STA-4/8（392-523 GOPs，33-41 GOPs/W）、OPU（1.1-2.9x vs RTX3090）、FlexRun（2.79x vs GPU for BERT）、HPTA（44x vs CPU，175x能效）、Swin系列（1.7-4.4x vs GPU）、OBS数据流（728 GOPs，58.3 GOPs/W）、Neural ODE混合（12.8x，94.6%参数削减）、BETA（1436 GOPs，174 GOPs/W）、Me-ViT（2682 GOPs，5.1x vs GPU）、TransAxx（近似计算）、SSR（36x vs GPU，7nm工艺）
+  - `GPU加速器` → TurboTransformers（变长输入优化，2.8x vs PyTorch）、Softmax重组（1.12-1.65x推理加速）、LightSeq2（算子融合，1.4-3.5x训练加速）、简化Transformer（15%更快训练，15%更少参数）、LLMA（参考解码，2x+加速）、FlexGen（单GPU高吞吐，40x vs DeepSpeed）、vLLM/PagedAttention（分页KV缓存）、ALISA（稀疏窗口注意力+动态调度）
+  - `ASIC加速器` → A3（近似注意力，7x vs CPU，11x能效）、ELSA（157x vs GPU for self-attention）、SpAtten（级联剪枝+渐进量化，162x vs GPU，1193x能效）、Sanger（动态稀疏+可重构架构）、SALO（混合稀疏，25.5x vs 1080Ti，336x能效）、AccelTran-Edge/Server（7520/372000 GOPs，14nm）、DTQAtten（16.4x vs SpAtten，952 GOPs）、Energon（168x vs CPU，10000x能效）、H3D Transformer（10 TOPS/W，3D异构CIM+TPU）、SALO2（25x vs RTX4090，70x能效）
+  - `存内计算加速器(In-Memory)` → ATT（ReRAM，202x vs GPU）、ReTransformer（ReRAM，23x加速，1086x功耗降低）、iMCAT（结合CAM，200x加速，41x能效）、TransPIM（辅助计算单元，10.8x加速，5.7x能效）、iMTransformer（11x加速，12.6x能效）、X-Former（混合NVM+CMOS，85x延迟，7.5x能耗）、TranCIM（全数字CIM，16.9x vs Jetson Nano）、H3DATTEIN（模拟+数字混合CIM，7100 GOPs/W）、PRIMATE（动态Token剪枝+PIM，30.6x加速）、HARDSEA（混合模拟数字，28.5x加速，1894x能效）
+- **核心结论/洞察**：
+  1. **统一工艺外推实现公平对比**：采用两种方法（理论缩放方程+实测矩阵乘法IP核）将不同工艺（7nm~180nm）加速器性能归一化到16nm，AccelTran-Server(14nm)在统一16nm后性能最高达363,647 GOPs。
+  2. **存内计算能效显著领先**：In-Memory架构（H3DATTEIN 7100 GOPs/W, TranCIM 20500 GOPs/W, HARDSEA 943.7 GOPs/W）远超FPGA/ASIC，归因于消除数据搬运开销。
+  3. **绝对性能ASIC领先**：ASIC在GOPs指标上整体占优（AccelTran-Server 372,000 GOPs），In-Memory次之，FPGA相对灵活但性能受限。
+  4. **FPGA灵活性优势**：FPGA在稀疏模式支持（BETA 174 GOPs/W）、近似计算（TransAxx）、算法-硬件协同（STA, FTRANS）方面表现突出，适合定制化场景。
+  5. **GPU系统级优化不可忽视**：FlexGen（40x吞吐量）、vLLM（PagedAttention）等通过内存管理和KV缓存优化在商用硬件上取得显著收益。
+- **附带资源**：表I：LLM硬件加速器全览（年份/框架/平台/工艺/性能GOPs/能效GOPs/W）、表II：FPGA加速器统一外推到16nm性能对比、表III：VHDL矩阵乘法IP核跨工艺频率实测结果、表IV：实测外推频率与性能（STA/BETA/ViA/Me-ViT/Swin）、图1-6：性能/能效跨工艺、跨平台可视化对比，该综述为LLM硬件加速领域首个系统性的跨平台（FPGA/ASIC/In-Memory/GPU）定量对比工作，统一工艺外推方法具有重要方法论价值。
 
 </details>
 
