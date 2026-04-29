@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-26-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-27-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -41,6 +41,7 @@
 | 8 | 🏆 **Model Compression and Efficient Inference for Large Language Models: A Survey** | 2024 | arXiv | `五维压缩`：量化/剪枝/蒸馏/紧凑架构/动态网络 + `模型分层`：中型(≤1B) vs 真·大型(>1B) | 独创中型vs真·LLM分层方法论；LLM压缩两大核心：免重训练+通用性保持 |
 | 9 | 🔥 **A Survey on Transformer Compression** | 2024 | arXiv | `四维压缩`：量化/蒸馏/剪枝/高效架构 + `新架构`：Mamba/RetNet/RWKV + `跨域`：NLP+CV | 同时覆盖语言与视觉Transformer压缩；系统对比Mamba/RetNet与Transformer复杂度与并行性 |
 | 10 | 🏆 **A Comprehensive Survey of Compression Algorithms for Language Models** | 2024 | arXiv | `剪枝` / `量化` / `KD` / `低秩近似` / `参数共享` / `高效架构` | 系统区分高成本与低成本算法，强调迭代压缩与直接优化目标函数是LLM时代的关键 |
+| 11 | 🏆 **Beyond Efficiency: A Systematic Survey of Resource-Efficient LLMs** | 2024 | arXiv | `五大资源×五阶段` 矩阵 + `架构/预训练/微调/推理/系统` 全生命周期 | 首个以资源类型（计算/内存/能源/财务/通信）为主轴的全生命周期LLM效率综述，提出资源-技术映射矩阵与标准化评估体系 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -249,6 +250,33 @@
 - **附带资源**：论文收录了丰富的对比表，如表2：编码器模型剪枝算法对比（MNLI/QQP/SQuAD）、表3：解码器模型剪枝算法对比（WikiText2 Perplexity）、表4：编码器量化算法对比、表5：解码器量化算法对比、表6：KD算法对比、表7：低秩近似算法对比，该综述为理解从BERT到LLM时代压缩算法的演进脉络提供了系统框架。
 
 <br>
+
+### 2. Beyond Efficiency: A Systematic Survey of Resource-Efficient LLMs (2024)
+[![Paper](https://img.shields.io/badge/Paper-arXiv'24-b31b1b?style=flat-square)]()
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-lightgrey?style=flat-square)](https://github.com/tiingwei-shii/Awesome-Resource-Efficient-LLM-Papers)
+
+[Beyond Efficiency: A Systematic Survey of Resource-Efficient Large Language Models](https://arxiv.org/abs/xxxx.xxxxx)
+
+- **分类方式**：按**五大资源类型**（计算/内存/能源/财务/网络通信）× **五阶段生命周期**（架构设计/预训练/微调/推理/系统设计）双维度矩阵组织；首创资源-技术直接/间接影响映射表（Table 2）
+- **覆盖子方向**：
+  - `架构设计 → 高效Transformer`：**近似注意力** Reformer(LSH O(Td log T))、Linear Transformer(O(Td²))、AFT(O(Td))、KDEformer(O(mTd))、MEGA(O(cTd))、Simple Linear Attention(24x vs FlashAttention-2)、SageAttention(2.1x vs FlashAttention2)；**硬件优化注意力** FlashAttention 1/2(IO-aware tiling)、PagedAttention(vLLM)、LightSeq/FasterTransformer/xFormers；**非Transformer架构** MoE(Switch Transformer/GLAM 1.2T参数仅激活8%)、RWKV(线性注意力+RNN推理)、Mamba(选择性状态空间线性缩放)、Hyena/Monarch Mixer/MatMul-free LM
+  - `预训练 → 内存效率`：**分布式训练** 数据并行ZeRO(分区模型状态)、模型并行Megatron-LM(张量+流水线)、GPipe/PipeDream(微批次)、MegaScale(万卡3D并行)；**混合精度** BF16/FP16训练
+  - `预训练 → 数据效率`：**重要性采样** Data-Juicer/INGENIOUS/ASTEROID(数据质量筛选)；**数据增强** LLM-DA(LLM生成增强)；**训练目标** MLM/MIM/FLIP掩码策略
+  - `微调 → 参数高效PEFT`：**Masking类** CHILD-TUNING(子网络识别)、动态参数选择、MEFT(MoE+CPU卸载)、DyLoRA(动态秩)；**Adapter类** 串行Adapter(Houlsby)、AdapterFusion/AdapterSoup、LoRA(低秩分解SVD块)、QLoRA(4bit量化+LoRA)
+  - `微调 → 全参数微调`：LOMO(梯度-参数更新融合，8×RTX3090微调65B)、MeZO(仅前向传播估计梯度，55GB微调30B)、HiFT(分层块更新节省显存)
+  - `推理 → 模型压缩`：**剪枝** SparseGPT(60%参数削减)、Wanda(权重×范数准则)、LLM-Pruner(依赖检测+一阶/Hessian)、LoSparse(低秩+稀疏)、ZipLM(硬件感知结构剪枝)、DynaTran(动态激活剪枝)；**量化** GPTQ(二阶信息3-4bit)、AWQ(1%显著权重保护)、SpQR(稀疏量化为近无损)、OmniQuant(可学习裁剪)、DuQuant(旋转置换)、ABQ-LLM(任意比特)；**蒸馏** 白盒(CTR-BERT/TinyBERT/Distilling Step-by-Step)、黑盒(Alpaca/Vicuna/LaMini-LM)；**低秩近似** SVD分解、Kronecker分解、TensorGPT压缩嵌入层
+  - `推理 → 动态加速`：**早退** DeeBERT(熵)、CALM(置信度+LTT阈值)、PCEE-BERT(信心+耐心)、MuE(多模态早退)；**输入剪枝** SpAtten(级联token剪枝)、LTP(可学习阈值)、LazyLLM(生成时动态剪枝KV 2.34x TTFT)、LLMLingua-2(提示压缩2-5x)、GRIFFIN(无需训练剪枝50%参数)；**令牌并行** Speculative Decoding(小模型草稿+大模型验证2-2.5x)、Staged Speculative Decoding(树型批次3.16x)
+  - `系统设计 → 部署优化`：**硬件卸载** FlexGen(线性规划搜索最优卸载)、DeepSpeed ZeRO-Inference、Ripple(智能手机闪存协同激活5.93x I/O削减)；**协同推理** PETALS(分布式层托管+8bit)；**边缘设备** MobileLLM(深度优先+嵌入共享+GQA)、EdgeShard(异构边云分区)、Any-Precision LLM(单模型多比特)、LocMoE(JetMoE 70%计算削减)
+  - `评估体系`：**五维资源指标** FLOPs/延迟/吞吐量/加速比(计算)，参数量/模型大小/压缩比(内存)，能耗(kWh)/碳排放(gCO2eq)(能源)，美元/参数(财务)，通信量(MB/GB)(网络)；**专用基准** Dynaboard(多维效用Dynascore)、EfficientQA(内存约束QA)、SustaiNLP(效率共享任务)；**辅助指标** 忠实度/鲁棒性/帕累托最优
+- **核心结论/洞察**：
+  1. **首创资源×生命周期双维度矩阵**：Table 2首次系统建立资源效率技术到五种关键资源的直接/间接影响映射，揭示同一技术对不同资源的多重效应。
+  2. **五维资源统一定义**：明确LLM资源效率涵盖计算/内存/能源/财务/网络通信五维度，每个维度提供可量化指标（FLOPs、模型大小、能耗kWh、美元/参数、通信量）。
+  3. **三元悖论普遍存在**：优化计算效率可能增加内存需求（稀疏化矩阵需额外索引），早退策略节省计算但需KV缓存重构——需要多目标帕累托优化框架。
+  4. **技术整合不足是主要缺口**（§10.2）：现有研究各自独立优化单一维度，缺乏将架构设计+压缩+动态加速+系统优化系统化融合的工作。
+  5. **标准化评估急缺**（§10.3）：已有基准（Dynaboard/EfficientQA）仅覆盖部分资源维度，缺乏统一的五维资源效率评估平台。
+  6. **AutoML+LLM效率是新兴方向**（§10.5）：Meta-Learning和NAS有望减少模型压缩中人工调参依赖。
+  7. **扩展律理论指导待深化**（§10.7）：需要更深入理解性能-资源投入的缩放关系以指导效率优化设计空间探索。
+- **附带资源**：[GitHub仓库持续更新](https://github.com/tiingwei-shii/Awesome-Resource-Efficient-LLM-Papers)。Table 1：近似注意力时间/空间复杂度对比（9种方法）、Table 2（核心）：资源效率技术×五大资源影响矩阵（直接✓/间接✓/无）、§9.1-9.2：标准化评估指标与基准（Dynaboard/EfficientQA/SustaiNLP/VLUE/Long Range Arena）、§9.1.4：提出新财务指标"美元/参数"、§10：七大开放挑战（资源类型权衡/技术整合/标准化评估/可解释性/AutoML/边缘计算/扩展律理论），该综述首次以资源类型为第一性维度构建LLM效率优化的系统化分类体系，五维资源×五阶段矩阵+资源-技术映射表是核心方法论贡献，为全生命周期可持续LLM开发提供全景式参考框架。
   
 </details>
 ---
