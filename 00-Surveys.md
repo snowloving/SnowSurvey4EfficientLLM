@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-13-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-14-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -258,6 +258,7 @@
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 📖 **Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective** | 2025 | arXiv | `硬件平台`：CPU/GPU/FPGA/ASIC/PIM + `优化方法`：量化/稀疏/快速解码/算子优化/异构协同 | 首篇以tokens/s和tokens/J统一度量不同硬件平台LLM推理性能的综述；PIM/NDP能效比最高达46.66 tokens/J |
 | 2 | 📖 **A Survey on Hardware Accelerators for LLMs** | 2025 | Applied Sciences | `硬件平台`：FPGA/GPU/ASIC/存内计算 + `加速技术`：稀疏/近似/融合/混合精度 | 系统梳理30+加速器架构；存内计算与ASIC可实现3-4个数量级的能效提升，FPGA在灵活性与效率间取得最优折中 |
+| 3 | 🔥 **Prompt Compression for Large Language Models: A Survey** | 2025 | NAACL-HLT | `压缩范式`：硬提示(过滤/改写) + 软提示(编码器-解码器) + `理解视角`：注意力优化/PEFT/模态集成/合成语言 | 首篇Prompt压缩系统综述；独特解读软提示为"LLM新合成语言"，硬软结合是未来方向 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -285,6 +286,25 @@
   - `硬件平台对比` → CPU: 3-50 tokens/s, 0.0057-2.38 tokens/J；GPU: 18-343.4 tokens/s, 0.06-0.86 tokens/J；FPGA: 3.61-450 tokens/s, 0.15-6.30 tokens/J；ASIC: 9.95-2700 tokens/s, 0.11-13.99 tokens/J；PIM/NDP: 10-1998 tokens/s, 0.14-46.66 tokens/J
 - **核心洞察补充**：PIM/NDP在所有硬件平台中实现最高能效比（46.66 tokens/J），边缘CPU（3-6W）能效亦优于GPU；量化在GPU上可实现最高绝对推理速度（343.4 tokens/s），算子优化在ASIC上可达2700 tokens/s；大batch（bs=8）较小batch（bs=1）吞吐提升2.56-5.32倍，能效提升3.82-7.87倍；未来三大趋势为多模态、推理时计算、更高能效，边缘芯片需达到>10 tokens/J以支持100-1000Hz实时控制
 - **附带资源**：[github仓库](https://github.com/Kimho666/LLM_Hardware_Survey)；论文图13-14提供bs=1和bs=8下各平台功耗-吞吐散点图，图18直观展示当前边缘AI与未来需求的1-2个数量级差距，极具系统设计参考价值
+<br>
+
+### 3. Prompt Compression for Large Language Models: A Survey (2025)
+[![Paper](https://img.shields.io/badge/Conference-NAACL'25-blue)]()
+
+[Prompt Compression for Large Language Models: A Survey](https://aclanthology.org/2025.naacl-long.368.pdf)
+
+- **分类方式**：按 **压缩范式**（硬提示方法/软提示方法）两大维度组织，进一步按架构（仅解码/编码-解码）和机制（过滤/改写/微调/冻结）细分
+- **覆盖子方向**：
+  - `硬提示-过滤` → 基于自信息（SelectiveContext通过SpaCy短语合并筛选低信息token；LLMLingua以小LM计算困惑度进行token级过滤，支持20x压缩率）、蒸馏增强（LLMLingua-2数据蒸馏训练分类器保留关键token）、RL增强（PCRL模型无关/TACO-RL任务特定的强化学习token选择）、嵌入增强（CPC上下文感知句子编码/TCRA-LLM嵌入摘要与语义压缩）、LongLLMLingua（文档重排+子序列恢复处理更长上下文）
+  - `硬提示-改写` → Nano-Capsulator（微调Vicuna-7B将提示总结为简洁自然语言，语义保持损失+效用奖励函数）、CompAct（主动压缩检索文档用于问答）、FAVICOMP（基于熟悉度的证据压缩用于RAG）
+  - `软提示-仅解码` → CC对比条件（为每个自然语言提示训练特定软提示，KL散度对齐输出分布）、GIST（微调LLM注意力掩码，压缩token存于KV值，最大26x压缩率，可泛化到未见提示）、AutoCompressor（递归分段压缩，支持30720 token长上下文，逐迭代传递摘要向量）
+  - `软提示-编码器-解码器` → ICAE（微调编码器，冻结LLM解码器，LoRA微调，压缩512 token到32-128向量，4x-16x压缩率）、500xCompressor（KV对取代嵌入向量，1-16 token压缩480 token，6x-480x压缩率，ArxivQA新数据防泄漏）、QGC（查询引导压缩器，保留高压缩比下关键信息）、xRAG（冻结嵌入模型+可训练适配器，单token压缩文档，SFR-Embedding-Mistral实现极致压缩）、UniICL（冻结LLM编码器-解码器，仅训练投影器，压缩ICL示例，嵌入可直接用于示例选择）
+  - `RAG应用` → xRAG/RECOMP/COCOM/CompAct/FAVICOMP/AdaComp/LLoCO/TCRA-LLM
+  - `Agent与工具` → HD-Gist（API文档压缩）、工具使用上下文压缩
+  - `特定领域` → Tag-LLM（科学领域）、CoLLEGe（概念嵌入生成）
+- **核心洞察补充**：提出四种理解软提示压缩的独特视角——(1)注意力机制优化（压缩token先吸收完整上下文，新token仅关注压缩token，类似"信息蒸馏"）；(2)与Prompt/Prefix Tuning的类比（ICAE类Prompt Tuning生成嵌入，500xCompressor类Prefix Tuning生成KV对，KV对含更丰富信息，高压缩比下优于嵌入）；(3)模态集成（压缩文本可视为新模态，与视觉编码器架构平行，但文本信息密度更高，压缩需更高精度）；(4)新合成语言（编码嵌入满足语言的三个关键特征：编码信息、在实体间传递、自适应评估，可视为LLM的"高效新语言"）
+- **核心洞察补充-挑战与未来**：当前软提示编码器与解码器尺寸相近，压缩时间与原始LLM输入处理时间可比，仅在新token生成阶段提升效率（短输出任务收益有限）；微调会导致灾难性遗忘和模型漂移，需要大规模多样化数据重训；硬软提示机制正交，结合可进一步提升压缩率，但压缩时间累加；受多模态架构启发，交叉注意力（而非当前的自注意力）用于压缩token尚待探索；BERT类小模型（参数比LLM少10x+）作为压缩编码器可大幅提升压缩速度
+- **附带资源**：论文图2提供Prompt压缩方法树形全景（硬/软、过滤/改写、仅解码/编码-解码、应用领域），Table 1为完整方法与应用的层级化汇总；配套开源仓库持续更新 [https://github.com/ZongqianLi/PromptCompression-Survey](https://github.com/ZongqianLi/PromptCompression-Survey)
 
 <br>
 </details>
