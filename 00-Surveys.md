@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-8-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-9-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -80,7 +80,7 @@
 ### 3. Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques (2025)
 [![Paper](https://img.shields.io/badge/Journal-Comput.Sci.Rev'25-blue)]()
 [![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
-[![Paper](https://img.shields.io/badge/IF=11.5-important)]()
+[![Paper](https://img.shields.io/badge/IF=12.7-important)]()
 
 [Empowering large language models to edge intelligence: A survey of edge efficient LLMs and techniques]()
 
@@ -251,7 +251,7 @@
 
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
-| 1 | *待添加* | — | — | `高效预训练` / `高效微调` 等 | — |
+| 1 | 🏆 **Parameter-Efficient Fine-Tuning in LLMs: A Survey of Methodologies** | 2025 | Artificial Intelligence Review `IF=10.2` | `PEFT分类`：加性/重参数化/选择性/混合/量化/多任务 + `应用`：视觉/扩散/MLLM | 覆盖100+方法的PEFT全景综述；QLoRA使65B模型可在单48GB GPU微调，PEFT可减少90%+训练成本 |
 
 
 <details>
@@ -261,6 +261,27 @@
 *本子方向涵盖以下细分领域：*
 - `Efficient-Pretraining`：数据筛选, 模型并行, MeZO等
 - `Efficient-Finetuning`：LoRA, Prefix Tuning, P-Tuning, QLoRA等
+<br>
+
+
+### 1. Parameter-Efficient Fine-Tuning in LLMs: A Survey of Methodologies (2025)
+[![Paper](https://img.shields.io/badge/Journal-Artif Intell Rev'25-blue)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=13.9-important)]()
+
+[Parameter-efficient fine-tuning in large language models: a survey of methodologies](https://doi.org/10.1007/s10462-025-11236-4)
+
+- **分类方式**：按 **PEFT方法类型**（加性/重参数化/选择性/混合/量化/多任务）六大类组织，并拓展至视觉模型、扩散模型、多模态LLM三大应用领域
+- **覆盖子方向**：
+    - `Additive PEFT` → Adapter（Serial, Residual, Parallel, Compacter）、Soft Prompt（Prefix-tuning, Prompt-tuning, P-tuning, Xprompt, APT）、Scale & Shift（(IA)³, SSF, PASTA, MoV）
+    - `Reparameterized PEFT` → 低秩分解（LoRA, KronA）、LoRA衍生（DyLoRA, AdaLoRA, SoRA, LoRA+, DoRA, Laplace-LoRA, HydraLoRA, AFLoRA, LoRA-SP, SuperLoRA, PeriodicLoRA）
+    - `Selective PEFT` → 非结构化掩码（Diff pruning, BitFit, Child-tuning, FishMask, LT-SFT）、结构化掩码（FAR, Xattn Tuning, SPT）
+    - `Hybrid PEFT` → UniPELT, MAM Adapter, S⁴, LLM-Adapter, NOAH, AutoPEFT, ProPETL
+    - `Quantization PEFT` → QLoRA, QA-LoRA, LoftQ, LQ-LoRA, QDyLoRA, BitDelta, BI-Adapter, PEQA
+    - `Multi-task PEFT` → AdapterFusion, AdaMix, MOELoRA, LoRAHub, SPoT, ATTEMPT, MPT
+    - `应用扩展` → 视觉模型（图像分类、密集预测）、扩散模型（少样本生成、可控生成）、多模态大模型
+- **核心结论/洞察**：PEFT通过仅微调<1%参数达到接近全微调性能，大幅降低计算/存储成本；LoRA及其衍生方法是目前最主流的PEFT范式；LoRA可将可训练参数减少10,000倍（GPT-3 175B仅需0.01%参数微调）；QLoRA通过NF4+双量化+Paged Optimizers使65B模型在单48GB GPU上微调成为可能；DoRA通过权重分解（幅度+方向）首次在PEFT上匹敌全参数微调性能；全量SFT需400万GPU小时的场景，PEFT可降至40万GPU小时（90%成本降低）；LLaMA-3.1 405B训练需4000万GPU小时，PEFT使"微调"这一能耗重灾区变得可持续；LLaVA系列MLP连接器在实际效果上可超越复杂的Q-Former设计，PEFT是实现可持续AI研究的关键技术。
+- **附带资源**：论文Figure 4提供PEFT方法完整分类体系思维导图，Figure 3/5-11以示意图对比各类方法核心原理，Table 5系统对比各PEFT方法的可训练参数量、应用场景与局限性，Table 6呈现代表性方法在多种基座模型和任务上的性能对比，Table 7汇总视觉/密集预测/扩散模型/可控生成四大应用领域的PEFT方法性能
 
 <br>
 </details>
