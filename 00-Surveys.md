@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-25-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-26-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -394,6 +394,7 @@
 | 5 | 📖 **Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding** | 2024 | arXiv | `推测解码`：模型中心(Draft设计) + Draft中心(验证策略) + `部署挑战`：吞吐/长上下文/并行/硬件/泛化 | 首篇推测解码系统综述；独创模型中心vs Draft中心二分法，覆盖Medusa/EAGLE-2/Hydra等前沿方法 |
 | 6 | 📖 **Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison** | 2024 | arXiv | `FPGA` / `ASIC` / `In-Memory` / `GPU` | 首个跨平台硬件加速器全面对比，统一工艺外推实现FPGA/ASIC/存内计算的公平性能比较 |
 | 7 | 🏆 **A Comprehensive Survey of Accelerated Generation Techniques in LLMs** | 2024 | arXiv | `投机解码` / `早退机制` / `非自回归解码` 三类 | 系统梳理三大约束解码范式，投机解码凭"草稿-验证"框架成为当前最主流加速路线 |
+| 8 | 🔥 **Efficient Prompting Methods for LLMs: A Survey** | 2024 | arXiv | `自动提示工程` / `提示压缩(T2V/T2T)` 双维度 | 首次系统梳理提示效率优化全貌：LLM自主迭代设计指令 vs 连续/离散空间压缩Prompt |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -506,7 +507,7 @@
 <br>
 
 ### 6. Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison (2024)
-[![Paper](https://img.shields.io/badge/Paper-arXiv'24-b31b1b?style=flat-square)]()
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [Hardware Acceleration of LLMs: A comprehensive survey and comparison](https://arxiv.org/pdf/2409.03384?)
 
@@ -527,7 +528,7 @@
 
 
 ### 7. A Comprehensive Survey of Accelerated Generation Techniques in LLMs (2024)
-[![Paper](https://img.shields.io/badge/Paper-arXiv'24-b31b1b?style=flat-square)]()
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [A Comprehensive Survey of Accelerated Generation Techniques in Large Language Models](https://arxiv.org/abs/xxxx.xxxxx)
 
@@ -546,6 +547,26 @@
 - **附带资源**：图1：三大加速技术完整分类体系（树状结构）、图2：投机解码Predict-Verify-Accept三步流程可视化，详细算法描述：SpecTr的OTM框架、CALM退出公式、Jacobi/Gauss-Seidel定点迭代系统等，覆盖突破性方法的关键实验数据（加速比/Token接受率/质量评估），该综述为LLM推理加速领域提供了迄今最完整的生成端优化方法论梳理，是理解从传统AR解码到并行加速技术演进路径的核心参考文献。
 <br>
 
+
+### 8. Efficient Prompting Methods for LLMs: A Survey (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[Efficient Prompting Methods for Large Language Models: A Survey](https://arxiv.org/pdf/2404.01077)
+
+- **分类方式**：按**资源节省目标**双大类 → `自动提示工程`(节省人力) + `提示压缩`(节省算力)，建立统一数学模型(Eq.1搜索最优指令, Eq.2/3最小化压缩前后输出分布差异)
+- **覆盖子方向**：
+  - `自动提示工程(Automatic Prompt Engineering)` → **指令设计**：**采样方法** APE(演示压缩为单指令+MC搜索)、OPRO(LLM作优化器+评分器迭代轨迹)、EvoPrompt(进化算法)、PromptAgent(MCTS策略规划)；**反馈方法** RLPrompt(RL冻结PLM+可训练MLP)、DSP(方向性刺激提示)、ProTeGi(文本梯度+束搜索)、GPO(提示集成增强鲁棒性)、APOHF(人类偏好训练神经网络)、BPO(偏好优化对齐人机理解)；**编辑方法** GrIPS(CRF解析→切片删除/交换/释义/添加)、TEMPERA(测试时RL编辑查询相关提示)
+  - `自动提示工程 → CoT优化`：**采样** Zero-Shot-CoT("Let's think step by step")、Auto-CoT(聚类多样性问题生成CoT)、自我一致性(多温度采样+多数投票)、Boosted Prompting(困难样本增强)；**反馈** Reflexion(语言化经验反馈+长短期记忆)、PROMST(离线反馈规则+SLLM概括+GenLLM生成)、DTG(负反馈检测错误→触发反思)；**交互工具** ReAct(CoT+动作交错)、ART(任务库检索+工具库调用)、ToolLLM(ToolBench→ToolLLaMA→ToolEval)
+  - `提示压缩(Prompt Compression)` → **T2V连续空间压缩**：**Internalization**(知识蒸馏) Context Distillation(HHH提示内化)、PING(伪输入生成+KD)、Distilling Step-by-Step(提取推理理由+多任务蒸馏)；**Encoding**(软提示) Gisting(Gist Token+Meta-Learning/HyperTuning，26x压缩)、UltraGist(超长上下文渐进压缩+随机比率)、AutoCompressor(RMT架构+分段迭代压缩)、ICAEx(上下文自编码器+记忆Token，PWC数据集)、500xCompressor(LoRA编码+KV适应，6-480x)、SelfCP(仅压缩超限Prompt+17M连接器)
+  - `提示压缩 → T2T离散空间压缩`：**Pruning(抽取式)** Selective Context(自信息度量删除低信息词元，覆盖率5x)、LLMLingua(困惑度+token级压缩+动态比率，20x)、LongLLMLingua(问题感知密度度量+4指标，17.5x)、LLMLingua-2(双向编码器+线性分类头+GPT-4合成数据蒸馏，3-6x压缩加速)；**Summarization(摘要式)** RECOMP(双编码器抽取/编解码摘要，选择性增强)、Nano-Capsulator(Reward反馈训练)、MEMWALKER(记忆树遍历导航)、CompAct(迭代摘要直到信息充分，47x)、Style-Compress(结合提示工程+风格多样化压缩 + 0.67x端到端延迟)
+- **核心结论/洞察**：
+  1. **提示工程与提示压缩应协同融合**：当前两者优化目标分离（指令优化 vs. 长上下文压缩），CoT是两者的交汇点；未来可通过RL统一奖励信号或目标函数加权综合(Eq.1 + Eq.3)实现Win-Win。
+  2. **LLM是优秀的提示优化器**：APE/OPRO/ProTeGi等工作证明LLM生成、评分、反思自身Prompt的能力超越人类工程师，尤其在24/24指令归纳任务上达到人类水平。
+  3. **连续空间压缩(Soft Prompt)在复用场景优势显著**：Gisting实现26x压缩/40% FLOPs减少、500xCompressor达6-480x压缩比、xRAG仅用1个Token融合检索模态。
+  4. **离散空间压缩可解释性更强**：LLMLingua系列在保持人类可读的同时实现3-20x压缩，Table 4跨基准对比显示粗到细压缩更适合复杂推理任务，细粒度适合长上下文任务。
+  5. **压缩方法种类丰富但标准化不足**：Table 3对比了9种编码方法(目标模型/压缩器架构/软提示位置)，Table 4汇总了8种Pruning方法的多任务压缩比与性能，但缺乏统一基准。
+- **附带资源**：Appendix A.1：开源项目汇总表（Table 5: 18个Prompt Compression工具链接，Table 6: 22个Automatic Prompt Engineering工具链接）、图2：高效提示方法全景图（左：自动提示工程迭代流程，右：T2V/T2T压缩双路径）、图4：反馈信号类型对比（RL/Gradient/Preference缩小搜索空间）、数学建模：Eq.1（离散空间搜索最优指令）、Eq.2-3（T2V/T2T压缩最小化输出分布KL散度）、Table 3：9种编码方法详细对比 / Table 4：8种Pruning方法跨基准性能表，该综述首次统一了提示工程和提示压缩的数学优化框架，是理解LLM时代提示效率优化技术全景的核心参考。
+  
 </details>
 
 ---
