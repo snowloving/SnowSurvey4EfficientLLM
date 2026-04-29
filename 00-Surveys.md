@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-11-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-12-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -257,6 +257,7 @@
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 📖 **Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective** | 2025 | arXiv | `硬件平台`：CPU/GPU/FPGA/ASIC/PIM + `优化方法`：量化/稀疏/快速解码/算子优化/异构协同 | 首篇以tokens/s和tokens/J统一度量不同硬件平台LLM推理性能的综述；PIM/NDP能效比最高达46.66 tokens/J |
+| 2 | 📖 **A Survey on Hardware Accelerators for LLMs** | 2025 | Applied Sciences | `硬件平台`：FPGA/GPU/ASIC/存内计算 + `加速技术`：稀疏/近似/融合/混合精度 | 系统梳理30+加速器架构；存内计算与ASIC可实现3-4个数量级的能效提升，FPGA在灵活性与效率间取得最优折中 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -327,6 +328,23 @@
     - `应用扩展` → 视觉模型（图像分类、密集预测）、扩散模型（少样本生成、可控生成）、多模态大模型
 - **核心结论/洞察**：PEFT通过仅微调<1%参数达到接近全微调性能，大幅降低计算/存储成本；LoRA及其衍生方法是目前最主流的PEFT范式；LoRA可将可训练参数减少10,000倍（GPT-3 175B仅需0.01%参数微调）；QLoRA通过NF4+双量化+Paged Optimizers使65B模型在单48GB GPU上微调成为可能；DoRA通过权重分解（幅度+方向）首次在PEFT上匹敌全参数微调性能；全量SFT需400万GPU小时的场景，PEFT可降至40万GPU小时（90%成本降低）；LLaMA-3.1 405B训练需4000万GPU小时，PEFT使"微调"这一能耗重灾区变得可持续；LLaVA系列MLP连接器在实际效果上可超越复杂的Q-Former设计，PEFT是实现可持续AI研究的关键技术。
 - **附带资源**：论文Figure 4提供PEFT方法完整分类体系思维导图，Figure 3/5-11以示意图对比各类方法核心原理，Table 5系统对比各PEFT方法的可训练参数量、应用场景与局限性，Table 6呈现代表性方法在多种基座模型和任务上的性能对比，Table 7汇总视觉/密集预测/扩散模型/可控生成四大应用领域的PEFT方法性能
+<br>
+
+
+### 3. A Survey on Hardware Accelerators for Large Language Models (2025)
+[![Paper](https://img.shields.io/badge/Journal-Appl.Sci.'25-blue)]()
+
+[A Survey on Hardware Accelerators for Large Language Models](https://www.mdpi.com/2076-3417/15/2/586/pdf?version=1736429302)
+
+- **分类方式**：按 **硬件平台类型**（FPGA/CPU-GPU/ASIC/存内计算）四大类组织，每类深入剖析加速器微架构与算法-硬件协同设计
+- **覆盖子方向**：
+  - `FPGA加速器` → MNNFast（列式流处理+零跳过+嵌入缓存，5.38×/6.54×能效）、FTRANS（块循环矩阵压缩+设计自动化，27×/81×能效）、MHA加速（脉动阵列+非线性函数优化，14.6×）、NPE（指令驱动+非线性向量单元，35×/6×能效）、列平衡块剪枝（CSB+BCSR混合稀疏，11×/2× vs GPU）、DFX（免汇编ISA+多FPGA模型并行，3.8×/4×能效）、OPU（可配置PE+动态数据流，15×/2.9×）、FlexRun（模块化GEMV+向量单元+自动设计空间探索，2.79×/2.59× vs GPU）、ODE混合（神经ODE压缩94.6%参数+QAT，12.8×/9.2×能效）
+  - `GPU/CPU优化` → SoftMax分解重构（减少HBM访问，1.12×-1.65×）、LightSeq2（算子融合+混合精度+内存生命周期管理，1.4×-3.5×）、简化Transformer（去除残差连接/投影参数，15%参数减少+15%吞吐提升）、LLMA（无草稿模型推测解码，2×-3×）、UltraFastBERT（快速FFN替代→O(log n)复杂度，78×）
+  - `ASIC加速器` → A³（近似候选选择+专用流水线，7×/11×能效）、ELSA（近似自注意力+硬件-软件协同，157×/1265×能效）、SpAtten（级联Token+头剪枝+渐进量化，347×/162× vs CPU/GPU，1193×/4059×能效）、Sanger（动态稀疏预测+可重构脉动阵列，22.7×/4.64×）、Energon（混合精度多轮过滤+动态稀疏，168×/8.7×，高达10000×能效）、H3D Transformer（CIM+TPU异构3D集成，2.6×-3.1× vs 7nm TPU）
+  - `存内计算加速器` → ATT（ReRAM交叉开关+专用流水线，202× vs GPU）、ReTransformer（ReRAM矩阵乘法+存内SoftMax/查找表，23.21×/1086×能效）、iMCAT（Xbar+CAM+局部敏感哈希过滤，200×/41×能效）、X-Former（NVM投影引擎+CMOS注意力引擎混合，85×/7.5×能效）、Flash Memory推理（窗口化+行列捆绑，25×/5× vs CPU/GPU）、FlashAttention-3（Hopper GPU异步+TMA+warp专用化，1.5×-2.0×，FP8达1.2 PFLOPs）
+  - `跨平台定量对比` → Table 1汇总30+加速器的年/技术/加速比/能效/基准平台；ASIC和存内计算可达3-4个数量级能效提升，FPGA在灵活性与实际可部署性间取得最优折中
+- **核心洞察补充**：ASIC和存内计算在加速比（最高347× vs CPU）和能效（最高10000× vs CPU）上远超FPGA和GPU，但需要巨额流片投资且缺乏灵活性；FPGA无需流片即可定制架构，在数据中心现有硬件中即插即用；FlashAttention-3通过利用Hopper GPU的Tensor Core异步性和TMA，FP8精度下达到近1.2 PFLOPs/s；LLMA无需额外草稿模型即可实现推测解码，在检索和对话场景中2×-3×加速；FPGA方案（FlexRun/DFX）正走向自动设计空间探索和模块化架构，降低定制门槛
+- **附带资源**：论文Table 1系统汇总30+加速器的技术节点、加速比、能效及对比基准，Figure 1可视化加速比vs能效的散点分布；配套开源仓库 [https://github.com/kachris/survey_HA_LLM](https://github.com/kachris/survey_HA_LLM)
 
 <br>
 </details>
