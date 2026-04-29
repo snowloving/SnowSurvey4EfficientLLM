@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-16-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-17-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -298,6 +298,7 @@
 | 1 | 📖 **Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective** | 2025 | arXiv | `硬件平台`：CPU/GPU/FPGA/ASIC/PIM + `优化方法`：量化/稀疏/快速解码/算子优化/异构协同 | 首篇以tokens/s和tokens/J统一度量不同硬件平台LLM推理性能的综述；PIM/NDP能效比最高达46.66 tokens/J |
 | 2 | 📖 **A Survey on Hardware Accelerators for LLMs** | 2025 | Applied Sciences | `硬件平台`：FPGA/GPU/ASIC/存内计算 + `加速技术`：稀疏/近似/融合/混合精度 | 系统梳理30+加速器架构；存内计算与ASIC可实现3-4个数量级的能效提升，FPGA在灵活性与效率间取得最优折中 |
 | 3 | 🔥 **Prompt Compression for Large Language Models: A Survey** | 2025 | NAACL-HLT | `压缩范式`：硬提示(过滤/改写) + 软提示(编码器-解码器) + `理解视角`：注意力优化/PEFT/模态集成/合成语言 | 首篇Prompt压缩系统综述；独特解读软提示为"LLM新合成语言"，硬软结合是未来方向 |
+| 4 | 📖 **Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference** | 2024 | arXiv | `CIM器件`：SRAM/ReRAM/PCM/FeFET/MRAM + `加速策略`：算法增强/容错/硬件感知训练/异构计算 | 首篇聚焦存内计算加速LLM推理的综述；模拟CIM可突破冯·诺依曼瓶颈，实现数倍至数百倍能效提升 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -344,6 +345,30 @@
 - **核心洞察补充**：提出四种理解软提示压缩的独特视角——(1)注意力机制优化（压缩token先吸收完整上下文，新token仅关注压缩token，类似"信息蒸馏"）；(2)与Prompt/Prefix Tuning的类比（ICAE类Prompt Tuning生成嵌入，500xCompressor类Prefix Tuning生成KV对，KV对含更丰富信息，高压缩比下优于嵌入）；(3)模态集成（压缩文本可视为新模态，与视觉编码器架构平行，但文本信息密度更高，压缩需更高精度）；(4)新合成语言（编码嵌入满足语言的三个关键特征：编码信息、在实体间传递、自适应评估，可视为LLM的"高效新语言"）
 - **核心洞察补充-挑战与未来**：当前软提示编码器与解码器尺寸相近，压缩时间与原始LLM输入处理时间可比，仅在新token生成阶段提升效率（短输出任务收益有限）；微调会导致灾难性遗忘和模型漂移，需要大规模多样化数据重训；硬软提示机制正交，结合可进一步提升压缩率，但压缩时间累加；受多模态架构启发，交叉注意力（而非当前的自注意力）用于压缩token尚待探索；BERT类小模型（参数比LLM少10x+）作为压缩编码器可大幅提升压缩速度
 - **附带资源**：论文图2提供Prompt压缩方法树形全景（硬/软、过滤/改写、仅解码/编码-解码、应用领域），Table 1为完整方法与应用的层级化汇总；配套开源仓库持续更新 [https://github.com/ZongqianLi/PromptCompression-Survey](https://github.com/ZongqianLi/PromptCompression-Survey)
+
+<br>
+
+
+### 4. Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[Memory Is All You Need: An Overview of Compute-in-Memory Architectures for Accelerating Large Language Model Inference](https://arxiv.org/pdf/2406.08413)
+
+- **分类方式**：按 **CIM器件技术**（SRAM/ReRAM/PCM/FeFET/MRAM）与 **加速策略**（算法增强/容错/硬件感知训练/高精度/全电路/异构计算）双维度组织，深入剖析Transformer算子的CIM映射
+- 
+- **覆盖子方向**：
+  - `Transformer算子分析` → 注意力计算（QKV投影/MHA/Scaled Dot-Product/Softmax）、FFN（两层线性变换+非线性激活）、执行时间分布（FFC层主导，注意力占比随序列长度二次增长）
+  - `CIM基本原理` → 交叉开关阵列（Ohm定律乘法+Kirchhoff电流求和）、ADC/DAC转换、模拟MVM（单次读操作完成矩阵向量乘）、复杂度从O(n²)降至O(n)
+  - `器件技术对比` → SRAM（6T-12T/成熟/低写延迟/高漏电/低密度）、ReRAM（1T1R/高密度/多值/3D集成/写能量高）、PCM（热驱动相变/高开关比/易制造/耐久度低）、FeFET（三端/高耐久10¹²/CMOS兼容/低写电流）、MRAM（磁性存储/高耐久/低开关比/面积大）
+  - `算法增强` → 多模式CIM（MulTCIM：注意力重塑+Token剪枝+动态位宽平衡）、窗口自注意力（ReBERT：排除低注意力Token不降精度）、Token级数据流（TransPIM：Token分片+内存分区并行+HBM近存计算）、矩阵分解（ReTransformer：消除数据依赖+子矩阵流水线避免中间结果写入）
+  - `容错与弹性` → 结构化剪枝+权重复制+MSB嵌入（零额外参数容错）、差分结构剪枝（行/列剪枝释放空间复制关键权重）、硬故障防护（非均匀冗余/权重投票）
+  - `硬件感知训练` → 噪声注入训练（前向注入非理想性/反向全精度）、漂移补偿（全局校正因子×缩放因子比值）、ISO精度（大网络可在CIM非理想性下保持与FP32相差<1%）
+  - `高精度技术` → RIME（单周期NOR/NAND/Minority逻辑实现FP32存内运算）、CMOS协处理（指数/除法由数字单元处理）
+  - `全电路设计` → 无ADC方案（共享斜坡+紧凑比较器/位级稀疏位映射翻转/模拟信号存储+时序生成器）、ReRAM非线性扩展（矩阵乘法+激活函数均在ReRAM中实现）
+  - `异构计算` → 模拟-数字混合（ReRAM预测Token相关性+SRAM精确注意力计算）、CMOS+NVM混合（iMTransformer：FeFET存投影权重+CMOS存注意力分数+CAM局部敏感哈希过滤）、序列阻塞数据流（X-Former重叠投影引擎和注意力引擎计算）、GPU+NVM扩展（25×更大模型/保持>50%峰值性能）
+  - `代表性架构性能` → PIM-GPT（41×-137×加速/123×-383×能效 vs T4 GPU）、iMCAT（200×加速/41×能效 vs Titan RTX）、X-Former（85×加速/7.5×能效 vs GTX 1060）、HARDSEA（13.5×-28.5×加速/291.6×-1894.3×能效 vs RTX 3090）、RACE-IT（10.7×加速/1193×能效 vs H100）、IBM NorthPole（7×加速/14×性能功耗比 vs MLPerf最优）
+- **核心洞察补充**：传统架构>60%时间浪费在数据等待，数据搬运能耗比实际FLOPs高数个数量级；CIM通过消除数据搬运突破冯·诺依曼瓶颈，尤其适合Transformer中占主导的大规模MVM运算；注意力计算的双动态操作数特性导致NVM写延迟/能耗问题，是CIM加速Transformer的核心挑战；非线性操作（Softmax/LayerNorm/GELU）虽占比小但在ReRAM中可消耗高达70%系统能量；模拟CIM的非理想性（编程噪声/读取噪声/电导漂移/工艺偏差）需通过硬件感知训练+误差校正+异构架构综合应对；系统级效率远低于宏级效率（外围电路ADC/DAC开销大），无ADC方案是重要趋势；LLM尺寸远超当前CIM容量（GPT-3需数千MB vs 当前百MB级），多芯片扩展是落地关键
+- **附带资源**：论文Table I对比BERT/GPT-3的参数量/层数/FC与注意力计算比例，Table II系统对比5种CIM器件技术（多值能力/单元面积/密度/开关比/写能量/写延迟/漏电/耐久度），Table III汇总10+种CIM加速器在BERT/GPT等模型上的加速比和能效比及对比基准
 
 <br>
 </details>
