@@ -32,8 +32,8 @@
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 🔥 **Towards Efficient Language Giants** | 2026 | Neural Networks `IF=6.3` | `高效模块设计` + `模型压缩` 双维度 | 混合方案（KD+量化/剪枝+量化）是突破单一技术瓶颈的关键 |
-| 2 | 🔥 **From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP** | 2025 | arXiv | `模型优化`：数据/设计/压缩/推理 + `LLM适配`：预训练/微调/Prompt/RAG | 312篇文献系统综述；揭示LLM全生命周期效率全景，含30+模型在13项基准的性能-价格Pareto分析 |
-| 3 | 🔥 **Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques** | 2025 | Computer Science Review `IF=11.5` | `边缘层级`：SLM设计/模型压缩/推理优化/部署框架 | 首篇面向边缘部署的全栈综述；定义<4B为SLM，汇总30+轻量模型架构对比与边缘硬件实测性能 |
+| 2 | 📖 **From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP** | 2025 | arXiv | `模型优化`：数据/设计/压缩/推理 + `LLM适配`：预训练/微调/Prompt/RAG | 312篇文献系统综述；揭示LLM全生命周期效率全景，含30+模型在13项基准的性能-价格Pareto分析 |
+| 3 | 🏆 **Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques** | 2025 | Computer Science Review `IF=11.5` | `边缘层级`：SLM设计/模型压缩/推理优化/部署框架 | 首篇面向边缘部署的全栈综述；定义<4B为SLM，汇总30+轻量模型架构对比与边缘硬件实测性能 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -86,14 +86,12 @@
 
 - **分类方式**：按 **边缘部署全栈**（SLM设计→模型压缩→推理优化→部署框架）四阶段组织，覆盖从模型选型到实际落地的完整链路
 - **覆盖子方向**：
-  - `SLM设计` → 小变体（Qwen 0.5B-4B/Gemma 2B/InternLM 1.8B/TinyLlama 1.1B）、预训练SLM（MobileLLM/MobiLlama/OpenELM/SmoLLM/Phi系列）、压缩SLM（Gemini-Nano/Llama 3.2 1B-3B/Sheared LLaMA/MiniMA/Baby Llama）
-  - `SLM架构对比` → 25+SLM的详细架构参数表（注意力类型/词表大小/归一化/位置编码/激活函数/层数/头数/隐藏维度/上下文长度）
-  - `模型压缩` → 剪枝（结构化5粒度/非结构化/SparseGPT/Wanda）、KD（白盒MiniLLM/GKD/黑盒CoT-ICL-IF蒸馏）、量化（PTQ：GPTQ/AWQ/SpQR/AQLM/LLM.int8/SmoothQuant/Outlier Suppression+；QAT：LLM-QAT/EfficientQAT/EdgeQAT；二值化：PB-LLM/BiLLM/BitNet b1.58）、低秩分解（TensorGPT/LoSparse/LoRA）
-  - `推理优化` → 推测解码（EAGLE/Medusa/Lookahead/LLMCad/SpecExec）、KV Cache压缩（FastGen/StreamingLLM/H2O/Scissorhands/KIVI/KVQuant/IntactKV）、早退（CALM/ConsistentEE/FREE/SkipDecode/LayerSkip）、内核优化（FlashAttention 1-2-3/FlashDecoding++/T-MAC）、内存卸载（FlexGen/PowerInfer/LLM in a flash/EdgeMoE）
-  - `部署框架` → 端侧推理引擎（ExecTorch/TFLite/MNN/ncnn/LLMCad/PowerInfer-2/Transformer-Lite）、云边协同（Hybrid LLM/Tabi/Edge-LLM/FedAgg/动态Token级协同）、部署套件（MLC-LLM/llama.cpp/mllm/NanoLLM）
-  - `边缘硬件实测` → Raspberry Pi 5/Jetson AGX Orin/Mac Mini上TinyLlama-1.1B和Phi-3-3.8B的吞吐与困惑度对比（FP16 vs INT4）
-- **核心洞察补充**：定义SLM为<4B参数模型（基于Open LLM Leaderboard统计分布）；边缘部署面临四大矛盾（模型增长vs内存限制/计算需求vs算力受限/能耗vs电池供给/吞吐需求vs带宽有限）；深度>宽度的架构设计对亚B级模型更关键（MobileLLM验证）；量化可显著提升边缘吞吐（TinyLlama在Raspberry Pi 5上INT4达27.61 tokens/s vs FP16的22.85 tokens/s）；Apple Intelligence采用混合精度量化（平均3.7 bits/weight）+LoRA适配器的量产方案
-- **附带资源**：论文Table 3提供25+SLM的完整架构参数对比表，Table 4列出三种典型边缘硬件规格，Table 5展示边缘设备上的实测吞吐与困惑度，Table 6对比7种代表性量化方法（均匀性/对称性/校准/混合精度），Table 10对比llama.cpp/MLC-LLM/mllm/NanoLLM四种部署套件的模型架构支持、硬件兼容性、量化支持等特性
+    - `小语言模型（SLM）` → 大模型小变体（OPT, Qwen）、预训练SLM（Phi, Gemma, TinyLlama, MobileLLM, MiniCPM, SmolLM）、压缩SLM（Gemini-Nano, LaMini-LM, MiniLLM, Sheared LLaMA, Llama 3.2）
+    - `模型压缩` → 剪枝（LLM-Pruner, SparseGPT, Wanda）、知识蒸馏（MiniLLM, MiniMA, CoT/ICL/Instruction蒸馏）、量化（GPTQ, AWQ, SmoothQuant, LLM-QAT, BitNet）、低秩分解（LoSparse, TensorGPT）
+    - `推理优化` → 投机解码（SpecDecoding, EAGLE, Medusa, LLMCad）、KV Cache压缩（KVQuant, KIVI, H2O, StreamingLLM）、早退（CALM, SkipDecode, EE-LLM）、核优化（FlashAttention, FlashDecoding）、内存卸载（FlexGen, PowerInfer, LLM in a flash, EdgeMoE）
+    - `部署框架` → 端侧引擎（ExecTorch, TFLite, PowerInfer, Transformer-Lite）、云边协同（Hybrid LLM, Tabi, Edge-LLM, FedAgg）、部署套件（MLC-LLM, llama.cpp, mlm, NanoLLM）
+  - **核心结论/洞察**：SLM（<4B）是边缘部署的基础，设计趋势为更深更窄、共享参数、高质量合成数据；int4量化可提升边缘吞吐量20-40%；投机解码（EAGLE/Medusa）和KV Cache压缩是边缘推理优化的关键；云边协同（Hybrid LLM、Edge-LLM）是突破边缘资源限制的有效路径；SLM在幻觉、可解释性、个性化方面仍面临挑战。
+  - **附带资源**：表2（27个SLM训练细节）、表3（26个SLM架构细节）、表5（边缘设备实测吞吐量与PPL）、表8-10（14个部署框架对比），是边缘LLM方向最全面的数据来源。
 
 <br>
 </details>
@@ -213,7 +211,7 @@
 
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
-| 1 | 🔥 **Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective** | 2025 | arXiv | `硬件平台`：CPU/GPU/FPGA/ASIC/PIM + `优化方法`：量化/稀疏/快速解码/算子优化/异构协同 | 首篇以tokens/s和tokens/J统一度量不同硬件平台LLM推理性能的综述；PIM/NDP能效比最高达46.66 tokens/J |
+| 1 | 📖 **Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective** | 2025 | arXiv | `硬件平台`：CPU/GPU/FPGA/ASIC/PIM + `优化方法`：量化/稀疏/快速解码/算子优化/异构协同 | 首篇以tokens/s和tokens/J统一度量不同硬件平台LLM推理性能的综述；PIM/NDP能效比最高达46.66 tokens/J |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -297,8 +295,8 @@
 
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
-| 1 | 🔥 **Efficiently Integrate LLMs with Visual Perception** | 2025 | Information Fusion  `IF=15.5`| `训练范式`：单阶段 / 两阶段 / 直接适配 | 仅关注视觉模态，直接适配在极低参数量下可接近全微调性能；轻量级LLM+LoRA是资源受限场景的有效路径 |
-| 2 | 🔥 **A Survey of Token Compression for Efficient Multimodal LLMs** | 2026 | TMLR | `模态驱动`：图像 / 视频 / 音频 + `机制驱动`：Transformation/Similarity/Attention/Query | 首篇MLLM长上下文Token压缩系统综述；Token压缩与模型压缩在削减FLOPs上具有正交互补性 |
+| 1 | 📖 **Efficiently Integrate LLMs with Visual Perception** | 2025 | Information Fusion  `IF=15.5`| `训练范式`：单阶段 / 两阶段 / 直接适配 | 仅关注视觉模态，直接适配在极低参数量下可接近全微调性能；轻量级LLM+LoRA是资源受限场景的有效路径 |
+| 2 | 📖 **A Survey of Token Compression for Efficient Multimodal LLMs** | 2026 | TMLR | `模态驱动`：图像 / 视频 / 音频 + `机制驱动`：Transformation/Similarity/Attention/Query | 首篇MLLM长上下文Token压缩系统综述；Token压缩与模型压缩在削减FLOPs上具有正交互补性 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
