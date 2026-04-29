@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-17-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-18-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -220,6 +220,7 @@
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 🔥 **A Survey on Model Compression for Transformer-Based LLMs** | 2026 | IEEE TETCI `IF=11.8` | `压缩方法`：剪枝/量化/蒸馏/低秩分解 + `新视角`：KV Cache压缩/NAS | 首篇将KV Cache压缩与NAS纳入LLM模型压缩统一框架的综述；混合压缩是工业落地主流范式 |
 | 2 | 🔥 **Survey on Knowledge Distillation for LLMs: Methods, Evaluation, and Application** | 2025 | ACM TIST `IF=6.5` | `KD范式`：白盒(Logits/Hint) + 黑盒(ICL/CoT/Instruction Following) + `鲁棒性评估` | 首次提出白盒/黑盒二分法用于LLM KD分类，清晰区分了可访问内部参数（白盒）和仅可访问API输出（黑盒）的两类方法；首篇从鲁棒性视角统一评估LLM蒸馏算法的综述；MiniLLM在GPT-2上对抗及OOD鲁棒性最优 |
+| 3 | 📖 **Art and Science of Quantizing Large-Scale Models: A Comprehensive Overview** | 2024 | arXiv | `量化范式`：PTQ(30+算法) + QAT(4类) + KV Cache压缩 + KD + 极端低比特 | 量化领域最深度的综述之一；详尽推导LLM-QAT/SmoothQuant/AWQ/GPTQ等核心公式，覆盖从二值网络到LLM量化的完整演进 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -283,6 +284,25 @@
   - `鲁棒性评估` → 对抗鲁棒性（AdvGLUE/ANLI）+ OOD鲁棒性（Flipkart/DDXPlus），在GPT-2/OPT/LLaMA/LLaMA2上统一评估9种KD算法
 - **核心洞察补充**：MiniLLM（反向KL散度+策略梯度优化）在GPT-2全系列上对抗及OOD鲁棒性最优；同蒸馏算法在不同模型架构上效果差异显著——GPT-2上MiniLLM最优，OPT上传统KD最优，LLaMA上SeqKD最优，LLaMA2上JS散度最优；白盒KD需大量GPU内存（教师前向传播特征），黑盒KD则依赖闭源API生成数据，存在成本与公平性挑战；MiniMA发现学生模型约为教师40%大小时蒸馏效果最优
 - **附带资源**：论文Table 1系统汇总14种白盒KD方法的压缩率、评估任务及性能对比，Table 5对比8种黑盒KD方法的特点与数据集，Table 2-8提供GPT-2/OPT/LLaMA在多种KD算法下的对抗鲁棒性（ASR↓）与OOD鲁棒性（F1↑）完整实验数据，极具工程选型参考价值
+
+<br>
+
+
+### 3. Art and Science of Quantizing Large-Scale Models: A Comprehensive Overview (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[Art and Science of Quantizing Large-Scale Models: A Comprehensive Overview](https://arxiv.org/pdf/2409.11650)
+
+- **分类方式**：按 **量化技术演进**（传统QNN→LLM量化）与 **方法体系**（QAT/PTQ/KV Cache压缩/KD）组织，提供从基础到前沿的完整技术脉络
+- **覆盖子方向**：
+  - `传统QNN基础` → BinaryConnect（确定性/随机二值化+STE）、BNN（权重+激活二值化+移位BatchNorm）、XNOR-Net（XNOR+bitcount加速）、DoReFa-Net（首次量化梯度）、WAGE（首次全整数量化训练→权重/激活/梯度/误差均量化）
+  - `LLM量化算法详解` → LLM-QAT（数据免蒸馏+对称MinMax+KV Cache首量化+混合采样，4-bit下仅1.5点精度损失）、PEQA/L4Q（LoRA-LSQ融合→权重合并→量化→梯度反传，3-bit提升2%）、QLoRA（NF4+双量化+Paged Optimizers，65B模型单48GB GPU微调）、LUT-GEMM（BCQ非线性量化+查表去反量化）、ZeroQuant（组级+Token级精细量化+LKD层蒸馏，INT8达5.19×加速）、SmoothQuant（diag(s)平滑变换→激活量化难度迁移至权重，1.51×加速）、SpQR（隔离离群值→高精度存储+双层量化）、OliVe（Outlier-Victim Pair→牺牲正常值换离群值表示范围+abfloat+内存对齐）、GPTQ（OBQ改进→固定左到右量化顺序+Cholesky分解）、AWQ（激活感知选1%显著权重+per-channel缩放+无需反向传播）、EasyQuant（免数据+保留<1%离群值不变+梯度优化范围，10×更快）
+  - `QAT分类体系` → 免数据QAT（LLM-QAT/EdgeQAT自适应位宽）、矩阵变换QAT（QuaRot正交旋转去离群值/SpinQuant学习最优旋转）、轻量高效QAT（LR-QAT低秩分解压缩QAT开销/EfficientQAT自适应分层+L4Q LoRA量化融合）、极端低比特QAT（PB-LLM 2-bit部分二值化→保留关键权重+自适应分层参数）
+  - `PTQ演进` → 早期（ACIQ截断优化+DFQ免数据4-bit+LBQ多张量+PWLQ分段线性）、中期（SPARQ最高有效位选择+BRECQ首次INT2+AdaRound自适应舍入）、近期（PTQD量化噪声分解+ZeroQ免数据蒸馏+Pareto最优位宽）、视觉PTQ（PTQ-ViT相似性感知+PTQ4ViT双均匀量化+Hessian度量）、扩散PTQ（Q-DiT细粒度组量化+动态激活量化+进化搜索）、ViT PTQ（AdaLog自适应对数底量化+偏置重参数化+FPCS快速渐进搜索）
+  - `KV Cache量化` → 系统优化（DeepSpeed Inference多GPU异构内存+FlexGen单GPU高吞吐）、Token淘汰（Scissorhands重要性持久假设5×减少/H2O Heavy-Hitter动态保留）、量化（KVQuant非均匀量化/KIVI免调2-bit非对称/QAQ质量自适应/SKVQ滑动窗/WKVQuant权重KV协同）、跨层压缩（MiniCache相邻层相似KV合并+敏感Token保留/CLA跨层注意力共享/MLKV多层KV头共享）
+  - `KD辅助量化` → 逐层蒸馏/注意力蒸馏/Logit蒸馏、QKD三阶段（自学-共学-指导）、SQAKD自监督量化感知蒸馏、LLM-QAT中Logits蒸馏对齐
+- **核心洞察补充**：LLM量化面临三大难题——离群值（LLM权重/激活中存在极值，直接裁剪严重损害性能）、分布不匹配（微调数据需与预训练分布一致）、规模差异（小模型量化方法不适用）；SmoothQuant通过数学等价变换diag(s)实现"激活→权重"量化难度迁移，是首个成功实现W8A8的LLM PTQ；AWQ发现仅保护1%显著权重即可大幅降低量化误差，基于激活而非权重本身选择保护对象避免过拟合校准集；LLM-QAT首次将QAT与KV Cache量化结合，30B模型4-bit仅降1.5点；GEAR首创三合一压缩（量化骨干+D的SVD低秩L+稀疏S），KV Cache压缩率远超单一方法；QLoRA使65B模型在单48GB GPU微调成为可能，结合NF4+双量化+分页优化器三大创新
+- **附带资源**：论文Table I汇总17+种量化算法的核心技术特征（对称MinMax/NF4/BCQ/OVP等），Table II-IV从激活量化/离群值处理/重要性加权/内存对齐等多维度系统对比各类算法，Figure 2-3展示L4Q与基线对比及KV Cache压缩方法分类树；论文还提供从BinaryConnect到LLM-QAT的完整QAT-QNN演进时间线
 
 <br>
 </details>
