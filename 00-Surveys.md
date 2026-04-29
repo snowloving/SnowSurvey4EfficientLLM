@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-14-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-15-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -36,6 +36,7 @@
 | 3 | 🏆 **Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques** | 2025 | Computer Science Review `IF=12.7` | `边缘层级`：SLM设计/模型压缩/推理优化/部署框架 | 首篇面向边缘部署的全栈综述；定义<4B为SLM，汇总30+轻量模型架构对比与边缘硬件实测性能 |
 | 4 | 🏆 **A Comprehensive Overview of Large Language Models** | 2025 | ACM TIST `IF=6.6` | `LLM全景`：架构/预训练/微调/增效/多模态/智能体/应用/评估 | 覆盖面最广的LLM综述之一；系统汇总50+预训练LLM架构细节与训练配置，含7大类评估基准全览 |
 | 5 | 🏆 **Towards Efficient Generative LLM Serving: A Survey from Algorithms to Systems** | 2025 | ACM Comput. Surv. `IF=28.0` | `算法创新`：解码/架构/压缩 + `系统优化`：量化/并行/内存/调度/内核 | 首篇覆盖LLM推理服务全栈的综述；系统对比10+框架的架构设计与优化取舍 |
+| 6 | 📖 **A Survey on Efficient Inference for Large Language Models** | 2024 | arXiv | `三级优化`：数据层(压缩/编排) + 模型层(量化/稀疏/结构/蒸馏) + 系统层(引擎/服务/硬件) | 覆盖最广的LLM推理综述之一；独创数据-模型-系统三级分类，含PTQ/推测解码/服务框架的对比实验 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -136,6 +137,25 @@
   - `内核优化` → 融合（FasterTransformer/TurboTransformers/ByteTransformer/Welder）、定制注意力（FlashAttention/xFormers/FlashDecoding/FlashDecoding++/FlashInfer）、变长序列（Ragged Tensor/Bucketing/Packing）、自动编译（TVM TensorIR/MLIR/OpenAI Triton/TorchInductor/Mirage）
 - **核心洞察补充**：推测解码在保证输出质量无损的前提下通过即用即验机制提升并行度，树上推测+验证（SpecInfer）被后续Medusa/EAGLE广泛采纳；vLLM的PagedAttention通过KV Cache分页管理显著提升批处理能力与吞吐；Prefill-Decode分离架构（Splitwise/DistServe）针对两阶段不同计算特性在不同GPU上独立优化；MQA→GQA→MLA的演进使KV Cache持续压缩（DeepSeek-V2通过MLA实现5.76×推理吞吐提升）；迭代级调度（Orca首创）已成为所有主流框架标配；FlashInfer以block-sparse格式统一多样化KV Cache模式、CUDA Graph最大化GPU利用率
 - **附带资源**：论文Table 2系统对比vLLM/TensorRT-LLM/MLC-LLM/FlexFlow-Serve/LightLLM/DeepSpeed-Inference/TGI等10+开源GPU推理框架的并行计算、调度策略、注意力内核实现及优先优化目标（延迟vs吞吐）差异；Table 1分类总结高效Transformer的注意力简化方法及其LLM应用
+<br>
+
+
+### 6. A Survey on Efficient Inference for Large Language Models (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[A Survey on Efficient Inference for Large Language Models](https://arxiv.org/abs/2404.14294)
+
+- **分类方式**：独创 **数据层-模型层-系统层** 三级分类体系，先分析三大效率瓶颈（模型规模/注意力平方复杂度/自回归解码），再按优化层级系统化组织
+- **覆盖子方向**：
+  - `数据层优化` → 输入压缩（Prompt剪枝：SelectiveContext/LLMLingua/LongLLMLingua/CoT-Influx；Prompt摘要：RECOMP/SemanticCompression；软提示压缩：PromptCompression/Gisting/ICAE/AutoCompressor；RAG：FLARE/REPLUG/Self-RAG）、输出编排（SoT骨架生成/SGD自适应骨架图/APAR自动并行/SGLang DSL编程）
+  - `模型层-高效结构` → 高效FFN（MoE：Switch Transformer/BASE/Expert Choice/SE-MoE/StableMoE/SMoE-Dropout/GLaM/Mixtral 8x7B；MoEfication稀疏上采样/MPOE矩阵分解）、高效注意力（MQA/GQA；核注意力：Linear Transformer/Performer/RFA/PolySketchFormer；低秩注意力：Linformer/Luna/Set Transformer/Funnel-Transformer）、替代架构（SSM：S4/DSS/S4D/H3/Mamba/Liquid S4/S5/BiGS/DenseMamba；长卷积：Hyena；类注意力循环：RWKV/RetNet）
+  - `模型层-压缩` → 量化（PTQ：GPTQ/AWQ/OWQ/SpQR/SqueezeLLM/QuIP/LLM.int8/SmoothQuant/ZeroQuant/RPTQ/OmniQuant/Atom/BiLLM/KVQuant/KIVI；QAT：LLM-QAT/QLoRA/QA-LoRA/LoftQ/Norm Tweaking）、权重剪枝（非结构化：SparseGPT/Wanda/ISC/BESA/Pruner-Zero/DSOT；结构化：LLM-Pruner/Sheared LLaMA/ZipLM/LoRAPrune/SliceGPT/FLAP/CoFi/SIMPLE/ExpertSparsity/SEER-MoE）、稀疏注意力（静态：Sparse Transformer/StreamingLLM/BigBird/Longformer/SemSA；动态：SpAtten/SeqBoat/Adaptively Sparse Attention/Reformer/Routing Transformer/Sparse Sinkhorn Attention/H₂O/Diffuser）、结构优化（NAS：AutoTinyBERT/NAS-BERT；LRF：LoRD/TensorGPT/LoSparse/ASVD/SVD-LLM）、KD（白盒：MiniLLM/GKD/TED/MiniMoE/DynaBERT/KPTD；黑盒：Multitask-ICT/MCKD/Distilling Step-by-Step/SCoTD/PaD/DISCO/LaMini-LM/Lion）、动态推理（样本级：FastBERT/DeeBERT/PABEE/HASHEE；Token级：CALM/SkipDecode）
+  - `系统层-引擎` → 算子优化（FlashAttention 1-2/FlashDecoding/FlashDecoding++/MegaBlocks MoE）、推测解码（draft构造：DistillSpec/SSD/OSD/PaSS/REST/Lookahead/Medusa/Eagle/Kangaroo；验证：token tree verifier/Spectr）、图优化（ByteTransformer/DeepSpeed/算子融合）、卸载（FlexGen/llama.cpp/PowerInfer/FastDecode）
+  - `系统层-服务` → 内存管理（vLLM PagedAttention/LightLLM Token级/S³预测分配/FlashInfer）、连续批处理（ORCA迭代级/vLLM/Sarathi/DeepSpeed-FastGen分片融合/Chunked-prefill）、调度（FCFS/FastServe多级反馈队列抢占/VTC公平性）、分布式（Splitwise/TetriInfer/DistServe预填-解码分离/SpotServe可抢占/Infinite-LLM长上下文/LoongServe弹性序列并行）
+  - `硬件加速器` → FPGA（FACT/ALLO/DFX/FlightLLM）
+  - `框架对比` → Table 6系统对比HuggingFace/DeepSpeed/vLLM/OpenPPL/FlashDecoding++/LightLLM/TensorRT-LLM的推理优化能力、单token延迟和在线服务吞吐
+- **核心洞察补充**：提出三大效率瓶颈（模型规模→内存访问/注意力平方复杂度→计算+内存/自回归解码→内存访问）作为全篇分析框架；AWQ在A100上W4A16使LLaMA-2-7B解码1.4×-2.4×加速，预填阶段因反量化开销反而减速；Eagle推测解码达3.47×-3.72×加速，token tree verifier是其关键；vLLM PagedAttention通过虚拟内存管理消除碎片化，使KV Cache内存利用率显著提升；Chunked-prefill将长预填分片与短解码批处理合并，消除流水线气泡；Splitwise/DistServe预填-解码分离架构针对两阶段不同计算特性（计算密集vs内存密集）独立优化；FlashDecoding++通过统一softmax最大值异步化+FlatGEMM+启发式算子选择达4.86×加速
+- **附带资源**：论文Table 3提供代表性PTQ方法的多维度对比（量化张量类型/数据格式/参数确定方案/值更新），Table 4在A100上W4A16量化下LLaMA-2系列在批大小×输入长度下的预填/解码/端到端加速比，Table 5对比6种推测解码方法（draft模型/额外开销/接受率/加速比），Table 6对比7个框架的推理吞吐和在线服务能力；论文Sec 7讨论Agent/长上下文/边缘部署/安全-效率协同四大关键应用场景
 
 <br>
 
