@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-32-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-33-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -43,6 +43,7 @@
 | 10 | 🏆 **A Comprehensive Survey of Compression Algorithms for Language Models** | 2024 | arXiv | `剪枝` / `量化` / `KD` / `低秩近似` / `参数共享` / `高效架构` | 系统区分高成本与低成本算法，强调迭代压缩与直接优化目标函数是LLM时代的关键 |
 | 11 | 🏆 **Beyond Efficiency: A Systematic Survey of Resource-Efficient LLMs** | 2024 | arXiv | `五大资源×五阶段` 矩阵 + `架构/预训练/微调/推理/系统` 全生命周期 | 首个以资源类型（计算/内存/能源/财务/通信）为主轴的全生命周期LLM效率综述，提出资源-技术映射矩阵与标准化评估体系 |
 | 12 | 🏆 **Efficient Large Language Models: A Survey** | 2024 | TMLR | `模型中心` / `数据中心` / `框架中心` 三维度, 覆盖全生命周期 | 迄今最全面的LLM效率综述之一，以模型-数据-框架三维视角系统梳理效率技术，配套GitHub持续更新论文列表 |
+| 13 | 🏆 **Inference Optimization of Foundation Models on AI Accelerators** | 2024 | KDD | `系统优化`(KV Cache/FlashAttention/连续批处理/PagedAttention) + `架构`(MQA/GQA/MoE) + `压缩`(量化/剪枝/蒸馏) + `投机解码` 四维度 | 面向AI加速器(GPU/TPU/Trainium/FPGA)的LLM推理全栈优化综述，涵盖芯片级数据流到分布式并行策略 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -304,8 +305,42 @@
   6. **数据中心方法重要性凸显**：LIMA/AlpaGasus等工作证明少量高质量数据可匹配甚至超越全量数据微调效果（5.7x加速），数据选择与提示工程是模型效率优化的轻量级补充路径。
   7. **开源框架生态繁荣**：DeepSpeed/Megatron/vLLM等覆盖训练到推理全流程，PagedAttention(KV分页)、连续批处理、量化集成成为标配特征。
 - **附带资源**：图1-2：LLaMA系列性能-训练时间/推理吞吐量可视化、图3：三大维度分类体系全景图、图4-20：各子方向技术详解（模型压缩/预训练/微调/推理/架构/数据选择/提示工程）、Table 1：代表性LLM预训练成本对比（GPT-3/OPT/BLOOM/LLaMA/PaLM等）、Table 2(核心)：LLM框架功能对比矩阵（训练/微调/推理支持×关键特性，覆盖18个框架），该综述是目前覆盖面最广的LLM效率优化综述之一，以模型-数据-框架三维视角构建完整技术图谱，配套开源库持续追踪领域进展，是研究者入门和系统了解LLM效率全貌的核心参考文献。
+<br>
 
 
+### 13. Inference Optimization of Foundation Models on AI Accelerators (2024)
+[![Paper](https://img.shields.io/badge/Conference-KDD'24-b31b1b?style=flat-square)]()
+
+[Inference Optimization of Foundation Models on AI Accelerators](https://dl.acm.org/doi/pdf/10.1145/3637528.3671465)
+
+- **分类方式**：按**推理优化四大支柱**（系统优化/结构化架构/模型压缩/快速解码）+ **AI加速器硬件视角**（GPU/TPU/AWS Trainium/Inferentia/FPGA）组织
+- **覆盖子方向**：
+  - `系统优化`：**KV Cache** 2bshdln字节×优化维度（b运行时/s序列/h头数/d维度/l层数/n字节/元素+低位精度KVQuant百万上下文A100单卡+StreamingLLM注意力槽+BigBird块稀疏+H₂O重击者驱逐策略）；**FlashAttention** 块稀疏分解+IO感知Tiling+多级内存层次（GPU L2缓存vs TPU/Trainium大暂存器）+BPT块级FFN减少内存+Ring Attention跨设备环形块级分布式；**FlashDecoding** 新增K/V序列长度并行化维度+小批量充分利用加速器；**连续批处理** Orca动态序列驱逐（EOS退出→新Prompt插入）+Flat Prefill Kernel减少Padding+块对角因果注意力掩码+吞吐量优化；**PagedAttention** 非连续物理内存分布序列+消除内部/外部内存碎片+vLLM/TensorRT-LLM/TGI实现+FP8 KV Cache 1.49x吞吐量（≤2.4%精度损失）+RadixAttention基树共享前缀+Sarathi-Serve分块预填充中断减少解码尾延迟1.33x
+  - `结构化架构`：**MQA/GQA** MQA单KV头加速解码（Falcon）+GQA中间数量KV头平衡质量/速度（Llama2-70B/Llama3-70B 64Q→8KV）+分布式KV头均分或序列维度分片；**MoE** 稀疏激活专家（Mistral 8专家）+Token Choice(延迟优化，少激活)/Expert Choice(吞吐量优化)+Expert Parallelism专家保持在小加速器组+All-to-All集合通信分发Token；**滑动窗口** 长序列线性复杂度O(nw)+类似CNN感受野随层增深；**Mixture-of-Depth** Token动态跳层(CALM退出准则)+计算资源分配
+  - `模型压缩 → 量化`：**PTQ** LLM.int8()分离离群值+ZeroQuant-V2低秩补偿+SmoothQuant平滑迁移量化难度W8A8+GPTQ二阶信息3-4bit+QuIP# Hadamard非相干+OmniQuant可学习权重裁剪+等效变换+AQLM加性量化+Outlier Suppression+通道移位缩放+QLoRA NF4双量化；**QAT** BitNet 1-bit架构+1.58-bit三元{-1,0,1}与全精度持平+LLM-QAT数据无关蒸馏+KV Cache量化+QLLM自适应通道重组；**加速上限** FP32→INT8理论4x(但实际受限于内存带宽/硬件/Quant-Dequant开销)
+  - `模型压缩 → 剪枝`：**结构化** SliceGPT PCA降嵌入维+LLM-Pruner耦合结构评分+一阶/Hessian+LoRA恢复+Sheared LLaMA目标形状+动态批加载+LoRAPrune LoRA权重梯度准则+ZipLM硬件感知迭代结构收缩；**非结构化** 幅度剪枝快速退化+Wanda(权重×输入范数免更新)+RIA(改进重加权)+SparseGPT(最优脑外科准则+最小化||(W-Ŵ)X||²+50%+稀疏度)+OWL/BESA/ISC逐层不同稀疏度；**N:M半结构化** Ampere 2:4硬件支持+Flash-LLM非结构化GPU加速+多数方法后训练结合LoRA/蒸馏微调恢复精度
+  - `模型压缩 → 蒸馏`：**标准KD** 最后一层蒸馏(最小化学生-教师输出差异)+层间蒸馏(匹配每层隐藏表示，需学生教师同层数，下游任务更佳)；**蒸馏成本** 训练步数≈预训练小模型+蒸馏损失=学生-教师损失+原始损失(需原始预训练数据)+教师前向传播开销；**符号蒸馏** 从教师模型合成数据(LLM-QAT数据无关)+灵活适应目标硬件
+  - `投机解码`：**原理** 多Token草稿→单次LLM前向验证→基于拒绝采样(理论TV散度)或确定性接受+输出分布无损(Theorem 1)；**独立草稿** 同系列小模型(T5-small→T5-XXL无需额外训练)+从头训练独立草稿模型；**自草稿** Self-Speculative跳层草稿+Medusa多头FFN预测未来Token+EAGLE特征级自回归+PaSS添加[LA]Token并行生成+Lookahead Jacobi方法；**Token Tree验证** 多候选序列→树结构共享前缀→树注意力掩码并行验证→SpecInfer 2-3x+Medusa/EAGLE/Lookahead集成；**对齐提升接受率** DistillSpec知识蒸馏草稿对齐(10-45%额外加速)+KL散度/TV散度目标(无明显优劣)
+  - `分布式并行`：**张量并行** 大张量运算分布多加速器+集合通信聚合+仅限节点内(NVLink/Neuron)+小张量开销增大；**流水线并行** 层分布跨设备+仅传输输入/输出+节点间适用+需重叠流水线阶段；**序列并行** 序列维度分布+长上下文解码+FlashDecoding/PagedAttention V2；**专家并行** MoE专家固定在小加速器组+All-to-All分发Token+免动态加载专家权重
+- **核心结论/洞察**：
+  1. **AI加速器硬件视角的推理全栈综述**：覆盖从芯片层级(SRAM/HBM/张量核心/脉动阵列)到分布式并行策略(张量/流水线/序列/专家并行)再到算法优化(系统/架构/压缩/投机解码)，是业界部署LLM推理服务的工程实践指南。
+  2. **解码阶段是内存带宽瓶颈**：低算术强度导致权重加载时间远超实际计算，小批量时尤为严重；投机解码利用此特性通过多Token并行验证几乎"免费"获得加速。
+  3. **KV Cache是内存优化核心战场**：内存公式2bshdln字节→优化低比特(KVQuant)、驱逐(H₂O/StreamingLLM)、分页(PagedAttention)、辐射树共享前缀(RadixAttention)等多路径齐头并进。
+  4. **FlashAttention系列是长上下文推理基础**：通过块稀疏+IO感知Tiling避免物化整个注意力矩阵+不同硬件适配不同块大小(GPU L2小 vs TPU/Trainium暂存器大)+Ring Attention扩展到分布式超长上下文。
+  5. **MoE架构实现计算-参数规模解耦**：Token Choice优化延迟(少激活专家)/Expert Choice优化吞吐量(均衡负载)+EP专家并行是分布式推理关键策略。
+  6. **投机解码无损加速特性突出**：理论证明输出分布不变(Theorem 1)+Token Tree验证提升接受率+蒸馏对齐提升接受率10-45%+EAGLE/Medusa等自草稿方案消除辅助模型依赖+整体2-3x加速。
+  7. **量化已成本质标准**：PTQ(GPTQ/AWQ/SmoothQuant/OmniQuant 3-4bit)+QAT(1.58-bit三元与全精度持平)+FP8 KV Cache 1.49x吞吐量，但实际加速受硬件限制。
+- **附带资源**：Figure 1：原始Transformer架构（编码器+解码器）
+  - Figure 2：FlashAttention IO感知分块算法（外循环K,V块→内循环Q块→HBM↔SRAM数据流）
+  - Figure 3：内存碎片类型（内部碎片/外部碎片对比图）
+  - Figure 4：GQA方法概览（MHA→MQA→GQA插值）
+  - Figure 5：MoE Switch FFN层替代传统密集FFN
+  - Figure 6：INT8量化示意图(FP32→INT8 4x内存节省)
+  - Figure 7：经典知识蒸馏流程（教师→蒸馏损失→学生）
+  - §1.3 分布式并行策略详解（张量/流水线/序列/专家并行适用场景与权衡）
+  - 涵盖现代AI加速器硬件特性(GPU TensorCore/AMD MatrixCore/TPU脉动阵列/HBM/SRAM/FPGA)
+  > 该综述是面向AI加速器的LLM推理优化工程实践全景指南，以硬件特性为出发点串联系统优化、架构设计、模型压缩和快速解码四大技术路线，适合工业界部署工程师和系统研究者。
+<br>
 </details>
 ---
 
