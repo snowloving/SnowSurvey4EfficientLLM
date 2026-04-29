@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-3-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-5-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -32,7 +32,7 @@
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 🔥 **Towards Efficient Language Giants** | 2026 | Neural Networks `IF=6.3` | `高效模块设计` + `模型压缩` 双维度 | 混合方案（KD+量化/剪枝+量化）是突破单一技术瓶颈的关键 |
-| 2 | *待添加* | — | — | — | — |
+| 2 | 🔥 **From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP** | 2025 | arXiv | `模型优化`：数据/设计/压缩/推理 + `LLM适配`：预训练/微调/Prompt/RAG | 312篇文献系统综述；揭示LLM全生命周期效率全景，含30+模型在13项基准的性能-价格Pareto分析 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -56,6 +56,23 @@
    - `参数共享` → ALBERT, Basis Sharing, MobileLLM, MobileLLMA, Relaxed Recursive Transformers
 - **核心结论/洞察**：量化、剪枝、KD占据不同的精度-效率空间——量化在3-4bit下提供50-76%内存节约且精度损失<3.8%；剪枝的FLOPs减少难转化为实际加速（1.14-1.36x）；KD可实现80-88%压缩且部分场景精度不降反升。混合方案（如KD+量化、剪枝+量化）是突破单一技术瓶颈的关键。场景化设计（长上下文/快速响应/边缘/高精度）应选择不同的技术组合。
 - **附带资源**：无公开GitHub库，但表4提供了跨技术综合对比（内存/FLOPs/加速比/精度损失），极具参考价值。参考文献覆盖至2025-2026年。Benchmarks and datasets模块基础但很有用。
+<br
+
+### 2. From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP (2025)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP]()
+
+- **分类方式**：按 **模型优化**（数据策展/模型设计/模型压缩/动态推理）与 **LLM适配**（预训练/微调/Prompt工程/RAG）双阶段交叉组织，辅以效率度量（FLOPs/延迟/吞吐/碳排放/定价）
+- **覆盖子方向**：
+  - `数据策展` → 去重（D4/CCNet）、子集选择（Ask-LLM/SubLIME）、主动学习（AnchorAL/NoiseAL）、课程学习（Curri-DPO）
+  - `模型设计` → 高效注意力（MQA/GQA/稀疏注意力/Linformer/FlashAttention）、MoE（Switch Transformer/Mixtral/DeepSeekMoE）、低秩近似（ASVD/FWSVD/Linformer）、参数共享（ALBERT/Universal Transformer/Basis Sharing）
+  - `模型压缩` → 剪枝（结构化：LLM-Pruner/Sheared LLaMA；非结构化：SparseGPT/Wanda；上下文：DejaVu）、KD（白盒：MiniLLM/TED/GKD；黑盒：Distilling Step-by-Step/Lion）、量化（PTQ：GPTQ/AWQ/SmoothQuant/OmniQuant；QAT：BitNet/LLM-QAT/BinaryBERT）
+  - `动态推理` → 早退（DeeBERT/CALM/BEExformer）、Token剪枝（SpAtten/LLMLingua/LazyLLM）、Token并行（推测解码/Speculative Sampling）
+  - `LLM适配效率` → 预训练（MLM/RTD/CLM/PPT）、PEFT（LoRA/QLoRA/AdaLoRA/Adapter/BitFit/Prefix-tuning）、Prompt工程（Prompt Pruning/Soft Prompt Compression/CoT/Coconut/CoD）、RAG效率（Self-RAG/Adaptive-RAG/CRAG/RQ-RAG）
+  - `效率度量` → 碳排（LLMCarbon/LLMCO2）、能耗（Lannelongue框架）、定价（$/1M tokens）、E2E响应时间、吞吐（tokens/s）
+- **核心洞察补充**：训练GPT-4级模型碳排放可达约2000吨CO₂，相当于300次跨大西洋飞行；LoRA可将可训练参数减少至原1/10000；现代蒸馏技术实现Pareto改进——GPT-5 mini性能（63.9%）超越更大模型Claude 4 Sonnet（60.1%）且价格更低；开放权重模型（DeepSeek/Gemma/LLaMA/Mistral）正缩小与私有模型的差距；上下文窗口已从128K扩展至1M-10M tokens；CoD仅消耗CoT 7.6%的token量却维持同等性能
+- **附带资源**：论文Table 3提供30+主流LLM在13项基准的详细性能对比，Table 4涵盖许可证、定价、延迟、吞吐等运营效率指标，Figure 22展示性能-价格Pareto前沿，Table 5汇总15+模型预训练的GPU小时、能耗与碳排放，极具选型参考价值
 
 <br>
 </details>
