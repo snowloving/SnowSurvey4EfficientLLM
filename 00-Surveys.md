@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-20-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-21-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -39,6 +39,7 @@
 | 6 | 📖 **A Survey on Efficient Inference for Large Language Models** | 2024 | arXiv | `三级优化`：数据层(压缩/编排) + 模型层(量化/稀疏/结构/蒸馏) + 系统层(引擎/服务/硬件) | 覆盖最广的LLM推理综述之一；独创数据-模型-系统三级分类，含PTQ/推测解码/服务框架的对比实验 |
 | 7 | 🔥 **A Survey of Resource-Efficient LLM and Multimodal Foundation Models** | 2024 | arXiv | `模型覆盖`：LLM/ViT/扩散/多模态 + `优化层级`：架构/算法/系统 + `生命周期`：预训练/微调/推理/服务 | 覆盖四大基础模型的全栈效率综述；含联邦学习、边缘部署、LLMaaS等新兴话题 |
 | 8 | 🏆 **Model Compression and Efficient Inference for Large Language Models: A Survey** | 2024 | arXiv | `五维压缩`：量化/剪枝/蒸馏/紧凑架构/动态网络 + `模型分层`：中型(≤1B) vs 真·大型(>1B) | 独创中型vs真·LLM分层方法论；LLM压缩两大核心：免重训练+通用性保持 |
+| 9 | 🔥 **A Survey on Transformer Compression** | 2024 | arXiv | `四维压缩`：量化/蒸馏/剪枝/高效架构 + `新架构`：Mamba/RetNet/RWKV + `跨域`：NLP+CV | 同时覆盖语言与视觉Transformer压缩；系统对比Mamba/RetNet与Transformer复杂度与并行性 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -196,6 +197,28 @@
   - `推理框架` → 通用（DNNFusion算子融合/DeepSpeed Inference多GPU+异构内存）、专用（TurboTransformer序列感知内存/ByteTransformer无填充/ FlexGen Zig-Zag并行离线吞吐/PowerInfer热神经元GPU+冷神经元CPU混合）
 - **核心洞察补充**：LLM压缩面临两大核心挑战：(1)**免重训**——微调成本随参数规模剧增，推动PTQ/一次性剪枝/免微调蒸馏成为主流；(2)**通用性保持**——LLM强调多任务泛化和涌现能力，压缩后需仔细验证零样本/少样本/推理能力；2-bit量化模型涌现能力严重退化，4-bit几乎无损；Wanda（权重×激活范数）在不需任何微调和二阶信息下接近SparseGPT性能；SmoothQuant通过数学等价变换diag(s)实现激活→权重量化难度迁移，首个成功W8A8；GPTQ可在4小时内在单A100上量化175B模型；MoE成为LLM高效扩展的主流范式（GPT-4/Mixtral/DeepSeekMoE）；FlashAttention通过Tiling+增量Softmax实现精确注意力计算且大幅减少HBM访问
 - **附带资源**：论文TABLE 1从9个维度系统对比AWQ/GPTQ/LLM.int8/SmoothQuant/LLM-QAT等主流量化方法的特征（位宽/粒度/均匀性/对称性/静态vs动态/重训/零样本/整数运算），TABLE 3从8个维度对比LLM剪枝方法（单元/度量/迭代/一次性/微调/全局/局部），TABLE 4对比14种BERT蒸馏方法（训练阶段/知识来源/损失函数），TABLE 5总结8种代表性MoE方法（基座模型/稀疏性/最大规模/负载均衡），TABLE 6对比6种推理框架（通用性/方法），Figure 10展示Adapter模块与Transformer集成的架构图
+
+<br>
+
+
+### 9. A Survey on Transformer Compression (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[A Survey on Transformer Compression](https://arxiv.org/pdf/2402.05964)
+
+- **分类方式**：按 **架构保持**（量化PTQ/QAT + 知识蒸馏）与 **架构自适应**（剪枝 + 高效架构设计→稀疏/线性注意力→非Transformer→高效FFN）四大维度组织，横跨NLP和CV
+- **覆盖子方向**：
+  - `量化-LLM` → PTQ（Outlier Suppression γ迁移/SmoothQuant diag(s)等价变换→激活→权重量化难度迁移/OmniQuant可学习权重裁剪+变换/RPTQ通道重排+聚类/ZeroQuant组级权重Token级激活/GPTQ二阶近似/AWQ激活感知/OS+通道平移缩放/QLLM低秩误差补偿/SqueezeLLM离群稀疏存储/CBQ跨块重建+LoRA/SignRound自适应舍入）（QAT：Q-BERT Hessian混合精度/I-BERT多项式近似GELU-SoftMax-LayerNorm+全整数推理/PEQA仅调缩放因子/QLoRA NF4+双量化/LLM-QAT免数据+KV Cache量化）
+  - `量化-ViT` → PTQ（PTQ-ViT核范数混合精度+秩保留/PTQ4ViT双均匀量化+Hessian指导/FQ-ViT Log2+2的幂全量化/APQ-ViT分块渐进优化/NoisyQuant固定噪声增强/RepQ-ViT尺度重参数化）（QAT：Q-ViT全可微+头级位宽/Quantformer秩保持+组级量化/OFQ统计权重量化+置信度退火+VVTQ变分感知）
+  - `知识蒸馏-NLP` → Logits（DistilBERT/MixKD线性插值/MiniLLM→反向KLD/GKD→on-policy/TED任务感知层过滤）、Hint（PKD Skip-Last/MINILM值-关系/MobileBERT瓶颈+HomoBERT/TinyBERT双阶段）、API黑盒（CoT：Fine-tune-CoT/SCOTT/KARD/PaD；IF：LaMini-LM/Lion/Symbolic KD；ICL：Multitask-ICT/Meta-ICT）
+  - `知识蒸馏-ViT` → Logits（DeiT硬标签+蒸馏Token/TinyViT预存数据增强+Logits）、Hint（DearKD CNN中间层诱导/ManifoldKD Patch-批次流形/ViTKD→FFN特征优于MHA+浅层适用+深层生成优于模仿）、跨架构（Renyi→跨归纳偏置蒸馏/CSKD位置级密集预测）
+  - `剪枝-LLM` → 非结构化（SparseGPT OBS掩码+重构/Wanda权重×激活范数）、结构化（LLM-Pruner耦合结构+Fisher/LoRAShear LHSPG渐进/Sheared LLaMA目标架构+动态批次/SliceGPT PCA截断）、上下文/Token（Dynamic Context Pruning sigmoid选择+KV Cache感知/稀疏注意力→局部+全局+内容分组）
+  - `剪枝-ViT` → Token/特征（Patch Sliming自顶向下/Power-BERT渐进词消除/DynamicViT轻量预测网络/S²ViTE联合非结构化+结构化）、结构化（ViT-Slim单次搜索/SAViT协同优化/X-Pruner类感知可微/Global Hessian剪枝+参数重分布）、表5-6系统对比DeiT剪枝和LLM剪枝方法的精度与加速比
+  - `高效架构-NLP` → 稀疏注意力（Factorized/Sparse Transformer/Longformer窗口+全局/BigBird/Reformer LSH/Linear Transformer核函数/Performer FAVOR+/FlashAttention IO感知分块）、非Transformer（S4→H3→Mamba选择性SSM/RetNet并行+递归+块递归三模式/RWKV线性注意力+递归/Hyena门控长卷积）、高效FFN（MoE：GShard/Switch/Expert Choice/DeepSpeed-MoE/SwiGLU激活）
+  - `高效架构-ViT` → 增强局部性（T2T-ViT聚合/LeViT CNN前置/MobileViT混合/TNT子Patch/CrossViT双分支/Swin移位窗口/CSwin交叉窗口/KVT k-NN注意力/HiLo高低频解耦）、更快注意力（Image Transformer局部/FasterViT层级分解/Flatten Transformer深度卷积+线性注意力）、无注意力（AFT/GFNet FFT/Pure MLP系列→MLP-Mixer/ResMLP/CycleMLP/MetaFormer池化/Vim双向Mamba/VMamba交叉扫描模块）
+  - `其他压缩` → 张量分解（Kronecker GPT2 1.5×/LoRD代码LLM/TSVD三元SVD/TensorGPT嵌入层3×）、早退（CALM 3×加速/SkipDecode KV缓存复用）、推测采样（Speculative Sampling → 理论无损/LLMCad端侧推理）
+- **核心洞察补充**：量化→LLM离群值平滑（SmoothQuant/OmniQuant）是关键，ViT低比特（<4bit）需QAT；知识蒸馏→黑盒KD通过API获取CoT/IF/ICL能力的提炼是LLM时代新范式，白盒KD中MINILM值-关系匹配简单高效；剪枝→SparseGPT实现175B一次性50-60%非结构化剪枝无需微调，结构化剪枝需PEFT（LoRA）辅助恢复；高效架构→Mamba/RetNet/RWKV等线性复杂度架构有潜力替代Transformer，但在长序列上下文学习能力上仍待验证；跨域共性→离群值处理、秩保持、结构化搜索策略在NLP和ViT压缩中原理相通；压缩组合→先架构设计→再剪枝→最后量化的顺序可获极致压缩
+- **附带资源**：论文Table 1汇总四大类压缩方法的代表工作与亮点，Table 2系统对比PTQ与QAT在ViT-B/DeiT/Swin上的W/A位宽与Top-1精度，Table 3提供LLaMA系列量化困惑度（7B-65B/4-8bit），Table 4对比DistilBERT/TinyBERT/MobileBERT等蒸馏方法的师生参数量与加速比，Table 5-6统计DeiT-B剪枝方法及LLM剪枝的代表性实验数据，Table 8对比Transformer/Mamba/RetNet等架构的训练并行、推理时间和内存复杂度
 
 <br>
 </details>
