@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-12-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-13-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -381,6 +381,8 @@
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 📖 **Efficiently Integrate LLMs with Visual Perception** | 2025 | Information Fusion  `IF=15.5`| `训练范式`：单阶段 / 两阶段 / 直接适配 | 仅关注视觉模态，直接适配在极低参数量下可接近全微调性能；轻量级LLM+LoRA是资源受限场景的有效路径 |
 | 2 | 📖 **A Survey of Token Compression for Efficient Multimodal LLMs** | 2026 | TMLR | `模态驱动`：图像 / 视频 / 音频 + `机制驱动`：Transformation/Similarity/Attention/Query | 首篇MLLM长上下文Token压缩系统综述；Token压缩与模型压缩在削减FLOPs上具有正交互补性 |
+| 3 | 📖 **Efficient Multimodal Large Language Models: A Survey** | 2025 | Visual Intelligence | `效率维度`：架构/视觉/LLM/训练/数据 + `应用`：医学/文档/视频/自动驾驶/遥感 | 首篇系统综述高效MLLM全栈优化；视觉Token压缩是MLLM特有的核心瓶颈，轻量LLM+高效投影器+MoE调优是主流范式 |
+
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -418,6 +420,25 @@
 - **附带资源**：
   - [GitHub仓库](https://github.com/cokeshao/Awesome-Multimodal-Token-Compression)，论文图3提供清晰分类法思维导图，表2-3对比训练无关方法在图像/视频理解基准上的性能，表4汇总常用多模态基准与评估指标，极具工程落地参考价值。
     
+<br>
+
+### 3. Efficient Multimodal Large Language Models: A Survey (2025)
+[![Paper](https://img.shields.io/badge/Journal-Vis.Intell.'25-blue)]()
+
+[Efficient multimodal large language models: a survey](https://link.springer.com/content/pdf/10.1007/s44267-025-00099-6.pdf)
+
+- **分类方式**：按 **MLLM效率全栈**（架构→高效视觉→高效LLM→训练→数据与基准→应用）六阶段组织，覆盖从模型设计到实际部署的完整链路
+- **覆盖子方向**：
+  - `架构设计` → 视觉编码器（CLIP/SigLIP/DINOv2/EVA/ViTamin多编码器融合BRAVE）、视觉-语言投影器（MLP/Q-Former/LDPv2/C-Abstractor/D-Abstractor/VSS-Mamba）、紧凑语言模型（Phi-2/Gemma/TinyLlama/Qwen）、视觉Token压缩（多视图输入LLaVA-UHD/InternLM-XComposer2-4KHD、Token处理LLaVA-PruMerge/SparseVLM/FastV/VTW、多尺度融合Mini-Gemini/S²-Wrapper、视觉专家MoVA/P2G、视频方法Elysium/VideoLLaVA）
+  - `高效结构` → MoE（MoE-LLaVA/MM1-MoE）、Mamba（Cobra/VL-Mamba线性复杂度）、推测解码SPD、早退FastV/VTW
+  - `高效视觉技术` → 紧凑架构（EfficientFormer/DynamicViT/SepViT/NASViT）、剪枝（结构化WDPruning/XPruner/非结构化CAP/DynamicViT/混合SPViT/ViT-Slim）、知识蒸馏（同构DeiT/TinyViT/MiniViT/异构DearKD/CiT）、量化（PTQ：PTQ4ViT/APQ-ViT/NoisyQuant；QAT：Quantformer/Q-ViT/BiViT/BinaryViT；硬件感知：GPU 2:4稀疏量化/FPGA Auto-ViT-Acc）
+  - `高效LLM技术` → 注意力优化（GQA/MQA/Funnel-Transformer/Set Transformer/核方法/低秩近似）、替代架构（MoE：GShard/Switch Transformer；RWKV线性注意力/Mamba SSM）、PEFT（LoRA/DyLoRA/LoRA-FA/(IA)³）、全参数微调（LOMO/MeZO内存优化）、量化（PTQ：GPTQ；QAT：AWQ）
+  - `训练策略` → 参数高效预训练（冻结vs解冻权衡，TinyLLaVA/VILA/ShareGPT4V/Idefics2多阶段课程）、指令微调（LaVIN MMA轻量适配器/HyperLLaVA动态调优）、训练阶段重构（SPHINX-X单阶段统一/Cobra省略预对齐、TinyGPT-V四阶段课程）、PEFT迁移（EAS/MemVP视觉提示注入FFN）
+  - `数据与基准` → 预训练数据（CC3M, LAION-5B, ShareGPT4V, MMC4）、指令微调数据、表5（22个模型×14个基准性能对比）
+  - `应用` → 生物医学（Med-MoE/LLaVA-Rad）、文档理解（TinyChart/TextHawk/HRVDA/Monkey）、视频理解（mPLUG-video/Video-LLaVA/LLaMA-VID/MA-LMM记忆增强）、自动驾驶（DriveGPT4/Dolphins）、遥感（GeoLLaVA/TinyRS-R1）
+- **核心洞察补充**：高效MLLM不能简单归结为高效LLM，需解决三个独特挑战：视觉-语言对齐、Transformer对视觉token的二次计算成本、联合模态优化；紧凑LLM主干（Phi-2, Gemma-2b）配合轻量投影器（LDPv2）是移动端部署的有效路径；视觉Token压缩（多视图、Token处理、多尺度融合）是处理高分辨率/长视频的关键；MoE（MoE-LLaVA）和Mamba（Cobra, VL-Mamba）是替代Transformer的有前景架构；ViTamin-XL（436M参数）以1/10参数量超越EVA-E（4.4B）的ImageNet零样本性能（82.9% vs 82.0%），证明轻量视觉编码器的潜力。
+- **附带资源**：论文Table 1汇总20+主流高效MLLM的架构配置（视觉编码器/LLM/投影器/分辨率），Table 3-4系统整理预训练和指令微调数据集，Table 5对比22个高效MLLM与13个大型MLLM在14项VL基准上的性能；配套持续更新的GitHub仓库 [https://github.com/lijiannuit/Efficient-Multimodal-LLMs-Survey](https://github.com/lijiannuit/Efficient-Multimodal-LLMs-Survey)
+
 <br>
 </details>
 
