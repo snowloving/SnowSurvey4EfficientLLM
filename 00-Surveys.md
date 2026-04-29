@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-5-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-7-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -116,6 +116,7 @@
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 🔥 **A Survey on Model Compression for Transformer-Based LLMs** | 2026 | IEEE TETCI `IF=11.8` | `压缩方法`：剪枝/量化/蒸馏/低秩分解 + `新视角`：KV Cache压缩/NAS | 首篇将KV Cache压缩与NAS纳入LLM模型压缩统一框架的综述；混合压缩是工业落地主流范式 |
+| 2 | 🔥 **Survey on Knowledge Distillation for LLMs: Methods, Evaluation, and Application** | 2025 | ACM TIST `IF=6.5` | `KD范式`：白盒(Logits/Hint) + 黑盒(ICL/CoT/Instruction Following) + `鲁棒性评估` | 首次提出白盒/黑盒二分法用于LLM KD分类，清晰区分了可访问内部参数（白盒）和仅可访问API输出（黑盒）的两类方法；首篇从鲁棒性视角统一评估LLM蒸馏算法的综述；MiniLLM在GPT-2上对抗及OOD鲁棒性最优 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -160,6 +161,27 @@
 - **附带资源**：无公开GitHub库，但论文Table III提供了六大类压缩方法的压缩目标、微调需求、硬件兼容性、典型压缩比的一览对比表，Table I-II分别给出代表性剪枝和量化方法的实验数据，极具横向对比参考价值。
 <br>
 
+
+### 2. Survey on Knowledge Distillation for LLMs: Methods, Evaluation, and Application (2025)
+[![Paper](https://img.shields.io/badge/Journal-ACM_TIST'25-blue)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=6.5-important)]()
+
+[Survey on Knowledge Distillation for Large Language Models: Methods, Evaluation, and Application]()
+
+- **分类方式**：按 **KD范式**（白盒/黑盒）两大维度组织，并进一步按功能细分为方法、评估、应用三大板块
+- **覆盖子方向**：
+  - `白盒KD-基于Logits` → DistillBERT/TinyBERT/MobileBERT/MiniLM/PD/MixKD/ReAugKD/MetaDistil/AD-KD/MiniLLM/GKD/MiniMA/f-DISTILL
+  - `白盒KD-基于Hint` → PKD/PKD-Last/PKD-Skip/XtremeDistil/TED/HomoDistil
+  - `黑盒KD-ICL` → ICL蒸馏/Meta-ICL/In-Context Tuning/SeCoKD/MEND/AICD
+  - `黑盒KD-CoT` → Distilling Step-by-Step/Symbolic KD/SCOTT/MCC-KD/Dialogue CoT/KRAD/PaD/S3
+  - `黑盒KD-Instruction Following` → Self-Instruct/Alpaca/Vicuna/GPT4All/Lion/LaMini-LM/Personalized Distillation/UniversalNER
+  - `多模态KD` → CoMD/VPD/Localized Symbolic KD
+  - `鲁棒性评估` → 对抗鲁棒性（AdvGLUE/ANLI）+ OOD鲁棒性（Flipkart/DDXPlus），在GPT-2/OPT/LLaMA/LLaMA2上统一评估9种KD算法
+- **核心洞察补充**：MiniLLM（反向KL散度+策略梯度优化）在GPT-2全系列上对抗及OOD鲁棒性最优；同蒸馏算法在不同模型架构上效果差异显著——GPT-2上MiniLLM最优，OPT上传统KD最优，LLaMA上SeqKD最优，LLaMA2上JS散度最优；白盒KD需大量GPU内存（教师前向传播特征），黑盒KD则依赖闭源API生成数据，存在成本与公平性挑战；MiniMA发现学生模型约为教师40%大小时蒸馏效果最优
+- **附带资源**：论文Table 1系统汇总14种白盒KD方法的压缩率、评估任务及性能对比，Table 5对比8种黑盒KD方法的特点与数据集，Table 2-8提供GPT-2/OPT/LLaMA在多种KD算法下的对抗鲁棒性（ASR↓）与OOD鲁棒性（F1↑）完整实验数据，极具工程选型参考价值
+
+<br>
 </details>
 
 ---
