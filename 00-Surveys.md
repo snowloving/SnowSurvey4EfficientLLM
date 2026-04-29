@@ -118,12 +118,11 @@
 
 <a id="infer-opt"></a>
 ### ⚡ 推理阶段优化
-> `03-Inference-Optimization` | KV缓存压缩 · 投机解码 · FlashAttention · 系统级服务 · 文本压缩
+> `03-Inference-Optimization` | KV缓存压缩 · 投机解码 · FlashAttention · 系统级服务 · 文本压缩 · 硬件加速
 
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
-| 1 | *待添加* | — | — | `KV-Cache` / `投机解码` / `FlashAttention` / `系统服务` 等 | — |
-
+| 1 | 🔥 **Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective** | 2025 | arXiv | `硬件平台`：CPU/GPU/FPGA/ASIC/PIM + `优化方法`：量化/稀疏/快速解码/算子优化/异构协同 | 首篇以tokens/s和tokens/J统一度量不同硬件平台LLM推理性能的综述；PIM/NDP能效比最高达46.66 tokens/J |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -135,6 +134,22 @@
 - `FlashAttention`：FA1/2/3, 高效注意力内核
 - `System-Level-Serving`：vLLM, TensorRT-LLM, SGLang, 调度优化
 - `Text-Compression`：提示压缩, Prompt压缩
+
+### 1. Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective (2025)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective](https://dai.sjtu.edu.cn/project.html)
+
+- **分类方式**：按 **硬件平台**（CPU/GPU/FPGA/ASIC/PIM-NDP）与 **软件优化方法**（量化/稀疏/快速解码/算子优化/异构协同/同构协同）双维度交叉组织，并首次以 tokens/s 和 tokens/J 统一量化对比
+- **覆盖子方向**：
+  - `量化` → 仅权重量化（GPTQ/AWQ/SpQR/T-MAC）、权重+激活量化（SmoothQuant/LLM.int8/Atom/QUIK）、KV Cache量化
+  - `稀疏` → 权重稀疏（SparseGPT/Wanda/DejaVu/E-Sparse）、激活稀疏（Turbo Sparse/ProSparse/SoLA/R-Sparse）、注意力稀疏（StreamingLLM/H2O/Sparse Flash Attention）
+  - `快速解码` → 推测解码（Medusa/EAGLE/Sequoia/Ouroboros/Kangaroo/Lookahead）、跳层（AdaInfer/LayerSkip/Mixture-of-Depths）
+  - `算子优化` → 融合（FlashAttention/FlashDecoding++/TensorRT-LLM）、非线性近似（ConSmax/HAAN）、粗粒度处理（TCP/Gaudi2/Groq LPU）、存储优化（FlashFormer/KV Cache预取）
+  - `异构协同` → CPU-GPU（PowerInfer/Twinpilot）、GPU-FPGA（GLITCHES）、PIM-NPU（NeuPIMs/IANUS）、PIM-CXL（CXL-PNM）
+  - `硬件平台对比` → CPU: 3-50 tokens/s, 0.0057-2.38 tokens/J；GPU: 18-343.4 tokens/s, 0.06-0.86 tokens/J；FPGA: 3.61-450 tokens/s, 0.15-6.30 tokens/J；ASIC: 9.95-2700 tokens/s, 0.11-13.99 tokens/J；PIM/NDP: 10-1998 tokens/s, 0.14-46.66 tokens/J
+- **核心洞察补充**：PIM/NDP在所有硬件平台中实现最高能效比（46.66 tokens/J），边缘CPU（3-6W）能效亦优于GPU；量化在GPU上可实现最高绝对推理速度（343.4 tokens/s），算子优化在ASIC上可达2700 tokens/s；大batch（bs=8）较小batch（bs=1）吞吐提升2.56-5.32倍，能效提升3.82-7.87倍；未来三大趋势为多模态、推理时计算、更高能效，边缘芯片需达到>10 tokens/J以支持100-1000Hz实时控制
+- **附带资源**：[github仓库](https://github.com/Kimho666/LLM_Hardware_Survey)；论文图13-14提供bs=1和bs=8下各平台功耗-吞吐散点图，图18直观展示当前边缘AI与未来需求的1-2个数量级差距，极具系统设计参考价值
 
 <br>
 </details>
