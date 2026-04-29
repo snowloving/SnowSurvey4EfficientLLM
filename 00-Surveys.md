@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-10-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-11-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -35,7 +35,7 @@
 | 2 | 📖 **From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP** | 2025 | arXiv | `模型优化`：数据/设计/压缩/推理 + `LLM适配`：预训练/微调/Prompt/RAG | 312篇文献系统综述；揭示LLM全生命周期效率全景，含30+模型在13项基准的性能-价格Pareto分析 |
 | 3 | 🏆 **Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques** | 2025 | Computer Science Review `IF=12.7` | `边缘层级`：SLM设计/模型压缩/推理优化/部署框架 | 首篇面向边缘部署的全栈综述；定义<4B为SLM，汇总30+轻量模型架构对比与边缘硬件实测性能 |
 | 4 | 🏆 **A Comprehensive Overview of Large Language Models** | 2025 | ACM TIST `IF=6.6` | `LLM全景`：架构/预训练/微调/增效/多模态/智能体/应用/评估 | 覆盖面最广的LLM综述之一；系统汇总50+预训练LLM架构细节与训练配置，含7大类评估基准全览 |
-
+| 5 | 🏆 **Towards Efficient Generative LLM Serving: A Survey from Algorithms to Systems** | 2025 | ACM Comput. Surv. `IF=28.0` | `算法创新`：解码/架构/压缩 + `系统优化`：量化/并行/内存/调度/内核 | 首篇覆盖LLM推理服务全栈的综述；系统对比10+框架的架构设计与优化取舍 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -114,6 +114,29 @@
     - `应用` → 医学、教育、科学、数学、法律、金融、机器人、编码
 - **核心洞察补充**：架构对比发现——预归一化在前100B规模提供稳定性但可能损害微调性能，GLM-130B采用DeepNorm（后归一化变体）获更优下游性能；并行注意+FFN层可提速15%且性能无降；MoE架构天然抗灾难性遗忘，适合持续学习；小模型微调——LIMA仅用1000条精选演示即接近GPT-4水平；Chinchilla定律指出每加倍模型规模应加倍训练token数；检索增强可使11B模型匹敌540B PaLM；红队测试发现即使对齐后的模型仍易受越狱攻击
 - **附带资源**：论文Table 1-2提炼50+预训练与指令微调LLM的核心发现与洞察，Table 5汇总30+LLM的详细架构参数（层数/头数/隐藏维度/注意力类型/归一化/位置编码/激活函数），Table 6-7提供预训练与指令微调的优化配置（批量大小/学习率/优化器），Table 8-11系统整理预训练与微调数据集及评估基准，Table 12展示各NLP任务上顶级LLM性能对比、Figure 2展示LLM发布历史时间线，开源vs闭源、Table 3-4有50+预训练和30+微调LLM的架构与优化细节。参考文献500+篇，覆盖LLM领域全面。
+<br>
+
+
+### 5. Towards Efficient Generative LLM Serving: A Survey from Algorithms to Systems (2025)
+[![Paper](https://img.shields.io/badge/Journal-ACM_Comput.Surv.'25-blue)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=28.0-important)]()
+
+[Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](https://dl.acm.org/doi/pdf/10.1145/3754448)
+
+- **分类方式**：按 **算法创新**（解码算法/架构设计/模型压缩）与 **系统优化**（低精度量化/并行计算/内存管理/请求调度/内核优化）双维度组织，从机器学习系统（MLSys）视角审视LLM服务全栈
+- **覆盖子方向**：
+  - `解码算法` → 非自回归解码（Mask-Predict/Semi-Autoregressive/Blockwise Parallel）、推测解码/投机解码（SpecInfer/Medusa/EAGLE/Sequoia/Staged Speculative/Kangaroo）、早退（DeeBERT/FastBERT/CALM/SkipDecode）、级联推理（CascadeBERT/Tabi/FrugalGPT）
+  - `架构设计` → 配置缩小（浅编解码/权重共享）、注意力简化（稀疏/MQA/GQA/MLA/Sliding Window/H₂O/StreamingLLM）、激活共享（跨层注意力复用）、条件计算（MoE路由/DeepSeekMoE/TaskMoE）、循环单元（RWKV/RetNet/Mamba）
+  - `模型压缩` → 知识蒸馏（白盒MiniLLM/TinyBERT/黑盒Alpaca/Vicuna/WizardLM）、网络剪枝（结构化LLM-Pruner/Deja Vu/非结构化SparseGPT/Wanda/Flash-LLM/PowerInfer）
+  - `低精度量化` → QAT（LLM-QAT/QLoRA/PEQA）、PTQ（GPTQ/SpQR/AWQ/LLM.int8/SmoothQuant/ZeroQuant/W4A4/FlexGen）、硬件支撑（NVIDIA INT8/INT4/FP8 Tensor Core/Hopper架构）
+  - `并行计算` → 模型并行（Tensor/Pipeline/Sequence→DeepSpeed-Ulysses/Ring Attention/Context Parallelism）、云伸缩（SpotServe/ServerlessLLM）、去中心化推理（Petals/HexGen）
+  - `内存管理` → PagedAttention（vLLM）/vAttention（虚拟-物理分离）/LightLLM（Token级）/CacheGen（KV Cache压缩）/InfiniGen（分层卸载）/Mooncake（KV Cache为中心的分离架构）
+  - `请求调度` → 迭代级调度（Orca/Continuous Batching/In-flight Batching）、抢占式（FastServe/Andes）、分离式Prefill-Decode（Splitwise/DistServe/ExeGPT）、异构负载调度（TetriInfer/Llumnix/Helix）
+  - `内核优化` → 融合（FasterTransformer/TurboTransformers/ByteTransformer/Welder）、定制注意力（FlashAttention/xFormers/FlashDecoding/FlashDecoding++/FlashInfer）、变长序列（Ragged Tensor/Bucketing/Packing）、自动编译（TVM TensorIR/MLIR/OpenAI Triton/TorchInductor/Mirage）
+- **核心洞察补充**：推测解码在保证输出质量无损的前提下通过即用即验机制提升并行度，树上推测+验证（SpecInfer）被后续Medusa/EAGLE广泛采纳；vLLM的PagedAttention通过KV Cache分页管理显著提升批处理能力与吞吐；Prefill-Decode分离架构（Splitwise/DistServe）针对两阶段不同计算特性在不同GPU上独立优化；MQA→GQA→MLA的演进使KV Cache持续压缩（DeepSeek-V2通过MLA实现5.76×推理吞吐提升）；迭代级调度（Orca首创）已成为所有主流框架标配；FlashInfer以block-sparse格式统一多样化KV Cache模式、CUDA Graph最大化GPU利用率
+- **附带资源**：论文Table 2系统对比vLLM/TensorRT-LLM/MLC-LLM/FlexFlow-Serve/LightLLM/DeepSpeed-Inference/TGI等10+开源GPU推理框架的并行计算、调度策略、注意力内核实现及优先优化目标（延迟vs吞吐）差异；Table 1分类总结高效Transformer的注意力简化方法及其LLM应用
+
 <br>
 
 </details>
