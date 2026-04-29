@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-19-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-20-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -339,6 +339,7 @@
 | 2 | 📖 **A Survey on Hardware Accelerators for LLMs** | 2025 | Applied Sciences | `硬件平台`：FPGA/GPU/ASIC/存内计算 + `加速技术`：稀疏/近似/融合/混合精度 | 系统梳理30+加速器架构；存内计算与ASIC可实现3-4个数量级的能效提升，FPGA在灵活性与效率间取得最优折中 |
 | 3 | 🔥 **Prompt Compression for Large Language Models: A Survey** | 2025 | NAACL-HLT | `压缩范式`：硬提示(过滤/改写) + 软提示(编码器-解码器) + `理解视角`：注意力优化/PEFT/模态集成/合成语言 | 首篇Prompt压缩系统综述；独特解读软提示为"LLM新合成语言"，硬软结合是未来方向 |
 | 4 | 📖 **Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference** | 2024 | arXiv | `CIM器件`：SRAM/ReRAM/PCM/FeFET/MRAM + `加速策略`：算法增强/容错/硬件感知训练/异构计算 | 首篇聚焦存内计算加速LLM推理的综述；模拟CIM可突破冯·诺依曼瓶颈，实现数倍至数百倍能效提升 |
+| 5 | 📖 **Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey** | 2024 | arXiv | `压缩维度`：语义压缩/PLM压缩/检索器压缩 + `RAG评估`：三元组(上下文+答案+接地)+四能力 | 首篇聚焦RAG上下文压缩的综述；覆盖AutoCompressor/ICAE/RECOMP/LongNet等核心方法 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -409,6 +410,24 @@
   - `代表性架构性能` → PIM-GPT（41×-137×加速/123×-383×能效 vs T4 GPU）、iMCAT（200×加速/41×能效 vs Titan RTX）、X-Former（85×加速/7.5×能效 vs GTX 1060）、HARDSEA（13.5×-28.5×加速/291.6×-1894.3×能效 vs RTX 3090）、RACE-IT（10.7×加速/1193×能效 vs H100）、IBM NorthPole（7×加速/14×性能功耗比 vs MLPerf最优）
 - **核心洞察补充**：传统架构>60%时间浪费在数据等待，数据搬运能耗比实际FLOPs高数个数量级；CIM通过消除数据搬运突破冯·诺依曼瓶颈，尤其适合Transformer中占主导的大规模MVM运算；注意力计算的双动态操作数特性导致NVM写延迟/能耗问题，是CIM加速Transformer的核心挑战；非线性操作（Softmax/LayerNorm/GELU）虽占比小但在ReRAM中可消耗高达70%系统能量；模拟CIM的非理想性（编程噪声/读取噪声/电导漂移/工艺偏差）需通过硬件感知训练+误差校正+异构架构综合应对；系统级效率远低于宏级效率（外围电路ADC/DAC开销大），无ADC方案是重要趋势；LLM尺寸远超当前CIM容量（GPT-3需数千MB vs 当前百MB级），多芯片扩展是落地关键
 - **附带资源**：论文Table I对比BERT/GPT-3的参数量/层数/FC与注意力计算比例，Table II系统对比5种CIM器件技术（多值能力/单元面积/密度/开关比/写能量/写延迟/漏电/耐久度），Table III汇总10+种CIM加速器在BERT/GPT等模型上的加速比和能效比及对比基准
+
+<br>
+
+
+### 5. Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey](https://arxiv.org/pdf/2409.13385?)
+
+- **分类方式**：按 **压缩技术维度**（语义压缩/预训练语言模型压缩/检索器压缩）三大类组织，并配套RAG评估指标（三元组+四能力）与基准数据集
+- **覆盖子方向**：
+  - `语义压缩` → 上下文蒸馏（Snell→逐步推理内化/Gisting→压缩为KV注意力前缀）、提示压缩（软提示：Prompt Tuning/Prefix Tuning/Prompt Compression→KL散度对齐；任务无关：LLMLingua-2数据蒸馏+Token分类保留/丢弃）、高效注意力（Transformer-XL分段递归/Longformer稀疏线性/FlashAttention分块重算/LongLoRA高效微调）、外推与插值（Position Interpolation线性变换/YaRN NTK感知缩放至128K）、上下文窗口扩展（Fei语义压缩三阶段→主题聚类+模型调优+重组→6-8×压缩）
+  - `PLM压缩` → AutoCompressors（RMT架构+递归摘要向量+随机分段训练+跨段落推理→1-2个数量级压缩）、LongNet（扩大注意力→对数依赖+线性复杂度+10亿Token规模）、In-Context AutoEncoder ICAE（双阶段→自编码预训练+指令微调→4×压缩+固定长度记忆槽+冻结LLM解码器）、RECOMP（抽取式压缩器→对比学习选关键句；摘要式压缩器→GPT蒸馏多文档摘要→RALM前置压缩）
+  - `检索器压缩` → LLMChainExtractor（逐文档LLM调用提取相关内容）、EmbeddingsFilter（嵌入相似度筛选→更经济快速）、DocumentCompressorPipeline（多压缩器串联→TextSplitter分块+EmbeddingsRedundantFilter去冗余+RelevantFilter相关性过滤）
+  - `评估指标` → RAG三元组（上下文相关性Context Relevance→防止无关信息致幻觉；答案接地性Groundedness→逐声明验证支撑证据；答案相关性Answer Relevance→评估最终回答与用户输入匹配度）、四能力（噪声鲁棒性→区分相关与无关文档；负拒绝→识别文档不足时拒答；信息整合→多文档综合评估；反事实鲁棒性→识别并忽略错误信息）、压缩率、推理时间
+  - `基准数据集` → 单跳/多跳QA、多选QA、特定领域QA、长文本场景、对话生成、代码搜索与解释
+- **核心洞察补充**：上下文压缩的独特价值在于RAG场景中检索到的文档常含大量无关信息，压缩可显著降低LLM处理开销并提升回答质量；AutoCompressors将长文本递归压缩为摘要向量，作为下一段落的软提示，实现跨段落信息保持；ICAE冻结LLM解码器仅训练编码器，压缩Token可跨LLM复用，4×压缩率下保持良好的条件生成能力；RECOMP通过前置压缩步骤将多文档摘要作为LLM输入前缀，同时降低编码成本并引导正确输出；RAG评估需同时关注检索质量（上下文相关性）和生成质量（接地性+答案相关性），噪声鲁棒性和负拒绝能力反映模型在非理想检索条件下的鲁棒性
+- **附带资源**：论文Figure 1提供上下文压缩方法的完整分类体系思维导图（语义压缩→PLM→检索器三叉树），Figure 10展示RAG三元组评估框架（上下文相关性/接地性/答案相关性），配套Github仓库持续更新 [https://github.com/SrGrace/Contextual-Compression](https://github.com/SrGrace/Contextual-Compression)
 
 <br>
 </details>
