@@ -40,6 +40,7 @@
 | 7 | 🔥 **A Survey of Resource-Efficient LLM and Multimodal Foundation Models** | 2024 | arXiv | `模型覆盖`：LLM/ViT/扩散/多模态 + `优化层级`：架构/算法/系统 + `生命周期`：预训练/微调/推理/服务 | 覆盖四大基础模型的全栈效率综述；含联邦学习、边缘部署、LLMaaS等新兴话题 |
 | 8 | 🏆 **Model Compression and Efficient Inference for Large Language Models: A Survey** | 2024 | arXiv | `五维压缩`：量化/剪枝/蒸馏/紧凑架构/动态网络 + `模型分层`：中型(≤1B) vs 真·大型(>1B) | 独创中型vs真·LLM分层方法论；LLM压缩两大核心：免重训练+通用性保持 |
 | 9 | 🔥 **A Survey on Transformer Compression** | 2024 | arXiv | `四维压缩`：量化/蒸馏/剪枝/高效架构 + `新架构`：Mamba/RetNet/RWKV + `跨域`：NLP+CV | 同时覆盖语言与视觉Transformer压缩；系统对比Mamba/RetNet与Transformer复杂度与并行性 |
+| 10 | 🏆 **A Comprehensive Survey of Compression Algorithms for Language Models** | 2024 | arXiv | `剪枝` / `量化` / `KD` / `低秩近似` / `参数共享` / `高效架构` | 系统区分高成本与低成本算法，强调迭代压缩与直接优化目标函数是LLM时代的关键 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -221,6 +222,34 @@
 - **附带资源**：论文Table 1汇总四大类压缩方法的代表工作与亮点，Table 2系统对比PTQ与QAT在ViT-B/DeiT/Swin上的W/A位宽与Top-1精度，Table 3提供LLaMA系列量化困惑度（7B-65B/4-8bit），Table 4对比DistilBERT/TinyBERT/MobileBERT等蒸馏方法的师生参数量与加速比，Table 5-6统计DeiT-B剪枝方法及LLM剪枝的代表性实验数据，Table 8对比Transformer/Mamba/RetNet等架构的训练并行、推理时间和内存复杂度
 
 <br>
+
+
+<br>
+
+### 10. A Comprehensive Survey of Compression Algorithms for Language Models (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
+
+[A Comprehensive Survey of Compression Algorithms for Language Models](https://arxiv.org/pdf/2401.15347)
+
+- **分类方式**：按**技术类型**（剪枝/量化/KD/低秩近似/参数共享/高效架构设计）与**成本**（高成本 vs 低成本）双维度分类
+- **覆盖子方向**：
+  - `剪枝` → 非结构化（SparseGPT, Wanda, OBS）、结构化（DynaBERT, ZipLM, LLM-Pruner, CoFi）、粒度划分（权重/神经元/头/层）、成本策略（高成本重训练 vs 低成本免训练）
+  - `量化` → 均匀量化（OPTQ/GPTQ, ZeroQuant）、非均匀量化（SqueezeLLM, SpQR）、QAT（I-BERT, LLM-QAT）、PTQ（SmoothQuant, AWQ）、极低位量化（BinaryBERT, BiT）
+  - `知识蒸馏` → 蒸馏源（Logits, Hidden States, Attention Maps, Embeddings）、层匹配策略（1:1, many:1, many:many）、代表方法（TinyBERT, MiniLM, ALP-KD, RAIL-KD）
+  - `低秩近似` → 原始参数分解（SVD, FWSVD, Tensor Decomposition）、参数高效微调PEFT（LoRA, AdaLoRA, DyLoRA）
+  - `参数共享` → 子层共享（ALBERT, Group-wise Sharing）、矩阵共享（MQA, GQA）
+  - `高效架构设计` → 手工设计（Reformer, Linformer, MobileBERT）、NAS（NAS-BERT, AdaBERT）
+- **核心结论/洞察**：
+  1. **成本分类是区分LLM适用性的关键**：明确将算法分为高成本（需全量重训练，如DynaBERT）和低成本（仅需校准数据，如SparseGPT/OPTQ），指出LLM时代低成本算法是主流但面临精度挑战。
+  2. **混合压缩方案具有协同效应**：多种技术（如剪枝+量化、KD+剪枝）组合可获得更高压缩率与精度平衡。
+  3. **两个成功关键特性**：
+     - **直接优化任务目标函数**：替代层级别重建误差的代理损失（如FWSVD引入Fisher信息，Kprune保留任务知识）可显著提升精度。
+     - **迭代式压缩过程**：逐步压缩（如Kprune）比一次性压缩（如KCM）能更好保留PLM学到的有用特征，避免无法恢复的精度损失。
+  4. **未来研究方向**：低成本迭代算法、直接优化目标函数、PEFT与高成本算法融合、LLM结构化剪枝、激活值低位量化、统一多压缩算法。
+- **附带资源**：论文收录了丰富的对比表，如表2：编码器模型剪枝算法对比（MNLI/QQP/SQuAD）、表3：解码器模型剪枝算法对比（WikiText2 Perplexity）、表4：编码器量化算法对比、表5：解码器量化算法对比、表6：KD算法对比、表7：低秩近似算法对比，该综述为理解从BERT到LLM时代压缩算法的演进脉络提供了系统框架。
+
+<br>
+  
 </details>
 ---
 
