@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-28-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-29-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -42,6 +42,7 @@
 | 9 | 🔥 **A Survey on Transformer Compression** | 2024 | arXiv | `四维压缩`：量化/蒸馏/剪枝/高效架构 + `新架构`：Mamba/RetNet/RWKV + `跨域`：NLP+CV | 同时覆盖语言与视觉Transformer压缩；系统对比Mamba/RetNet与Transformer复杂度与并行性 |
 | 10 | 🏆 **A Comprehensive Survey of Compression Algorithms for Language Models** | 2024 | arXiv | `剪枝` / `量化` / `KD` / `低秩近似` / `参数共享` / `高效架构` | 系统区分高成本与低成本算法，强调迭代压缩与直接优化目标函数是LLM时代的关键 |
 | 11 | 🏆 **Beyond Efficiency: A Systematic Survey of Resource-Efficient LLMs** | 2024 | arXiv | `五大资源×五阶段` 矩阵 + `架构/预训练/微调/推理/系统` 全生命周期 | 首个以资源类型（计算/内存/能源/财务/通信）为主轴的全生命周期LLM效率综述，提出资源-技术映射矩阵与标准化评估体系 |
+| 12 | 🏆 **Efficient Large Language Models: A Survey** | 2024 | TMLR | `模型中心` / `数据中心` / `框架中心` 三维度, 覆盖全生命周期 | 迄今最全面的LLM效率综述之一，以模型-数据-框架三维视角系统梳理效率技术，配套GitHub持续更新论文列表 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -251,11 +252,10 @@
 
 <br>
 
-### 2. Beyond Efficiency: A Systematic Survey of Resource-Efficient LLMs (2024)
-[![Paper](https://img.shields.io/badge/Paper-arXiv'24-b31b1b?style=flat-square)]()
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-lightgrey?style=flat-square)](https://github.com/tiingwei-shii/Awesome-Resource-Efficient-LLM-Papers)
+### 11. Beyond Efficiency: A Systematic Survey of Resource-Efficient LLMs (2024)
+[![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
-[Beyond Efficiency: A Systematic Survey of Resource-Efficient Large Language Models](https://arxiv.org/abs/xxxx.xxxxx)
+[Beyond Efficiency: A Systematic Survey of Resource-Efficient Large Language Models](https://arxiv.org/pdf/2401.00625)
 
 - **分类方式**：按**五大资源类型**（计算/内存/能源/财务/网络通信）× **五阶段生命周期**（架构设计/预训练/微调/推理/系统设计）双维度矩阵组织；首创资源-技术直接/间接影响映射表（Table 2）
 - **覆盖子方向**：
@@ -276,8 +276,36 @@
   5. **标准化评估急缺**（§10.3）：已有基准（Dynaboard/EfficientQA）仅覆盖部分资源维度，缺乏统一的五维资源效率评估平台。
   6. **AutoML+LLM效率是新兴方向**（§10.5）：Meta-Learning和NAS有望减少模型压缩中人工调参依赖。
   7. **扩展律理论指导待深化**（§10.7）：需要更深入理解性能-资源投入的缩放关系以指导效率优化设计空间探索。
-- **附带资源**：[GitHub仓库持续更新](https://github.com/tiingwei-shii/Awesome-Resource-Efficient-LLM-Papers)。Table 1：近似注意力时间/空间复杂度对比（9种方法）、Table 2（核心）：资源效率技术×五大资源影响矩阵（直接✓/间接✓/无）、§9.1-9.2：标准化评估指标与基准（Dynaboard/EfficientQA/SustaiNLP/VLUE/Long Range Arena）、§9.1.4：提出新财务指标"美元/参数"、§10：七大开放挑战（资源类型权衡/技术整合/标准化评估/可解释性/AutoML/边缘计算/扩展律理论），该综述首次以资源类型为第一性维度构建LLM效率优化的系统化分类体系，五维资源×五阶段矩阵+资源-技术映射表是核心方法论贡献，为全生命周期可持续LLM开发提供全景式参考框架。
-  
+- **附带资源**：[GitHub仓库持续更新](https://github.com/tiingweii-shii/Awesome-Resource-Efficient-LLM-Papers)。Table 1：近似注意力时间/空间复杂度对比（9种方法）、Table 2（核心）：资源效率技术×五大资源影响矩阵（直接✓/间接✓/无）、§9.1-9.2：标准化评估指标与基准（Dynaboard/EfficientQA/SustaiNLP/VLUE/Long Range Arena）、§9.1.4：提出新财务指标"美元/参数"、§10：七大开放挑战（资源类型权衡/技术整合/标准化评估/可解释性/AutoML/边缘计算/扩展律理论），该综述首次以资源类型为第一性维度构建LLM效率优化的系统化分类体系，五维资源×五阶段矩阵+资源-技术映射表是核心方法论贡献，为全生命周期可持续LLM开发提供全景式参考框架。
+
+<br>
+
+### 12. Efficient Large Language Models: A Survey (2024)
+[![Paper](https://img.shields.io/badge/Journal-TMLR'24-blue?style=flat-square)]()
+[
+[Efficient Large Language Models: A Survey](https://openreview.net/pdf?id=bsCCJHbO8A)
+
+- **分类方式**：按**三大维度**（模型中心方法 / 数据中心方法 / LLM框架）× **全生命周期**组织，首创模型-数据-框架三维统一视角
+- **覆盖子方向**：
+  - `模型中心 → 模型压缩`：**量化** PTQ（LLM.int8()首篇INT8、GPTQ OBQ+Hessian 3-4bit、QuIP LDL+Kronecker 2bit、AWQ 1%显著权重保护、OWQ离群值感知、SpQR稀疏量化、SqueezeLLM k-means 3bit、FineQuant粒度分配；Weight-Activation协同：ZeroQuant、SmoothQuant逐通道缩放W8A8、OliVe OVP、RPTQ通道重排序、Outlier Suppression+通道移位缩放、QLLM自适应通道重组）、QAT（LLM-QAT自产数据蒸馏+KV Cache量化、BitNet 1-bit）；**参数剪枝** 结构化（LLM-Pruner梯度+LoRA恢复、Sheared LLaMA目标形状+动态批加载、LoRAPrune LoRA准则+迭代、Deja Vu上下文稀疏）、非结构化（SparseGPT单次60%稀疏、Wanda权重×激活范数免更新、SAMSP Hessian敏感度混合稀疏分配）；**低秩近似**（TensorGPT张量链嵌入压缩、LoSparse低秩+稀疏混合、FWSVD Fisher加权SVD、ASVD激活感知SVD免训练、SVD-LLM截断感知数据白化）；**知识蒸馏** 白盒（Baby LLaMA集成蒸馏、MiniLLM反向KLD、GKD自生成输出+灵活损失、TED任务感知逐层蒸馏、MiniMA 3B SOTA）、黑盒（Multitask-ICT ICL蒸馏、Distilling Step-by-Step CoT推理链+多任务、Fine-tune-CoT零样本CoT多样推理、SOCRATIC CoT问题分解、SCOTT反事实推理、Lion对抗蒸馏、DISCO反事实蒸馏）
+  - `模型中心 → 高效预训练`：**混合精度** AMP(FP16前向/反向+FP32主权重)、BFLOAT16(更大动态范围)；**模型缩放** 渐进式堆叠、MSLT多阶段层训练、CompoundGrow(深度+宽度+长度)、bert2BERT(FPI+AKI知识迁移节省30%)、LiGO线性增长算子、Mango多线性算子59.9%加速、FLM-101B离线结构扩展；**初始化** DeepNet(Post-LN-init稳定残差)、T-Fixup/ZerO/SkipInit/ReZero；**优化器** Lion(进化符号动量更省内存)、Sophia(轻量二阶优化器2x加速)；**系统级** ZeRO-1/2/3(优化器状态/梯度/参数分区)、ZeRO-Offload(CPU卸载)、ZeRO-Infinity(NVMe)、FSDP混合分片、Zeus/Perseus(GPU能耗优化30%)
+  - `模型中心 → 高效微调`：**PEFT → 低秩适配** LoRA(W←W+AB)、LoRA-FA(固定下投影仅更新上投影)、LoraHub(LoRA模块组合零样本泛化)、LongLoRA(S²-Attn长上下文)、MHR(MoE路由)、AdaLoRA(SVD自适应秩分配)、DyLoRA(动态多秩训练)、Tied-LoRA(权重绑定)；**PEFT → Adapter** 串行Adapter(Houlsby下投影-GeLU-上投影)、AdapterFusion/AdapterSoup(权重平均)、LLM-Adapters/OpenDelta；**PEFT → Prefix/Prompt Tuning** 虚拟Token优化、P-Tuning v2(深层加入)、Multitask Prompt Tuning(知识迁移+低秩更新)；**MEFT** QLoRA(NF4量化+LoRA)、QALoRA(分组量化+共享适配参数)、LoftQ(SVD初始化+LoRA)、PEQA(两阶段量化感知)、Selective Fine-Tuning(选择性保留中间激活)、LOMO(融合梯度计算与参数更新O(1)梯度内存)、MeZO(零阶优化两前向传播估计梯度，单卡微调30B)
+  - `模型中心 → 高效推理`：**算法级** 推测解码(Speculative Decoding小模型草稿+大模型验证2-3x、Staged Speculative树形批次3.16x、BiLD fallback/rollback策略、SpecInfer多SSM+Token Tree验证、Medusa多头并行+树注意力、Lookahead Jacobi解码、LLMA检索参考文本2x加速)；**KV Cache优化** 压缩(KIVI Key逐通道/Value逐Token 2bit、KVQuant 3bit含Pre-RoPE量化)、驱逐(H₂O动态子模问题平衡、Scissorhands持久重要性假设、StreamingLLM滑动窗口+注意力槽)；**系统级** FlexGen(线性规划最优卸载+4bit量化，单16GB GPU跑OPT-175B)、vLLM(PagedAttention分页KV缓存+连续批处理2-4x)、Orca(迭代级调度36.9x吞吐量)、S3(输出长度预测调度)、Andes(QoE感知服务)、DeepSpeed-Inference(多GPU+CPU/NVMe混合)、Flash-Decoding(长上下文并行解码)、FlashDecoding++(异步softmax+双缓冲4.86x vs HuggingFace)
+  - `模型中心 → 高效架构设计`：**高效注意力** 共享式(MQA单KV头/GQA分组KV头，LLaMA-2/Mistral-7B)、核化/低秩(Linformer线性投影、Performer正正交随机特征、Sumformer通用近似)、固定模式(Longformer局部窗口+全局、Big Bird块稀疏、Sparse Transformer)、可学习模式(Reformer LSH、Routing Transformer、HyperAttention谱近似+sortLSH)、硬件辅助(FlashAttention IO感知Tiling减少HBM-SRAM通信、vAttention连续虚拟内存KV缓存)；**MoE** GShard(自动分片600B+)、Switch Transformer(万亿参数简化路由)、GLaM(1.2T仅激活8%参数)、Mixtral 8x7B(6x推理速度超越LLaMA-2 70B)、Expert Choice(专家选Token)、StableMoE(两阶段训练)、Lifelong-MoE(持续预训练)、Flan-MoE(指令微调增强)；系统级MoE FastMoE/FasterMoE/Lina/DeepSpeed-MoE(PR-MoE金字塔残差)、TA-MoE(拓扑感知路由)、EdgeMoE(边缘设备存储分层)、MegaBlocks(块稀疏GPU kernel 40%训练时间缩短)；**长上下文** 位置外推/内插(ALiBi线性偏置、xPOS注意力分辨率、CLEX ODE连续外推、RoPE内插/PoSE跳式训练)、循环结构(Block-Recurrent Transformer、∞-former无限记忆)、分割滑动窗口(Memorizing Transformer近邻检索)、记忆检索增强(RAPTOR递归摘要树、PCW并行上下文窗口、Focused Transformer对比训练)
+  - `数据中心 → 数据选择`：**预训练** SSPT(阅读理解预训练)、DSIR(重要性重采样数据选择2-2.5% GLUE提升)、DoReMi(分布鲁棒优化混合比例)；**微调** Instruction Mining(线性评估数据质量42.5%胜出)、TS-DShapley(高效Shapley数据估值)、LTD Instruction Tuning(<0.5%数据有效微调)、AlpaGasus(9K高质量数据5.7x微调加速，超越52K全量)、LIMA(少量精选样本匹配/超越GPT-4 43%)
+  - `数据中心 → 提示工程`：**Few-Shot提示** 示范选择(KATE最近邻、VoteK多样性惩罚、EPR监督检索、UDR统一检索器)、示范排序(距离排序、全局/局部熵)、指令生成(Instruction Induction、APE、Self-Instruct 33%提升、LLM as Optimizer 8-50%提升)；**多步推理** CoT/Zero-Shot-CoT、Auto-CoT(聚类生成)、Self-Ask(自问自答)、ReAct(推理+动作交错)、Least-to-Most(分解子问题99.7%)、ToT(树状探索+决策)、GoT(图思维62%提升/31%成本降低)、SoT(骨架并行生成)；**提示压缩** Gisting(Gist Token 26x压缩40% FLOPs减少)、AutoCompressor(摘要向量扩展到30K Token)、PCRL(RL策略网络24.6% Token减少)、ICAEx(上下文自编码器4x压缩)、Nugget 2D(20x压缩98% BLEU)、LongLLMLingua(问题感知粗到细17.1%提升)；**提示生成** AutoPrompt(梯度引导搜索)、TempLM(模板蒸馏)、PromptGen(动态提示生成)
+  - `LLM框架`：**训练框架** DeepSpeed(3D并行+ZeRO+FlashAttention+PagedAttention+量化+RLHF全栈)、Megatron(3D并行+序列并行+选择性激活重计算)、Colossal-AI(3D+序列+自动并行+异构内存)、Nanotron(HuggingFace轻量级)、MegaBlocks(dropless-MoE块稀疏)、FairScale(FSDP+AdaScale)、Pax(Google JAX)、Composer(MosaicML FSDP)；**推理服务** vLLM(PagedAttention分页KV 2-4x吞吐量)、TensorRT-LLM(NVIDIA TensorRT引擎+连续批处理)、TGI(HuggingFace连续批处理+量化)、RayLLM(分布式调度+自动扩展)、MLC LLM(编译部署多平台)、OpenLLM(BentoML生态+量化)、LLM Foundry(MosaicML)、Sax(Google)、Mosec(Rust协调器+流水线)
+- **核心结论/洞察**：
+  1. **三维统一视角首创**：首次以模型中心（算法/系统级优化）、数据中心（数据选择/提示工程）、框架中心（训练/推理服务基础设施）三维度系统化组织LLM效率研究，覆盖从单模型压缩到分布式训练/推理服务的完整技术栈。
+  2. **性能-效率权衡可视化**：图1-2通过LLaMA系列性能-GPU小时/推理吞吐量关系图，直观展示模型规模增长带来的效率瓶颈，以及Mistral-7B等高效架构设计（GQA+滑动窗口）如何以更小模型取得竞争力性能。
+  3. **推测解码是推理加速核心突破**：Speculative Decoding系列（小模型草稿+大模型验证）实现2-3.5x加速且保持输出分布无损，Medusa等自草稿方案消除辅助模型依赖是重要趋势。
+  4. **PEFT+MEFT构成微调效率双支柱**：LoRA系列（低秩适配）主导参数效率，QLoRA/MeZO/LOMO等内存高效方案使单卡微调数十B参数模型成为现实。
+  5. **MoE架构实现计算-性能解耦**：Mixtral 8x7B以12.9B激活参数超越LLaMA-2 70B，6x推理加速，开创稀疏激活高效范式。
+  6. **数据中心方法重要性凸显**：LIMA/AlpaGasus等工作证明少量高质量数据可匹配甚至超越全量数据微调效果（5.7x加速），数据选择与提示工程是模型效率优化的轻量级补充路径。
+  7. **开源框架生态繁荣**：DeepSpeed/Megatron/vLLM等覆盖训练到推理全流程，PagedAttention(KV分页)、连续批处理、量化集成成为标配特征。
+- **附带资源**：图1-2：LLaMA系列性能-训练时间/推理吞吐量可视化、图3：三大维度分类体系全景图、图4-20：各子方向技术详解（模型压缩/预训练/微调/推理/架构/数据选择/提示工程）、Table 1：代表性LLM预训练成本对比（GPT-3/OPT/BLOOM/LLaMA/PaLM等）、Table 2(核心)：LLM框架功能对比矩阵（训练/微调/推理支持×关键特性，覆盖18个框架），该综述是目前覆盖面最广的LLM效率优化综述之一，以模型-数据-框架三维视角构建完整技术图谱，配套开源库持续追踪领域进展，是研究者入门和系统了解LLM效率全貌的核心参考文献。
+
+
 </details>
 ---
 
