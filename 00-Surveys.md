@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-31-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-32-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -539,6 +539,7 @@
 | 6 | 📖 **Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison** | 2024 | arXiv | `FPGA` / `ASIC` / `In-Memory` / `GPU` | 首个跨平台硬件加速器全面对比，统一工艺外推实现FPGA/ASIC/存内计算的公平性能比较 |
 | 7 | 🏆 **A Comprehensive Survey of Accelerated Generation Techniques in LLMs** | 2024 | arXiv | `投机解码` / `早退机制` / `非自回归解码` 三类 | 系统梳理三大约束解码范式，投机解码凭"草稿-验证"框架成为当前最主流加速路线 |
 | 8 | 🔥 **Efficient Prompting Methods for LLMs: A Survey** | 2024 | arXiv | `自动提示工程` / `提示压缩(T2V/T2T)` 双维度 | 首次系统梳理提示效率优化全貌：LLM自主迭代设计指令 vs 连续/离散空间压缩Prompt |
+| 9 | 🏆 **Unlocking Efficiency in LLM Inference: A Comprehensive Survey of Speculative Decoding** | 2024 | ACL | `草稿策略(独立/自草稿)` / `验证策略(贪婪/采样/Token Tree)` / `对齐(KD)` | 首篇投机解码专门综述，提供形式化定义+分类体系+Spec-Bench第三方公平评测基准 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -710,7 +711,36 @@
   4. **离散空间压缩可解释性更强**：LLMLingua系列在保持人类可读的同时实现3-20x压缩，Table 4跨基准对比显示粗到细压缩更适合复杂推理任务，细粒度适合长上下文任务。
   5. **压缩方法种类丰富但标准化不足**：Table 3对比了9种编码方法(目标模型/压缩器架构/软提示位置)，Table 4汇总了8种Pruning方法的多任务压缩比与性能，但缺乏统一基准。
 - **附带资源**：Appendix A.1：开源项目汇总表（Table 5: 18个Prompt Compression工具链接，Table 6: 22个Automatic Prompt Engineering工具链接）、图2：高效提示方法全景图（左：自动提示工程迭代流程，右：T2V/T2T压缩双路径）、图4：反馈信号类型对比（RL/Gradient/Preference缩小搜索空间）、数学建模：Eq.1（离散空间搜索最优指令）、Eq.2-3（T2V/T2T压缩最小化输出分布KL散度）、Table 3：9种编码方法详细对比 / Table 4：8种Pruning方法跨基准性能表，该综述首次统一了提示工程和提示压缩的数学优化框架，是理解LLM时代提示效率优化技术全景的核心参考。
-  
+
+<br>
+
+### 9. Unlocking Efficiency in LLM Inference: A Comprehensive Survey of Speculative Decoding (2024)
+[![Paper](https://img.shields.io/badge/Conference-ACL'24-blue)]()
+
+[Unlocking Efficiency in Large Language Model Inference: A Comprehensive Survey of Speculative Decoding](https://aclanthology.org/2024.findings-acl.456.pdf)
+
+- **分类方式**：按**投机解码全流程**（草稿策略×验证策略×对齐方法）三大维度 + **Table 3方法总览**(拖拽类型+对齐+验证+加速比)；首创Spec-Bench六任务评测基准
+- **覆盖子方向**：
+  - `形式化定义与算法`：**Algorithm 1 自回归解码**（逐Token生成，内存带宽受限，GPU利用率低）；**Algorithm 2 投机解码**（Draft-then-Verify范式：草稿→验证→接受/校正→循环）；**两大子步骤** 起草(DRAFT(x, M_p)高效生成K个候选Token) + 验证(VERIFY+并行计算K+1分布)
+  - `起草策略 → 独立草稿(Independent Drafting)`：**Non-Autoregressive草稿** SpecDec(独立NAT Transformer，深-浅编码器-解码器，5x加速，需从头训练)；**小型LM草稿** Speculative Sampling(同系列小模型无需额外训练，如T5-small→T5-XXL，2-3x加速)、Staged Speculative Decoding(树形批次+两级推测3.16x)、Cascade Speculative Drafting(垂直级联+水平级联分配，额外81%加速)；**检索式草稿** REST(检索式非参数草稿2.12-2.36x)、LLMA(前缀匹配参考文本2x)、Lookahead(Trie多分支检索+VA验证5.03x)
+  - `起草策略 → 自草稿(Self-Drafting)`：**FFN头并行** Blockwise Decoding(首创Draft-then-Verify，额外FFN头+序列KD)、Medusa(多头并行预测+树注意力，Vicuna上2x)；**早退/层跳过** Predictive Pipelined Decoding(中间层预测+并发子进程)、Self-Speculative(贝叶斯优化选Skip层)；**Jacobi解码** 直接拼接[PAD]Token并行生成(偏离自回归模式)、Lookahead(Jacobi+N-gram+Token Tree 2.3x)、PaSS(可学习[LA]Token+小数据集微调，30%解码提升)；**EAGLE** 特征级自回归草稿+提前一步Token融入，KV Cache复用降低计算开销，Spec-Bench上1.8-2.4x最优
+  - `验证策略 → 贪婪解码(Greedy)`：**Lossless** 草稿Token=LLM的Top-1(Matching严格)→第一个不匹配位置用argmax校正；**近似宽松** SpecDec Top-k宽松(草稿在Top-k中即接受)、BiLD Rollback(连续不匹配超阈值才拒绝)
+  - `验证策略 → 投机采样(Sampling)`：**Lossless公式(6-7)** 接受条件r<min(1,q_i/p_i)(r~U[0,1])→拒绝以1-q_i/p_i概率→校正从norm(max(0,q_c-p_c))重采样；**理论保证** 保持与目标LLM相同的输出分布(Leviathan/Chen等证明)→广泛采用；**近似宽松** 乘宽容参数l∈[0,1]松弛p_i
+  - `验证策略 → Token Tree验证`：SpecInfer(合并多候选序列为Token Tree→树注意力掩码并行验证)→多样性来自不同boost-tuned LMs或FFN头Top-k预测→1.5-3.5x加速
+  - `对齐方法`：**序列KD(Seq-KD)** 草稿在教师生成序列上训练(Blockwise Decoding)；**集体Boost-Tuning(Col-BT)** 多小LM在训练数据上Seq-KD后聚合(SpecInfer)；**DistillSpec** 比较多种KD策略+On-Policy数据+定制散度函数(10-45%额外加速)；**在线KD** 在线持续蒸馏更新草稿模型(1.22-3.06x延迟降低)
+  - `Spec-Bench评测基准`：**组成** 6子任务×80样本=480样本：多轮对话(MT-bench)、翻译(WMT14 DE-EN)、摘要(CNN/Daily Mail)、问答(Natural Questions)、数学推理(GSM8K)、检索增强生成(DPR)；**硬件** 消费级RTX 3090(24GB) + A100(80GB)；**核心结果(图5-6)** EAGLE贪婪Greedy下1.8-2.4x最优(数学推理2.4x)、PLD摘要2.4x但翻译仅1.1-1.3x；采样温度T↑加速比↓(EAGLE 1.7-2.1x仍最优)；**扩展分析** A100比3090加速比显著提升(Medusa 1.48x→2.42x)→推测解码受益于更强硬件；模型规模影响(Medusa 7B 2.4x→13B 2.0x略降、EAGLE 2.4-2.5x稳定)；FP32精度加速比下降(EAGLE 2.39x→1.74x)
+  - `应用场景`：语法纠错(SAD 9-12x)、检索增强生成(RaLMSpec 2x+)、多轮对话(LLMA 2-3x)、端侧推理(LLMCad 9.3x)、推测对比解码(SCD加速+提升质量)
+- **核心结论/洞察**：
+  1. **首篇投机解码专门综述**：提供形式化定义(Algorithm 2)和系统分类(Figure 3)，首次将草稿策略/验证策略/对齐方法三维度统一框架化。
+  2. **EAGLE综合最优**：特征级自回归+KV Cache复用降低草稿开销，Spec-Bench 6任务平均1.8-2.4x加速，且跨模型规模(7B/13B/33B)加速比稳定(2.4-2.5x)。
+  3. **自草稿(Self-Drafting)成为主流趋势**：消除独立草稿模型依赖(Medusa/EAGLE/Lookahead等)，降低系统复杂度，分布式推理更友好。
+  4. **投机采样保证输出分布无损**：公式(6-7)理论证明(Leviathan 2023)，成为采样场景标准验证方案；Token Tree验证是提升接受率的关键补充策略。
+  5. **Spec-Bench填补公平评测空白**：首次提供6任务×2精度×2硬件的第三方统一评测，揭示方法在不同场景下的差异化表现（PLD适合输入输出高重叠场景、EAGLE通用性最强）。
+  6. **三大开放挑战**：①草稿准确率与效率权衡(对齐是突破方向，鼓励优先保证早期位置Token质量)；②批处理推测解码(变长解码步长+采样复杂度随batch增大→连续批处理是可能方向)；③与其他技术整合(对比解码/非自回归/FlashAttention/vLLM/多模态推测解码)。
+  7. **FP32精度下加速比显著下降**：EAGLE 2.39x→1.74x，PLD几乎无加速(1.01x)，未来应报告双精度加速比。
+- **附带资源**：Figure 2：投机解码发展时间线(2018-2024)、Figure 3：投机解码分类体系(起草/验证/对齐三棵子树)、Table 3(核心)：投机解码方法全览(29种方法×拖拽类型×对齐策略×验证支持×加速比)，该综述是投机解码领域首篇系统性综述，以形式化定义+三维分类+Spec-Bench公平评测三重特色，为该领域研究提供了完整的理论框架、方法地图和实验基准。
+
+<br>  
 </details>
 
 ---
