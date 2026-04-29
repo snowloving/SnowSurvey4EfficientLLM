@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-7-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-8-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -33,6 +33,7 @@
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 🔥 **Towards Efficient Language Giants** | 2026 | Neural Networks `IF=6.3` | `高效模块设计` + `模型压缩` 双维度 | 混合方案（KD+量化/剪枝+量化）是突破单一技术瓶颈的关键 |
 | 2 | 🔥 **From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP** | 2025 | arXiv | `模型优化`：数据/设计/压缩/推理 + `LLM适配`：预训练/微调/Prompt/RAG | 312篇文献系统综述；揭示LLM全生命周期效率全景，含30+模型在13项基准的性能-价格Pareto分析 |
+| 3 | 🔥 **Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques** | 2025 | Computer Science Review `IF=11.5` | `边缘层级`：SLM设计/模型压缩/推理优化/部署框架 | 首篇面向边缘部署的全栈综述；定义<4B为SLM，汇总30+轻量模型架构对比与边缘硬件实测性能 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -73,6 +74,26 @@
   - `效率度量` → 碳排（LLMCarbon/LLMCO2）、能耗（Lannelongue框架）、定价（$/1M tokens）、E2E响应时间、吞吐（tokens/s）
 - **核心洞察补充**：训练GPT-4级模型碳排放可达约2000吨CO₂，相当于300次跨大西洋飞行；LoRA可将可训练参数减少至原1/10000；现代蒸馏技术实现Pareto改进——GPT-5 mini性能（63.9%）超越更大模型Claude 4 Sonnet（60.1%）且价格更低；开放权重模型（DeepSeek/Gemma/LLaMA/Mistral）正缩小与私有模型的差距；上下文窗口已从128K扩展至1M-10M tokens；CoD仅消耗CoT 7.6%的token量却维持同等性能
 - **附带资源**：论文Table 3提供30+主流LLM在13项基准的详细性能对比，Table 4涵盖许可证、定价、延迟、吞吐等运营效率指标，Figure 22展示性能-价格Pareto前沿，Table 5汇总15+模型预训练的GPU小时、能耗与碳排放，极具选型参考价值
+<br>
+
+
+### 3. Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques (2025)
+[![Paper](https://img.shields.io/badge/Journal-Comput.Sci.Rev'25-blue)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=11.5-important)]()
+
+[Empowering large language models to edge intelligence: A survey of edge efficient LLMs and techniques]()
+
+- **分类方式**：按 **边缘部署全栈**（SLM设计→模型压缩→推理优化→部署框架）四阶段组织，覆盖从模型选型到实际落地的完整链路
+- **覆盖子方向**：
+  - `SLM设计` → 小变体（Qwen 0.5B-4B/Gemma 2B/InternLM 1.8B/TinyLlama 1.1B）、预训练SLM（MobileLLM/MobiLlama/OpenELM/SmoLLM/Phi系列）、压缩SLM（Gemini-Nano/Llama 3.2 1B-3B/Sheared LLaMA/MiniMA/Baby Llama）
+  - `SLM架构对比` → 25+SLM的详细架构参数表（注意力类型/词表大小/归一化/位置编码/激活函数/层数/头数/隐藏维度/上下文长度）
+  - `模型压缩` → 剪枝（结构化5粒度/非结构化/SparseGPT/Wanda）、KD（白盒MiniLLM/GKD/黑盒CoT-ICL-IF蒸馏）、量化（PTQ：GPTQ/AWQ/SpQR/AQLM/LLM.int8/SmoothQuant/Outlier Suppression+；QAT：LLM-QAT/EfficientQAT/EdgeQAT；二值化：PB-LLM/BiLLM/BitNet b1.58）、低秩分解（TensorGPT/LoSparse/LoRA）
+  - `推理优化` → 推测解码（EAGLE/Medusa/Lookahead/LLMCad/SpecExec）、KV Cache压缩（FastGen/StreamingLLM/H2O/Scissorhands/KIVI/KVQuant/IntactKV）、早退（CALM/ConsistentEE/FREE/SkipDecode/LayerSkip）、内核优化（FlashAttention 1-2-3/FlashDecoding++/T-MAC）、内存卸载（FlexGen/PowerInfer/LLM in a flash/EdgeMoE）
+  - `部署框架` → 端侧推理引擎（ExecTorch/TFLite/MNN/ncnn/LLMCad/PowerInfer-2/Transformer-Lite）、云边协同（Hybrid LLM/Tabi/Edge-LLM/FedAgg/动态Token级协同）、部署套件（MLC-LLM/llama.cpp/mllm/NanoLLM）
+  - `边缘硬件实测` → Raspberry Pi 5/Jetson AGX Orin/Mac Mini上TinyLlama-1.1B和Phi-3-3.8B的吞吐与困惑度对比（FP16 vs INT4）
+- **核心洞察补充**：定义SLM为<4B参数模型（基于Open LLM Leaderboard统计分布）；边缘部署面临四大矛盾（模型增长vs内存限制/计算需求vs算力受限/能耗vs电池供给/吞吐需求vs带宽有限）；深度>宽度的架构设计对亚B级模型更关键（MobileLLM验证）；量化可显著提升边缘吞吐（TinyLlama在Raspberry Pi 5上INT4达27.61 tokens/s vs FP16的22.85 tokens/s）；Apple Intelligence采用混合精度量化（平均3.7 bits/weight）+LoRA适配器的量产方案
+- **附带资源**：论文Table 3提供25+SLM的完整架构参数对比表，Table 4列出三种典型边缘硬件规格，Table 5展示边缘设备上的实测吞吐与困惑度，Table 6对比7种代表性量化方法（均匀性/对称性/校准/混合精度），Table 10对比llama.cpp/MLC-LLM/mllm/NanoLLM四种部署套件的模型架构支持、硬件兼容性、量化支持等特性
 
 <br>
 </details>
