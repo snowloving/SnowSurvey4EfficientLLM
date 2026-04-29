@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-29-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-30-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -27,7 +27,7 @@
 
 > **说明**：本部分聚焦 LLM 效率优化的通用方法，涵盖模型压缩、高效架构、推理训练加速等。
 > 
-> **评级说明**：`🏆` = 必读经典 · `🔥` = 高质量综述 · `📖` = 值得翻阅
+> **评级说明**：`🏆` = 必读经典 · `🔥` = 高质量综述 · `📖` = 值得翻阅 （仅供参考）
 > 
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
@@ -350,7 +350,7 @@
 | 2 | 🔥 **Survey on Knowledge Distillation for LLMs: Methods, Evaluation, and Application** | 2025 | ACM TIST `IF=6.5` | `KD范式`：白盒(Logits/Hint) + 黑盒(ICL/CoT/Instruction Following) + `鲁棒性评估` | 首次提出白盒/黑盒二分法用于LLM KD分类，清晰区分了可访问内部参数（白盒）和仅可访问API输出（黑盒）的两类方法；首篇从鲁棒性视角统一评估LLM蒸馏算法的综述；MiniLLM在GPT-2上对抗及OOD鲁棒性最优 |
 | 3 | 📖 **Art and Science of Quantizing Large-Scale Models: A Comprehensive Overview** | 2024 | arXiv | `量化范式`：PTQ(30+算法) + QAT(4类) + KV Cache压缩 + KD + 极端低比特 | 量化领域最深度的综述之一；详尽推导LLM-QAT/SmoothQuant/AWQ/GPTQ等核心公式，覆盖从二值网络到LLM量化的完整演进 |
 | 4 | 🔥 **A Survey on Model Compression for Large Language Models** | 2024 | TACL `IF=6.9`| `量化(QAT/PTQ)` / `剪枝(非结构化/结构化/半结构化)` / `KD(黑盒/白盒)` / `低秩分解` | 聚焦压缩技术本身，按压缩类型（量化/剪枝/KD/低秩）系统梳理，附带标准化指标与基准评估体系 |
-
+| 5 | 🔥 **A Survey of Low-Bit Large Language Models: Basics, Systems, and Algorithms** | 2025 | Neural Networks `IF=6.3` | `基础(数据格式/粒度/动静)` / `系统(框架/硬件支持)` / `算法(QAT/PTQ/等效变换/补偿/混合精度)` 三维度 | 迄今最全面的LLM低位量化综述，首创基础-系统-算法三维框架，覆盖量化全技术栈从底层格式到上层部署 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -460,7 +460,37 @@
   6. **压缩技术整合+AutoML是趋势**：结构化剪枝+KD结合、PEFT+QAT结合、AutoML自动化选择最优压缩策略（架构/超参数/压缩率）是提升压缩效率的可行路径。
   7. **扩展律对压缩构成根本性挑战**（§7.4）：模型大小-性能的缩放关系意味着压缩必然伴随性能损失，需深入理解其机理以突破限制。
 - **附带资源**：图1：LLM模型压缩方法分类体系（量化/剪枝/KD/低秩分解）、图2：各类压缩方法基本流程示意（QAT-KD为任务相关，其余为任务无关）、Table 1：代表性量化方法性能总览（13种方法×Bit Width×Perplexity Difference×Speedup）、Table 2：代表性剪枝方法性能总览（11种方法×压缩率×加速比×Perplexity Difference）、§2：标准化压缩评估指标定义与基准数据集汇总、§7：八大未来方向（更先进方法/扩展经典压缩技术/推理部署/Roofline模型/扩展律/AutoML/可解释性/校准数据优化），该综述是LLM模型压缩领域首篇专门性综述，以压缩技术类型为主线构建清晰分类体系，结合标准化评估框架，为后续压缩研究奠定了系统性参考基础。
+<br>
 
+
+### 5. A Survey of Low-Bit Large Language Models: Basics, Systems, and Algorithms (2025)
+[![Paper](https://img.shields.io/badge/Journal-Neural_Networks'25-blue?style=flat-square)]()
+
+[A Survey of Low-Bit Large Language Models: Basics, Systems, and Algorithms](https://arxiv.org/pdf/2409.16694)
+
+- **分类方式**：按**基础×系统×算法**三维度 + **训练×推理**两阶段组织，首创涵盖底层数据格式到上层部署的全栈量化技术体系
+- **覆盖子方向**：
+  - `基础 → 低位数据格式`：**标准格式** FP16(E5M10)/BF16(E8M7)/FP8(E4M3,E5M2)/INTk/NormalFloat(NF，标准正态分布分位数优化)、Micro Scaling FP(MX格式，E8M0共享缩放因子+子块粒度)；**自定义格式** Flint(浮点整数，结合指数与整数)、Afloat(自适应偏置浮点，覆盖离群值)、Student Float(SF，学生t分布分位数替代NF)；**二值化** sign/bool函数+popcount硬件加速
+  - `基础 → 量化粒度`：Tensor-wise(整张量单缩放因子)、Token-wise(每Token独立缩放)、Channel-wise(每通道独立缩放，可与Token-wise合并)、Group-wise(分组平衡复杂度与误差，g元素/组)、Element-wise(仅训练时，推理前合并)
+  - `基础 → 动态/静态量化`：动态量化(推理时实时计算激活缩放因子，无需校准，灵活但增加计算)、静态量化(预校准固定缩放因子，推理更快但需校准数据)
+  - `系统 → 推理框架`：**主流框架** TensorRT-LLM/ONNX Runtime/Transformers/OpenVINO/PowerInfer/llama.cpp/MLC-LLM/DeepSpeed-MII/vLLM/LightLLM/SGLang等20+个；**算法集成** GPTQ/AWQ/SmoothQuant被最多框架支持，LLM.int8()由bitsandbytes深度支持，FP6-LLM集成在DeepSpeed-FastGen；**比特宽度支持** Weight-only(任意比特因需反量化回FP16)、W&A(INT4/FP8需硬件MMA指令)、KV Cache(FP16/INT4/INT8)；**硬件平台** NVIDIA GPU(全覆盖)、AMD GPU(vLLM/bitsandbytes/llama.cpp)、Apple Metal/Intel XPU/TPU(MLC-LLM/ONNX Runtime)
+  - `系统 → 数据流与加速机理`：**缓存层次** Host→Device(PCIe 25GB/s)→L2/Shared Memory(1555GB/s)→Registers(19400GB/s)；**Weight-only加速** 减少Host→Device传输+引入反量化额外开销(需传输节省>反量化时间才有效)；**W&A加速** 额外加速低比特MatMul+需量化激活+结果类型转换；**KV Cache量化** 减少Device Memory存储+传输，4种技术(低比特/量化窗口/跳过新K反量化/优化离群Token)；**量化/反量化底层实现** 浮点量化(缩放→溢出/下溢检测→复制舍入)、整数量化(Marlin标准流程含移位打包)、二值化(popcount指令+算数规则设计)
+  - `算法 → 低位训练`：**FP16训练** 损失缩放避免梯度下溢/溢出(适用于Volta/Turing老硬件)；**FP8训练** 延迟缩放策略(基于历史amax选择缩放因子)、Transformer Engine支持、DeepSeek-V3细粒度块级FP8训练；**INT8训练** QST(权重量化+侧网络+低秩适配器+梯度无关下采样)、Q-GaLore(INT4投影矩阵+INT8权重+自适应子空间更新)、Jetfire(INT8数据流+逐块量化)、4-bit Optimizer(行/列信息+二阶矩零点问题线性量化器)；**BF16训练** 最稳定，需Ampere/Hopper架构硬件
+  - `算法 → 量化策略与PEFT`：**部分参数微调** PEQA(仅训练缩放因子)、OWQ(仅更新高精度"弱列")；**低比特LoRA** QLoRA(NF4双量化+LoRA，单48GB GPU微调65B)、QA-LoRA(INT量化+无损合并AB到Wq)、LoftQ/LQ-LoRA(迭代SVD最小化||W-(Wq+AB)||)、IR-QLoRA(信息校准+连接增强)、QDLoRA(动态秩分配)、RoLoRA(旋转+LoRA实现W&A量化)
+  - `算法 → PTQ → 等效变换`：**移位变换** OS+(通道级移位消除非对称，Δ=f(max,min)/2)、OmniQuant(可学习Δ+块级误差最小化)、AffineQuant(学习一般可逆矩阵)；**缩放变换** SmoothQuant(Φ_j=max|X|^α/max|W|^(1-α)迁移量化难度，α=0.5适用于OPT/BLOOM)、FPTQ(对数函数计算平滑尺度)、AWQ(激活感知搜索超参数α，Φ=Φ_x^α)、OS+(搜索阈值t压缩通道)；(学习型) OmniQuant/AffineQuant同时学习Δ和Φ；**旋转变换** QuIP(Kronecker正交矩阵→ 降低相干性)、QuIP#(Hadamard矩阵O(n log n)加法)、QuaRot(Hadamard+在线量化，Head-wise旋转)、SpinQuant(Cayley SGD学习最优旋转矩阵Stiefel流形，MMLU波动从13点降至最低)、DuQuant(先验知识旋转+置换+贪婪搜索)、PrefixQuant(前缀Token离线预填充KV缓存)
+  - `算法 → PTQ → 补偿`：**OBD/OBS/OBQ到GPTQ** 基于Hessian逆的二阶补偿，GPTQ改为逐列量化使175B模型4 GPU小时完成；**改进** QuantEase(坐标下降更精确补偿)、QQO(先OS+变换后GPTQ补偿)
+  - `算法 → PTQ → 混合精度`：**元素级** SpQR(敏感度识别离群权重存高精度稀疏矩阵)、SqueezeLLM(非均匀量化+k-means质心)、PB-LLM(首次二值化非显著权重，10-30%高精度)、BiLLM(残差逼近显著权重+分组量化非显著，1.08bit)、GEAR(低秩矩阵逼近量化残差+KV Cache)；**通道级** LLM.int8()(离群通道FP16+向量量化INT8)、OWQ(灵敏度感知混合精度)、Atom(动态重排序+静态重排序+KVCache 4bit)；**Token级** KVQuant/IntactKV/SKVQ(首Token/低语义Token高精度)、KIVI/WKVQuant(近期KV全精度+历史KV量化)；**张量级** LLM-MQ(一阶信息+量化误差分配不同层位宽)、CacheGen(浅层KV更高精度)
+  - `算法 → PTQ → 组合与新型架构`：**低秩+量化** LR-QAT(LoRA实现参数高效QAT)、INT2.1(LoRA最小化输出分布距离)、LQER(SVD量化误差+激活诱导缩放)、ZeroQuant-V2(SVD低秩补偿)；**稀疏+量化** SDQ(先稀疏后量化)、JSQ(联合稀疏-量化度量，平衡信息保留与量化友好)；**量化+量化** SmoothQuant+GPTQ组合；**MLLMs量化** Q-VLM(跨层依赖挖掘)、MQuant(视觉/语言模态分离量化参数)、MBQ(模态敏感度调整重构损失)；**MoE量化** MC-MOE(线性规划比特分配)、QuantMoE-Bench(结构感知混合精度，不同专家/层/块不同比特)
+  - `工具包与基准`：**量化工具** LLMC(北航，覆盖AWQ/GPTQ/SmoothQuant/QuaRot等10+算法，支持TensorRT-LLM/vLLM等后端)、MI-optimize(清华，AWQ/FP8/GPTQ/QuIP/RTN/SmoothQuant/SpQR/ZeroQuant)、QLLM-Eval(清华，多模型+多基准评估)、LLM Compressor(Neural Magic，GPTQ/SmoothQuant/FP8)；**评估基准** lm-evaluation-harness/OpenCompass(下游任务)、LongEval/Lost-in-the-Middle(长上下文)、MT-Bench(对话)
+- **核心结论/洞察**：
+  1. **首创基础-系统-算法三维量化全栈框架**：首次将LLM量化从底层数据格式和缓存数据流加速机理到上层算法策略（等效变换/补偿/混合精度/组合）系统化整合，揭示量化实现真实加速的必要条件（传输节省>额外计算开销）。
+  2. **等效变换是解决离群值问题的核心范式**：SmoothQuant（缩放）、OS+（移位）、QuaRot（旋转）三大类等效变换从数学等价角度迁移量化难度，正交于补偿/混合精度方法可组合使用。
+  3. **Weight-only量化因LLM参数传输瓶颈而价值凸显**：即使需反量化+FP16 MatMul，只要数据传输节省超过反量化开销即可实现加速，支持任意比特宽度和查找表反量化（如NF/SF/MX格式）。
+  4. **低比特LoRA开辟PEFT+量化融合新范式**：QLoRA(NF4双量化)、QA-LoRA(可无损部署)、LoftQ(迭代SVD初始化)…使单卡微调数十B参数模型成为现实。
+  5. **KV Cache量化成为长上下文推理关键瓶颈**：首Token/低语义Token离群是核心挑战；KIVI(Key逐通道/Value逐Token 2bit)、KVQuant(Pre-RoPE量化+非均匀)、WKVQuant(二维量化)等推动KV极致压缩。
+  6. **硬件-算法协同设计日益重要**：MX格式(行业联盟标准)、FP6-LLM(完整GPU内核)、AQLM(W1A16/W2A8无需反量化)等表明底层系统支持是算法落地的关键。
+  7. **量化工具包生态成熟**：LLMC(多算法+多后端+多模型)、QLLM-Eval(多基准)等开源工具使量化算法复现和部署高度便利化。
+- **附带资源**：图1：LLM量化综述全景骨架图（基础→系统→训练→推理→未来趋势），该综述是迄今LLM低位量化领域最全面的综述，以"基础→系统→算法"三维框架统一底层格式、系统实现和上层算法，为量化研究者提供从原理到部署的完整技术图谱。
 
 </details>
 
