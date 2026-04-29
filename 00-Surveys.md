@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-9-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-10-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -33,7 +33,9 @@
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 🔥 **Towards Efficient Language Giants** | 2026 | Neural Networks `IF=6.3` | `高效模块设计` + `模型压缩` 双维度 | 混合方案（KD+量化/剪枝+量化）是突破单一技术瓶颈的关键 |
 | 2 | 📖 **From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP** | 2025 | arXiv | `模型优化`：数据/设计/压缩/推理 + `LLM适配`：预训练/微调/Prompt/RAG | 312篇文献系统综述；揭示LLM全生命周期效率全景，含30+模型在13项基准的性能-价格Pareto分析 |
-| 3 | 🏆 **Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques** | 2025 | Computer Science Review `IF=11.5` | `边缘层级`：SLM设计/模型压缩/推理优化/部署框架 | 首篇面向边缘部署的全栈综述；定义<4B为SLM，汇总30+轻量模型架构对比与边缘硬件实测性能 |
+| 3 | 🏆 **Empowering LLMs to Edge Intelligence: A Survey of Edge Efficient LLMs and Techniques** | 2025 | Computer Science Review `IF=12.7` | `边缘层级`：SLM设计/模型压缩/推理优化/部署框架 | 首篇面向边缘部署的全栈综述；定义<4B为SLM，汇总30+轻量模型架构对比与边缘硬件实测性能 |
+| 4 | 🏆 **A Comprehensive Overview of Large Language Models** | 2025 | ACM TIST `IF=6.6` | `LLM全景`：架构/预训练/微调/增效/多模态/智能体/应用/评估 | 覆盖面最广的LLM综述之一；系统汇总50+预训练LLM架构细节与训练配置，含7大类评估基准全览 |
+
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -62,7 +64,7 @@
 ### 2. From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP (2025)
 [![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
-[From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP]()
+[From Transformers to LLMs: A Systematic Survey of Efficiency Considerations in NLP](https://arxiv.org/pdf/2406.16893)
 
 - **分类方式**：按 **模型优化**（数据策展/模型设计/模型压缩/动态推理）与 **LLM适配**（预训练/微调/Prompt工程/RAG）双阶段交叉组织，辅以效率度量（FLOPs/延迟/吞吐/碳排放/定价）
 - **覆盖子方向**：
@@ -82,7 +84,7 @@
 [![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
 [![Paper](https://img.shields.io/badge/IF=12.7-important)]()
 
-[Empowering large language models to edge intelligence: A survey of edge efficient LLMs and techniques]()
+[Empowering large language models to edge intelligence: A survey of edge efficient LLMs and techniques](https://www.sciencedirect.com/science/article/abs/pii/S1574013725000310)
 
 - **分类方式**：按 **边缘部署全栈**（SLM设计→模型压缩→推理优化→部署框架）四阶段组织，覆盖从模型选型到实际落地的完整链路
 - **覆盖子方向**：
@@ -92,8 +94,28 @@
     - `部署框架` → 端侧引擎（ExecTorch, TFLite, PowerInfer, Transformer-Lite）、云边协同（Hybrid LLM, Tabi, Edge-LLM, FedAgg）、部署套件（MLC-LLM, llama.cpp, mlm, NanoLLM）
   - **核心结论/洞察**：SLM（<4B）是边缘部署的基础，设计趋势为更深更窄、共享参数、高质量合成数据；int4量化可提升边缘吞吐量20-40%；投机解码（EAGLE/Medusa）和KV Cache压缩是边缘推理优化的关键；云边协同（Hybrid LLM、Edge-LLM）是突破边缘资源限制的有效路径；SLM在幻觉、可解释性、个性化方面仍面临挑战。
   - **附带资源**：表2（27个SLM训练细节）、表3（26个SLM架构细节）、表5（边缘设备实测吞吐量与PPL）、表8-10（14个部署框架对比），是边缘LLM方向最全面的数据来源。
-
 <br>
+
+
+### 4. A Comprehensive Overview of Large Language Models (2025)
+[![Paper](https://img.shields.io/badge/Journal-ACM_TIST'25-blue)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=6.5-important)]()
+
+[A Comprehensive Overview of Large Language Models](https://arxiv.org/pdf/2307.06435)
+
+- **分类方式**：按 **LLM研发全生命周期**（背景→架构→预训练→微调→增效→多模态→智能体→评估）八大板块组织，提供自包含的全面概览
+- **覆盖子方向**：
+    - `预训练模型（50+）` → 通用型（GPT-3/4, PaLM, LLaMA, BLOOM, Gopher, Chinchilla, Gemini, Grok）、代码型（Codex, AlphaCode, StarCoder）、科学型（Galactica）、对话型（LaMDA）、金融型（BloombergGPT）
+    - `微调模型（30+）` → 指令微调（T0, Flan, OPT-IML, Tk-Instruct）、人类对齐（RLHF, DPO, Constitutional AI, LIMA）、持续预训练
+    - `效率优化` → PEFT（LoRA, Adapter, Prefix Tuning, BitFit）、量化（GPTQ, SmoothQuant, QLoRA, LLM.int8）、剪枝（Wanda, LLM-Pruner）
+    - `多模态LLM` → 预训练（Flamingo, BLIP-2, MiniGPT-4）、微调（LLaMA-Adapter, LaVIN）、提示（Multimodal-CoT）
+    - `评估基准` → 多任务（MMLU, BIG-bench, GLUE/SuperGLUE）、推理（GSM8K, MATH, HumanEval）、语言理解（CoQA, WiC, RACE）、常识（HellaSwag, WinoGrande, PIQA）等100+基准
+    - `应用` → 医学、教育、科学、数学、法律、金融、机器人、编码
+- **核心洞察补充**：架构对比发现——预归一化在前100B规模提供稳定性但可能损害微调性能，GLM-130B采用DeepNorm（后归一化变体）获更优下游性能；并行注意+FFN层可提速15%且性能无降；MoE架构天然抗灾难性遗忘，适合持续学习；小模型微调——LIMA仅用1000条精选演示即接近GPT-4水平；Chinchilla定律指出每加倍模型规模应加倍训练token数；检索增强可使11B模型匹敌540B PaLM；红队测试发现即使对齐后的模型仍易受越狱攻击
+- **附带资源**：论文Table 1-2提炼50+预训练与指令微调LLM的核心发现与洞察，Table 5汇总30+LLM的详细架构参数（层数/头数/隐藏维度/注意力类型/归一化/位置编码/激活函数），Table 6-7提供预训练与指令微调的优化配置（批量大小/学习率/优化器），Table 8-11系统整理预训练与微调数据集及评估基准，Table 12展示各NLP任务上顶级LLM性能对比、Figure 2展示LLM发布历史时间线，开源vs闭源、Table 3-4有50+预训练和30+微调LLM的架构与优化细节。参考文献500+篇，覆盖LLM领域全面。
+<br>
+
 </details>
 ---
 
@@ -186,7 +208,7 @@
 [![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
 [![Paper](https://img.shields.io/badge/IF=6.5-important)]()
 
-[Survey on Knowledge Distillation for Large Language Models: Methods, Evaluation, and Application]()
+[Survey on Knowledge Distillation for Large Language Models: Methods, Evaluation, and Application](https://dl.acm.org/doi/pdf/10.1145/3699518?download=true)
 
 - **分类方式**：按 **KD范式**（白盒/黑盒）两大维度组织，并进一步按功能细分为方法、评估、应用三大板块
 - **覆盖子方向**：
