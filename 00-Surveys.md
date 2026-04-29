@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-30-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-31-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -351,6 +351,8 @@
 | 3 | 📖 **Art and Science of Quantizing Large-Scale Models: A Comprehensive Overview** | 2024 | arXiv | `量化范式`：PTQ(30+算法) + QAT(4类) + KV Cache压缩 + KD + 极端低比特 | 量化领域最深度的综述之一；详尽推导LLM-QAT/SmoothQuant/AWQ/GPTQ等核心公式，覆盖从二值网络到LLM量化的完整演进 |
 | 4 | 🔥 **A Survey on Model Compression for Large Language Models** | 2024 | TACL `IF=6.9`| `量化(QAT/PTQ)` / `剪枝(非结构化/结构化/半结构化)` / `KD(黑盒/白盒)` / `低秩分解` | 聚焦压缩技术本身，按压缩类型（量化/剪枝/KD/低秩）系统梳理，附带标准化指标与基准评估体系 |
 | 5 | 🔥 **A Survey of Low-Bit Large Language Models: Basics, Systems, and Algorithms** | 2025 | Neural Networks `IF=6.3` | `基础(数据格式/粒度/动静)` / `系统(框架/硬件支持)` / `算法(QAT/PTQ/等效变换/补偿/混合精度)` 三维度 | 迄今最全面的LLM低位量化综述，首创基础-系统-算法三维框架，覆盖量化全技术栈从底层格式到上层部署 |
+| 6 | 📖 **A Survey on Symbolic Knowledge Distillation of LLMs** | 2024 | IEEE TAI | `直接蒸馏` / `多级蒸馏` / `RL策略蒸馏` 三类 | 首篇LLM符号化知识蒸馏综述，系统梳理将隐式知识转化为可解释符号规则（知识图谱/决策树/逻辑规则）的全流程方法 |
+
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -491,6 +493,33 @@
   6. **硬件-算法协同设计日益重要**：MX格式(行业联盟标准)、FP6-LLM(完整GPU内核)、AQLM(W1A16/W2A8无需反量化)等表明底层系统支持是算法落地的关键。
   7. **量化工具包生态成熟**：LLMC(多算法+多后端+多模型)、QLLM-Eval(多基准)等开源工具使量化算法复现和部署高度便利化。
 - **附带资源**：图1：LLM量化综述全景骨架图（基础→系统→训练→推理→未来趋势），该综述是迄今LLM低位量化领域最全面的综述，以"基础→系统→算法"三维框架统一底层格式、系统实现和上层算法，为量化研究者提供从原理到部署的完整技术图谱。
+<br>
+
+
+### 6. A Survey on Symbolic Knowledge Distillation of Large Language Models (2024)
+[![Paper](https://img.shields.io/badge/Journal-IEEE_TAI'24-blue?style=flat-square)]()
+
+[A Survey on Symbolic Knowledge Distillation of Large Language Models](https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=10597596&ref=)
+
+- **分类方式**：按**蒸馏范式**（直接蒸馏/多级迭代蒸馏/RL策略蒸馏）+ **应用场景**（常识推理/摘要/翻译/数学推理/指令生成/视觉常识/复杂推理）两维度组织
+- **覆盖子方向**：
+  - `符号化知识蒸馏基础`：**传统KD对比** 响应式KD(教师logits→学生，KL散度)、特征式KD(FitNets匹配中间层、注意力图转移、Gram矩阵关系)、关系式KD(FSP流矩阵、多教师图建模、多图注意力网络)；**符号化KD五步流程** 训练教师模型→提取知识(激活模式/LRP/SHAP)→符号化表示(决策树/逻辑规则/图模型)→训练学生模型→评估与精炼；**与传统KD关键区别** 知识本质(软标签 vs 人类可读符号)、可解释性(黑盒 vs 透明决策)、学生模型(仅模仿 vs 可独立行为调整)
+  - `直接蒸馏(Direct Distillation)`：**核心流程** 定制提示诱导LLM生成→解析文本提取知识→结构化格式(知识图谱/规则/框架)→人工或模型Critic(RoBERTa)质量过滤→高质知识库训练小模型；**代表工作** [West et al. 2021] ATOMIC常识知识图谱6.5M条，COMET-distil(1.5B)仅为教师GPT-3(175B)的1/100但性能超越、[Bhagavatula et al. 2022] I2D2框架(Prompt构建+NeuroLogic约束解码+Critic过滤+自模仿学习)、Gen-A-tomic 7M常识语料库精度超越GPT-3、[Park et al. 2023] LSKD局部化视觉常识，定位图像多区域推理+建立Lokalized Commonsense Knowledge Corpus
+  - `多级蒸馏(Multilevel Distillation)`：**核心流程** 教师生成初始知识库→质量过滤(保真度/长度)→训练学生→学生生成新知识→再过滤→循环迭代；**代表工作** [Sclar et al. 2022] REFEREE框架(参考无关句子摘要+可控压缩比+迭代师生角色互换)，小模型压缩比可控性超越GPT3-Instruct；每代应用三滤(保真度NLI验证/长度控制/上下文连贯)
+  - `RL策略蒸馏(Distillation using RL Policy)`：**核心流程** 当前策略采样生成数据→奖励模型(Reward Model)打分排序→按阈值过滤保留高分输出→离线RL(如GKD)微调语言模型策略→逐轮提高阈值迭代；**代表工作** [Gulcehre et al. 2024] ReST(机器翻译领域RLHF替代方案，离线生成训练数据集+复用，显著提升翻译质量)、自奖励语言模型(LLM自主生成+评判+微调超人类水平)
+  - `应用领域覆盖`(Table III)：**常识推理** [West 2021/NOVACOMET/I2D2]、**摘要** [REFEREE]、**翻译** [ReST]、**数学证明/推理** [Expert Iteration/Distilling Step-by-Step/Orca/Orca 2]、**视觉常识** [LSKD]、**指令生成** [Self-Instruct/Alpaca/WizardLM/Evol-Instruct]、**查询处理** [Vicuna/Koala/AMA/QAMELEON]、**数据标注** [GPT-3 Labeling/LM-in-the-Loop]、**复杂推理** [Distilling Step-by-Step/Orca-2 5种推理策略]
+  - `关键组件汇总`(Table IV)：教师模型(GPT-3 175B/GPT-3.5/GPT-4/PaLM 540B/ChatGPT/BLIP-2)、学生模型(COMET-distil 1.5B/GPT-2/T5/LLaMA 7B/Vicuna-13B/FlanT5/Orca 13B)、生成数据集规模(5.1K~7M条)
+  - `未来机遇与挑战`：**机遇** 创建更大/多样/高质量数据集；机器处理低层任务+人类监管降低50-96%标注成本；蒸馏出更小更强大模型用于摘要/翻译/常识推理；指令调优(Instruction Tuning)；新型算法与统一评估基准；开源数据与模型；LLM自我改进(自奖励/自训练实现超人类智能)；跨领域共生(文本→视觉/医疗/自动驾驶语义锚)。**挑战** 数据质量与多样性保证(偏差继承问题)；自动化与人工监督平衡；紧凑模型性能无损压缩(量化极致低位性能不足，符号KD需向通用符号知识库演进)；多样化指令调优适应性；持续学习与适应性(新知识更新不牺牲效率)
+- **核心结论/洞察**：
+  1. **首篇LLM符号化知识蒸馏专门综述**：系统性填补了LLM可解释性知识提取领域的空白，将隐式参数化知识转换为显式符号表示（规则/知识图谱/决策树/逻辑）的全流程方法首次被系统梳理。
+  2. **"机器→语料→机器"新范式的里程碑**：West et al.(2021)开创性工作证明从LLM提取知识再训练的小模型（1/100规模）可超越原模型，开启了以LLM为知识种子生成大规模高质量训练数据的新路线。
+  3. **三范式覆盖全应用场景**：直接蒸馏（常识/数学/视觉）、多级迭代蒸馏（摘要/压缩比可控）、RL策略蒸馏（翻译/人类偏好对齐）三大范式各有适用场景，Orca-2首次实现小模型策略级推理选择。
+  4. **与传统KD的本质差异**：符号KD输出人类可读知识表示（非软标签），学生模型可独立调整行为（非仅模仿），数据生成能力（传统KD无），且无层级依赖。
+  5. **数据生成是符号KD的核心价值**：Self-Instruct/Alpaca/WizardLM/Evol-Instruct等利用LLM自生成指令数据极大降低了人工标注依赖，WizardLM通过逐级进化指令复杂度实现复杂任务突破。
+  6. **跨领域应用潜力巨大**：LSKD将文本符号知识注入视觉模型提升可解释性，医疗/法律/金融领域专用模型（HuatuoGPT/ChatDoctor/LawyerLLaMA/XuanYuan）已展现领域适配效能。
+  7. **神经符号AI评估基准急缺**：当前借用传统KD/LLM基准，需开发专门针对神经符号系统（神经+符号双组件）的验证测试框架。
+- **附带资源**：图1：LLM与知识蒸馏七十年里程碑时间线（1950-2024）、图2：传统知识蒸馏三种类型示意（响应式/特征式/关系式）、图3：符号化知识蒸馏五步流程可视化、图4-6：直接/多级/RL蒸馏流程图、图7：相关研究全景图（KB→一致性→编辑→推理→可解释→符号蒸馏），该综述是LLM符号化知识蒸馏领域首篇系统性综述，聚焦于将LLM黑盒知识转化为透明、可解释、可复用的符号表示，为构建可信任AI系统提供了方法论全景图和未来研究路线。同时因其专注于知识蒸馏中的可解释符号化路径，可与纯模型压缩导向的LLM压缩综述形成互补。
+<br>
 
 </details>
 
