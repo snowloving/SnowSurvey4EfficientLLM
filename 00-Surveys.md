@@ -569,13 +569,14 @@
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 📖 **Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective** | 2025 | arXiv | `硬件平台`：CPU/GPU/FPGA/ASIC/PIM + `优化方法`：量化/稀疏/快速解码/算子优化/异构协同 | 首篇以tokens/s和tokens/J统一度量不同硬件平台LLM推理性能的综述；PIM/NDP能效比最高达46.66 tokens/J |
 | 2 | 🔥 **Prompt Compression for Large Language Models: A Survey** | 2025 | NAACL-HLT | `压缩范式`：硬提示(过滤/改写) + 软提示(编码器-解码器) + `理解视角`：注意力优化/PEFT/模态集成/合成语言 | 首篇Prompt压缩系统综述；独特解读软提示为"LLM新合成语言"，硬软结合是未来方向 |
-| 3 | 📖 **Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference** | 2024 | arXiv | `CIM器件`：SRAM/ReRAM/PCM/FeFET/MRAM + `加速策略`：算法增强/容错/硬件感知训练/异构计算 | 首篇聚焦存内计算加速LLM推理的综述；模拟CIM可突破冯·诺依曼瓶颈，实现数倍至数百倍能效提升 |
-| 4 | 📖 **Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey** | 2024 | arXiv | `压缩维度`：语义压缩/PLM压缩/检索器压缩 + `RAG评估`：三元组(上下文+答案+接地)+四能力 | 首篇聚焦RAG上下文压缩的综述；覆盖AutoCompressor/ICAE/RECOMP/LongNet等核心方法 |
-| 5 | 📖 **Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding** | 2024 | arXiv | `推测解码`：模型中心(Draft设计) + Draft中心(验证策略) + `部署挑战`：吞吐/长上下文/并行/硬件/泛化 | 首篇推测解码系统综述；独创模型中心vs Draft中心二分法，覆盖Medusa/EAGLE-2/Hydra等前沿方法 |
-| 6 | 📖 **Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison** | 2024 | arXiv | `FPGA` / `ASIC` / `In-Memory` / `GPU` | 首个跨平台硬件加速器全面对比，统一工艺外推实现FPGA/ASIC/存内计算的公平性能比较 |
-| 7 | 🏆 **A Comprehensive Survey of Accelerated Generation Techniques in LLMs** | 2024 | arXiv | `投机解码` / `早退机制` / `非自回归解码` 三类 | 系统梳理三大约束解码范式，投机解码凭"草稿-验证"框架成为当前最主流加速路线 |
-| 8 | 🔥 **Efficient Prompting Methods for LLMs: A Survey** | 2024 | arXiv | `自动提示工程` / `提示压缩(T2V/T2T)` 双维度 | 首次系统梳理提示效率优化全貌：LLM自主迭代设计指令 vs 连续/离散空间压缩Prompt |
-| 9 | 🏆 **Unlocking Efficiency in LLM Inference: A Comprehensive Survey of Speculative Decoding** | 2024 | ACL | `草稿策略(独立/自草稿)` / `验证策略(贪婪/采样/Token Tree)` / `对齐(KD)` | 首篇投机解码专门综述，提供形式化定义+分类体系+Spec-Bench第三方公平评测基准 |
+| 3 | 📖 **A Survey on Hardware Accelerators for LLMs** | 2025 | Applied Sciences | `硬件平台`：FPGA/GPU/ASIC/存内计算 + `加速技术`：稀疏/近似/融合/混合精度 | 系统梳理30+加速器架构；存内计算与ASIC可实现3-4个数量级的能效提升，FPGA在灵活性与效率间取得最优折中 |
+| 4 | 📖 **Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference** | 2024 | arXiv | `CIM器件`：SRAM/ReRAM/PCM/FeFET/MRAM + `加速策略`：算法增强/容错/硬件感知训练/异构计算 | 首篇聚焦存内计算加速LLM推理的综述；模拟CIM可突破冯·诺依曼瓶颈，实现数倍至数百倍能效提升 |
+| 5 | 📖 **Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey** | 2024 | arXiv | `压缩维度`：语义压缩/PLM压缩/检索器压缩 + `RAG评估`：三元组(上下文+答案+接地)+四能力 | 首篇聚焦RAG上下文压缩的综述；覆盖AutoCompressor/ICAE/RECOMP/LongNet等核心方法 |
+| 6 | 📖 **Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding** | 2024 | arXiv | `推测解码`：模型中心(Draft设计) + Draft中心(验证策略) + `部署挑战`：吞吐/长上下文/并行/硬件/泛化 | 首篇推测解码系统综述；独创模型中心vs Draft中心二分法，覆盖Medusa/EAGLE-2/Hydra等前沿方法 |
+| 7 | 📖 **Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison** | 2024 | arXiv | `FPGA` / `ASIC` / `In-Memory` / `GPU` | 首个跨平台硬件加速器全面对比，统一工艺外推实现FPGA/ASIC/存内计算的公平性能比较 |
+| 8 | 🏆 **A Comprehensive Survey of Accelerated Generation Techniques in LLMs** | 2024 | arXiv | `投机解码` / `早退机制` / `非自回归解码` 三类 | 系统梳理三大约束解码范式，投机解码凭"草稿-验证"框架成为当前最主流加速路线 |
+| 9 | 🔥 **Efficient Prompting Methods for LLMs: A Survey** | 2024 | arXiv | `自动提示工程` / `提示压缩(T2V/T2T)` 双维度 | 首次系统梳理提示效率优化全貌：LLM自主迭代设计指令 vs 连续/离散空间压缩Prompt |
+| 10 | 🏆 **Unlocking Efficiency in LLM Inference: A Comprehensive Survey of Speculative Decoding** | 2024 | ACL | `草稿策略(独立/自草稿)` / `验证策略(贪婪/采样/Token Tree)` / `对齐(KD)` | 首篇投机解码专门综述，提供形式化定义+分类体系+Spec-Bench第三方公平评测基准 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -607,7 +608,7 @@
 - **附带资源**：[github仓库](https://github.com/Kimho666/LLM_Hardware_Survey)；论文图13-14提供bs=1和bs=8下各平台功耗-吞吐散点图，图18直观展示当前边缘AI与未来需求的1-2个数量级差距，极具系统设计参考价值
 <br>
 
-### 2. Prompt Compression for Large Language Models: A Survey (2025)
+### 3. Prompt Compression for Large Language Models: A Survey (2025)
 [![Paper](https://img.shields.io/badge/Conference-NAACL'25-blue)]()
 
 [Prompt Compression for Large Language Models: A Survey](https://aclanthology.org/2025.naacl-long.368.pdf)
@@ -627,8 +628,24 @@
 
 <br>
 
+### 2. A Survey on Hardware Accelerators for Large Language Models (2025)
+[![Paper](https://img.shields.io/badge/Journal-Appl.Sci.'25-blue)]()
 
-### 3. Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference (2024)
+[A Survey on Hardware Accelerators for Large Language Models](https://www.mdpi.com/2076-3417/15/2/586/pdf?version=1736429302)
+
+- **分类方式**：按 **硬件平台类型**（FPGA/CPU-GPU/ASIC/存内计算）四大类组织，每类深入剖析加速器微架构与算法-硬件协同设计
+- **覆盖子方向**：
+  - `FPGA加速器` → MNNFast（列式流处理+零跳过+嵌入缓存，5.38×/6.54×能效）、FTRANS（块循环矩阵压缩+设计自动化，27×/81×能效）、MHA加速（脉动阵列+非线性函数优化，14.6×）、NPE（指令驱动+非线性向量单元，35×/6×能效）、列平衡块剪枝（CSB+BCSR混合稀疏，11×/2× vs GPU）、DFX（免汇编ISA+多FPGA模型并行，3.8×/4×能效）、OPU（可配置PE+动态数据流，15×/2.9×）、FlexRun（模块化GEMV+向量单元+自动设计空间探索，2.79×/2.59× vs GPU）、ODE混合（神经ODE压缩94.6%参数+QAT，12.8×/9.2×能效）
+  - `GPU/CPU优化` → SoftMax分解重构（减少HBM访问，1.12×-1.65×）、LightSeq2（算子融合+混合精度+内存生命周期管理，1.4×-3.5×）、简化Transformer（去除残差连接/投影参数，15%参数减少+15%吞吐提升）、LLMA（无草稿模型推测解码，2×-3×）、UltraFastBERT（快速FFN替代→O(log n)复杂度，78×）
+  - `ASIC加速器` → A³（近似候选选择+专用流水线，7×/11×能效）、ELSA（近似自注意力+硬件-软件协同，157×/1265×能效）、SpAtten（级联Token+头剪枝+渐进量化，347×/162× vs CPU/GPU，1193×/4059×能效）、Sanger（动态稀疏预测+可重构脉动阵列，22.7×/4.64×）、Energon（混合精度多轮过滤+动态稀疏，168×/8.7×，高达10000×能效）、H3D Transformer（CIM+TPU异构3D集成，2.6×-3.1× vs 7nm TPU）
+  - `存内计算加速器` → ATT（ReRAM交叉开关+专用流水线，202× vs GPU）、ReTransformer（ReRAM矩阵乘法+存内SoftMax/查找表，23.21×/1086×能效）、iMCAT（Xbar+CAM+局部敏感哈希过滤，200×/41×能效）、X-Former（NVM投影引擎+CMOS注意力引擎混合，85×/7.5×能效）、Flash Memory推理（窗口化+行列捆绑，25×/5× vs CPU/GPU）、FlashAttention-3（Hopper GPU异步+TMA+warp专用化，1.5×-2.0×，FP8达1.2 PFLOPs）
+  - `跨平台定量对比` → Table 1汇总30+加速器的年/技术/加速比/能效/基准平台；ASIC和存内计算可达3-4个数量级能效提升，FPGA在灵活性与实际可部署性间取得最优折中
+- **核心洞察补充**：ASIC和存内计算在加速比（最高347× vs CPU）和能效（最高10000× vs CPU）上远超FPGA和GPU，但需要巨额流片投资且缺乏灵活性；FPGA无需流片即可定制架构，在数据中心现有硬件中即插即用；FlashAttention-3通过利用Hopper GPU的Tensor Core异步性和TMA，FP8精度下达到近1.2 PFLOPs/s；LLMA无需额外草稿模型即可实现推测解码，在检索和对话场景中2×-3×加速；FPGA方案（FlexRun/DFX）正走向自动设计空间探索和模块化架构，降低定制门槛
+- **附带资源**：论文Table 1系统汇总30+加速器的技术节点、加速比、能效及对比基准，Figure 1可视化加速比vs能效的散点分布；配套开源仓库 [https://github.com/kachris/survey_HA_LLM](https://github.com/kachris/survey_HA_LLM)
+
+<br>
+
+### 4. Memory Is All You Need: An Overview of CIM Architectures for Accelerating LLM Inference (2024)
 [![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [Memory Is All You Need: An Overview of Compute-in-Memory Architectures for Accelerating Large Language Model Inference](https://arxiv.org/pdf/2406.08413)
@@ -652,7 +669,7 @@
 <br>
 
 
-### 4. Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey (2024)
+### 5. Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey (2024)
 [![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey](https://arxiv.org/pdf/2409.13385?)
@@ -670,7 +687,7 @@
 <br>
 
 
-### 5. Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding (2024)
+### 6. Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding (2024)
 [![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [Closer Look at Efficient Inference Methods: A Survey of Speculative Decoding](https://arxiv.org/pdf/2411.13157?)
@@ -687,7 +704,7 @@
 
 <br>
 
-### 6. Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison (2024)
+### 7. Hardware Acceleration of LLMs: A Comprehensive Survey and Comparison (2024)
 [![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [Hardware Acceleration of LLMs: A comprehensive survey and comparison](https://arxiv.org/pdf/2409.03384?)
@@ -708,7 +725,7 @@
 <br>
 
 
-### 7. A Comprehensive Survey of Accelerated Generation Techniques in LLMs (2024)
+### 8. A Comprehensive Survey of Accelerated Generation Techniques in LLMs (2024)
 [![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [A Comprehensive Survey of Accelerated Generation Techniques in Large Language Models](https://arxiv.org/abs/xxxx.xxxxx)
@@ -729,7 +746,7 @@
 <br>
 
 
-### 8. Efficient Prompting Methods for LLMs: A Survey (2024)
+### 9. Efficient Prompting Methods for LLMs: A Survey (2024)
 [![Paper](https://img.shields.io/badge/Platform-arXiv-blue)]()
 
 [Efficient Prompting Methods for Large Language Models: A Survey](https://arxiv.org/pdf/2404.01077)
@@ -750,7 +767,7 @@
 
 <br>
 
-### 9. Unlocking Efficiency in LLM Inference: A Comprehensive Survey of Speculative Decoding (2024)
+### 10. Unlocking Efficiency in LLM Inference: A Comprehensive Survey of Speculative Decoding (2024)
 [![Paper](https://img.shields.io/badge/Conference-ACL'24-blue)]()
 
 [Unlocking Efficiency in Large Language Model Inference: A Comprehensive Survey of Speculative Decoding](https://aclanthology.org/2024.findings-acl.456.pdf)
@@ -788,7 +805,6 @@
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
 | 1 | 🏆 **Parameter-Efficient Fine-Tuning in LLMs: A Survey of Methodologies** | 2025 | Artificial Intelligence Review `IF=10.2` | `PEFT分类`：加性/重参数化/选择性/混合/量化/多任务 + `应用`：视觉/扩散/MLLM | 覆盖100+方法的PEFT全景综述；QLoRA使65B模型可在单48GB GPU微调，PEFT可减少90%+训练成本 |
-| 2 | 📖 **A Survey on Hardware Accelerators for LLMs** | 2025 | Applied Sciences | `硬件平台`：FPGA/GPU/ASIC/存内计算 + `加速技术`：稀疏/近似/融合/混合精度 | 系统梳理30+加速器架构；存内计算与ASIC可实现3-4个数量级的能效提升，FPGA在灵活性与效率间取得最优折中 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -821,22 +837,6 @@
 <br>
 
 
-### 2. A Survey on Hardware Accelerators for Large Language Models (2025)
-[![Paper](https://img.shields.io/badge/Journal-Appl.Sci.'25-blue)]()
-
-[A Survey on Hardware Accelerators for Large Language Models](https://www.mdpi.com/2076-3417/15/2/586/pdf?version=1736429302)
-
-- **分类方式**：按 **硬件平台类型**（FPGA/CPU-GPU/ASIC/存内计算）四大类组织，每类深入剖析加速器微架构与算法-硬件协同设计
-- **覆盖子方向**：
-  - `FPGA加速器` → MNNFast（列式流处理+零跳过+嵌入缓存，5.38×/6.54×能效）、FTRANS（块循环矩阵压缩+设计自动化，27×/81×能效）、MHA加速（脉动阵列+非线性函数优化，14.6×）、NPE（指令驱动+非线性向量单元，35×/6×能效）、列平衡块剪枝（CSB+BCSR混合稀疏，11×/2× vs GPU）、DFX（免汇编ISA+多FPGA模型并行，3.8×/4×能效）、OPU（可配置PE+动态数据流，15×/2.9×）、FlexRun（模块化GEMV+向量单元+自动设计空间探索，2.79×/2.59× vs GPU）、ODE混合（神经ODE压缩94.6%参数+QAT，12.8×/9.2×能效）
-  - `GPU/CPU优化` → SoftMax分解重构（减少HBM访问，1.12×-1.65×）、LightSeq2（算子融合+混合精度+内存生命周期管理，1.4×-3.5×）、简化Transformer（去除残差连接/投影参数，15%参数减少+15%吞吐提升）、LLMA（无草稿模型推测解码，2×-3×）、UltraFastBERT（快速FFN替代→O(log n)复杂度，78×）
-  - `ASIC加速器` → A³（近似候选选择+专用流水线，7×/11×能效）、ELSA（近似自注意力+硬件-软件协同，157×/1265×能效）、SpAtten（级联Token+头剪枝+渐进量化，347×/162× vs CPU/GPU，1193×/4059×能效）、Sanger（动态稀疏预测+可重构脉动阵列，22.7×/4.64×）、Energon（混合精度多轮过滤+动态稀疏，168×/8.7×，高达10000×能效）、H3D Transformer（CIM+TPU异构3D集成，2.6×-3.1× vs 7nm TPU）
-  - `存内计算加速器` → ATT（ReRAM交叉开关+专用流水线，202× vs GPU）、ReTransformer（ReRAM矩阵乘法+存内SoftMax/查找表，23.21×/1086×能效）、iMCAT（Xbar+CAM+局部敏感哈希过滤，200×/41×能效）、X-Former（NVM投影引擎+CMOS注意力引擎混合，85×/7.5×能效）、Flash Memory推理（窗口化+行列捆绑，25×/5× vs CPU/GPU）、FlashAttention-3（Hopper GPU异步+TMA+warp专用化，1.5×-2.0×，FP8达1.2 PFLOPs）
-  - `跨平台定量对比` → Table 1汇总30+加速器的年/技术/加速比/能效/基准平台；ASIC和存内计算可达3-4个数量级能效提升，FPGA在灵活性与实际可部署性间取得最优折中
-- **核心洞察补充**：ASIC和存内计算在加速比（最高347× vs CPU）和能效（最高10000× vs CPU）上远超FPGA和GPU，但需要巨额流片投资且缺乏灵活性；FPGA无需流片即可定制架构，在数据中心现有硬件中即插即用；FlashAttention-3通过利用Hopper GPU的Tensor Core异步性和TMA，FP8精度下达到近1.2 PFLOPs/s；LLMA无需额外草稿模型即可实现推测解码，在检索和对话场景中2×-3×加速；FPGA方案（FlexRun/DFX）正走向自动设计空间探索和模块化架构，降低定制门槛
-- **附带资源**：论文Table 1系统汇总30+加速器的技术节点、加速比、能效及对比基准，Figure 1可视化加速比vs能效的散点分布；配套开源仓库 [https://github.com/kachris/survey_HA_LLM](https://github.com/kachris/survey_HA_LLM)
-
-<br>
 </details>
 
 ---
