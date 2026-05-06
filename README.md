@@ -26,7 +26,7 @@ This repository is designed for:
 
 ## 🔗 Full List
 - [Surveys](00-Surveys.md)
-
+- [Architecture-Optimization](01-Architecture.md)
 
 ---
 
@@ -40,10 +40,9 @@ Efficient-LLM-Literature/
 │
 ├── 01-Architecture-Optimization/    # 架构级优化
 │   ├── Attention-Mechanisms/        # GQA, MQA, Sliding Window, etc.
-│   ├── FFN-Optimization/            # SwiGLU, Parallel, etc.
 │   ├── Alternative-Architectures/   # Mamba, RWKV, Hyena, etc.
 │   ├── Mixture-of-Experts/          # MoE routing, load balancing
-│   └── Reasoning-Model-Optimization/ # CoT, ToT, 长推理链效率
+│   └── Other/                       # FFN-and-Activation-Optimization: SwiGLU, Parallel, etc.
 │
 ├── 02-Model-Compression/            # 模型压缩
 │   ├── Quantization/                # GPTQ, AWQ, SmoothQuant, LLM.int8()
