@@ -37,8 +37,8 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
-|![Publish](https://img.shields.io/badge/Paper-arXiv'19-b31b1b) <br>[Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150) <br> Noam Shazeer |<img width="1002" alt="image" src="figures/mqa.png"> |[Paper](https://arxiv.org/pdf/1911.02150)|
-|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/abs/2305.13245) <br> Joshua Ainslie, James Lee-Thorp, Michiel de Jong, Yury Zemlyanskiy, Federico Lebrón, Sumit Sanghai |<img width="1002" alt="image" src="figures/gqa.png"> |[Paper](https://arxiv.org/pdf/2305.13245)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'19-b31b1b) <br>[Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150) <br> Noam Shazeer ||[Paper](https://arxiv.org/pdf/1911.02150)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/abs/2305.13245) <br> Joshua Ainslie, James Lee-Thorp, Michiel de Jong, Yury Zemlyanskiy, Federico Lebrón, Sumit Sanghai |<img width="1002" alt="image" src="[figures/gqa.png](https://arxiv.org/html/2305.13245v3/extracted/5314337/images/gmq_architecture.png)"> |[Paper](https://arxiv.org/pdf/2305.13245)|
 
 ---
 
