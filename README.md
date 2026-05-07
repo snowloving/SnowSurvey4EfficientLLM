@@ -40,8 +40,8 @@ Efficient-LLM-Literature/
 │
 ├── 01-Architecture-Optimization/    # 架构级优化
 │   ├── Attention-Mechanisms/        # GQA, MQA, Sliding Window, etc.
-│   ├── Alternative-Architectures/   # Mamba, RWKV, Hyena, etc.
 │   ├── Mixture-of-Experts/          # MoE routing, load balancing
+│   ├── Alternative-Architectures/   # Mamba, RWKV, Hyena, etc.
 │   └── Other/                       # FFN-and-Activation-Optimization: SwiGLU, Parallel, etc.
 │
 ├── 02-Model-Compression/            # 模型压缩
