@@ -37,8 +37,8 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
-|![Publish](https://img.shields.io/badge/Paper-arXiv'19-b31b1b) <br>[Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150) <br> Noam Shazeer ||[Paper](https://arxiv.org/pdf/1911.02150)|
-|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/abs/2305.13245) <br> Joshua Ainslie, James Lee-Thorp, Michiel de Jong, Yury Zemlyanskiy, Federico Lebrón, Sumit Sanghai |<img width="1002" alt="image" src="[figures/gqa.png](https://arxiv.org/html/2305.13245v3/extracted/5314337/images/gmq_architecture.png)"> |[Paper](https://arxiv.org/pdf/2305.13245)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'19-b31b1b) <br>[Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150) <br> Noam Shazeer | |[Paper](https://arxiv.org/pdf/1911.02150)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/abs/2305.13245) <br> Joshua Ainslie, James Lee-Thorp, Michiel de Jong, Yury Zemlyanskiy, Federico Lebrón, Sumit Sanghai |<img width="1002" alt="image" src="https://arxiv.org/html/2305.13245v3/extracted/5314337/images/gmq_architecture.png"> |[Paper](https://arxiv.org/pdf/2305.13245)|
 
 ---
 
@@ -47,8 +47,6 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
-|[![Star](https://img.shields.io/github/stars/NVlabs/hymba.svg?style=social&label=Star)](https://github.com/NVlabs/hymba) ![Publish](https://img.shields.io/badge/Conference-ICLR'25-blue) <br>[Hymba: A Hybrid-head Architecture for Small Language Models](https://www.arxiv.org/abs/2411.13676) <br> Xin Dong, Yonggan Fu, Shizhe Diao, Wonmin Byeon, Zijia Chen, Ameya Sunil Mahabaleshwarkar, Shih-Yang Liu, Matthijs Van Keirsbilck, Min-Hung Chen, Yoshi Suhara, Yingyan Lin, Jan Kautz, Pavlo Molchanov ||[Paper](https://www.arxiv.org/pdf/2411.13676)|
-|[Efficient Hybrid Inference for LLMs: Reward-Based Token Modelling with Selective Cloud Assistance](https://arxiv.org/abs/2409.13757) <br> Adarsh MS, Jithin VG, Ditto PS @Bud Ecosystem |<img width="1002" alt="image" src="[figures/selective-cloud-llm-assistance.png](https://arxiv.org/html/2305.13245v3/extracted/5314337/images/gmq_architecture.png)"> |[Paper](https://arxiv.org/pdf/2409.13757)|
 
 
 ---
