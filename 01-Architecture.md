@@ -43,7 +43,7 @@
 ---
 
 <a id="list"></a>
-## 论文清单
+## 📄 论文清单
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
