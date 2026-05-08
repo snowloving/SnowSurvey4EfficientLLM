@@ -52,6 +52,8 @@
 |![Publish](https://img.shields.io/badge/Paper-arXiv'20-b31b1b) <br>[Linformer: Self-Attention with Linear Complexity](https://arxiv.org/abs/2006.04768) <br> Sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, Hao Ma | |[Paper](https://arxiv.org/pdf/2006.04768)|
 |![Publish](https://img.shields.io/badge/Conference-ICASSP'20-blue) <br>[Lightweight and Efficient End-to-End Speech Recognition Using Low-Rank Transformer](https://ieeexplore.ieee.org/document/9053878) <br> Genta Indra Winata, Samuel Cahyawijaya, Zhaojiang Lin, Zihan Liu, Pascale Fung | |[Paper](https://ieeexplore.ieee.org/document/9053878)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'21-purple) <br>[Luna: Linear Unified Nested Attention](https://arxiv.org/abs/2106.01540) <br> Xuezhe Ma, Xiang Kong, Sinong Wang, Chunting Zhou, Jonathan May, Hao Ma, Luke Zettlemoyer | |[Paper](https://arxiv.org/pdf/2106.01540)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'19-blue) <br>[Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks](https://arxiv.org/abs/1810.00825) <br> Juho Lee, Yoonho Lee, Jungtaek Kim, Adam Kosiorek, Seungjin Choi, Yee Whye Teh | |[Paper](https://arxiv.org/pdf/1810.00825)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'20-blue) <br>[Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention](https://arxiv.org/abs/2006.16236) <br> Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas, François Fleuret | |[Paper](https://arxiv.org/pdf/2006.16236)|
 ---
 
 <a id="list"></a>
