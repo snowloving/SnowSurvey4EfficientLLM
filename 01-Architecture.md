@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-3-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-6-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -41,6 +41,8 @@
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/abs/2305.13245) <br> Joshua Ainslie, James Lee-Thorp, Michiel de Jong, Yury Zemlyanskiy, Federico Lebrón, Sumit Sanghai |<img width="1002" alt="image" src="https://arxiv.org/html/2305.13245v3/extracted/5314337/images/gmq_architecture.png"> |[Paper](https://arxiv.org/pdf/2305.13245)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://arxiv.org/abs/2405.04434) <br> DeepSeek-AI |<img width="1002" alt="image" src="https://arxiv.org/html/2405.04434v5/x4.png"> |[Paper](https://arxiv.org/pdf/2405.04434)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'19-b31b1b) <br> [Generating Long Sequences with Sparse Transformers](https://arxiv.org/abs/1904.10509) <br> Rewon Child, Scott Gray, Alec Radford, Ilya Sutskever | |[Paper](https://arxiv.org/pdf/1904.10509)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'20-b31b1b) <br>[Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150) <br> Iz Beltagy, Matthew E. Peters, Arman Cohan | |[Paper](https://arxiv.org/pdf/2004.05150)|
+
 ---
 
 <a id="list"></a>
