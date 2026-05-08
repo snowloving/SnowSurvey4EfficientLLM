@@ -54,6 +54,7 @@
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'21-purple) <br>[Luna: Linear Unified Nested Attention](https://arxiv.org/abs/2106.01540) <br> Xuezhe Ma, Xiang Kong, Sinong Wang, Chunting Zhou, Jonathan May, Hao Ma, Luke Zettlemoyer | |[Paper](https://arxiv.org/pdf/2106.01540)|
 |![Publish](https://img.shields.io/badge/Conference-ICML'19-blue) <br>[Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks](https://arxiv.org/abs/1810.00825) <br> Juho Lee, Yoonho Lee, Jungtaek Kim, Adam Kosiorek, Seungjin Choi, Yee Whye Teh | |[Paper](https://arxiv.org/pdf/1810.00825)|
 |![Publish](https://img.shields.io/badge/Conference-ICML'20-blue) <br>[Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention](https://arxiv.org/abs/2006.16236) <br> Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas, François Fleuret | |[Paper](https://arxiv.org/pdf/2006.16236)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'21-red) <br>[Rethinking Attention with Performers](https://arxiv.org/abs/2009.14794) <br> Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin, Lukasz Kaiser, et al. | |[Paper](https://arxiv.org/pdf/2009.14794)|
 ---
 
 <a id="list"></a>
