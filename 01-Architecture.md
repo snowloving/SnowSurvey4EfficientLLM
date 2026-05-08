@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-6-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-7-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -43,6 +43,7 @@
 |![Publish](https://img.shields.io/badge/Paper-arXiv'19-b31b1b) <br> [Generating Long Sequences with Sparse Transformers](https://arxiv.org/abs/1904.10509) <br> Rewon Child, Scott Gray, Alec Radford, Ilya Sutskever | |[Paper](https://arxiv.org/pdf/1904.10509)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'20-b31b1b) <br>[Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150) <br> Iz Beltagy, Matthew E. Peters, Arman Cohan | |[Paper](https://arxiv.org/pdf/2004.05150)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'20-purple) <br>[Big Bird: Transformers for Longer Sequences](https://arxiv.org/abs/2007.14062) <br> Manzil Zaheer, Guru Guruganesh, Avinava Dubey, Joshua Ainslie, Chris Alberti, Santiago Ontanon, Philip Pham, Anirudh Ravula, Qifan Wang, Li Yang, Amr Ahmed | |[Paper](https://arxiv.org/pdf/2007.14062)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'20-red) <br>[Reformer: The Efficient Transformer](https://arxiv.org/abs/2001.04451) <br> Nikita Kitaev, Łukasz Kaiser, Anselm Levskaya | |[Paper](https://arxiv.org/pdf/2001.04451)|
 ---
 
 <a id="list"></a>
