@@ -42,7 +42,7 @@
 |![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://arxiv.org/abs/2405.04434) <br> DeepSeek-AI |<img width="1002" alt="image" src="https://arxiv.org/html/2405.04434v5/x4.png"> |[Paper](https://arxiv.org/pdf/2405.04434)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'19-b31b1b) <br> [Generating Long Sequences with Sparse Transformers](https://arxiv.org/abs/1904.10509) <br> Rewon Child, Scott Gray, Alec Radford, Ilya Sutskever | |[Paper](https://arxiv.org/pdf/1904.10509)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'20-b31b1b) <br>[Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150) <br> Iz Beltagy, Matthew E. Peters, Arman Cohan | |[Paper](https://arxiv.org/pdf/2004.05150)|
-
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'20-purple) <br>[Big Bird: Transformers for Longer Sequences](https://arxiv.org/abs/2007.14062) <br> Manzil Zaheer, Guru Guruganesh, Avinava Dubey, Joshua Ainslie, Chris Alberti, Santiago Ontanon, Philip Pham, Anirudh Ravula, Qifan Wang, Li Yang, Amr Ahmed | |[Paper](https://arxiv.org/pdf/2007.14062)|
 ---
 
 <a id="list"></a>
