@@ -33,7 +33,7 @@
 -->
 
 <a id="important"></a>
-## 🔥 本领域经典论文
+## 🔥 本领域经典论文之Efficient Attention Mechanisms
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
@@ -49,6 +49,7 @@
 |![Publish](https://img.shields.io/badge/Journal-TACL'21-orange) <br>[Efficient Content-Based Sparse Attention with Routing Transformers](https://arxiv.org/abs/2003.05997) <br> Aurko Roy, Mohammad Saffar, Ashish Vaswani, David Grangier | |[Paper](https://arxiv.org/pdf/2003.05997)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'22-brightgreen) <br>[ClusterFormer: Neural Clustering Attention for Efficient and Effective Transformer](https://arxiv.org/abs/2203.09053) <br> Ningning Wang, Guobing Gan, Peng Zhang, Shuai Zhang, Junqiu Wei, Qun Liu, Xin Jiang | |[Paper](https://arxiv.org/pdf/2203.09053)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[HyperAttention: Long-context Attention in Near-Linear Time](https://arxiv.org/abs/2310.05869) <br> Insu Han, Rajesh Jayaram, Amin Karbasi, Vahab Mirrokni, David Woodruff, Amir Zandieh | |[Paper](https://arxiv.org/pdf/2310.05869)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'20-b31b1b) <br>[Linformer: Self-Attention with Linear Complexity](https://arxiv.org/abs/2006.04768) <br> Sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, Hao Ma | |[Paper](https://arxiv.org/pdf/2006.04768)|
 ---
 
 <a id="list"></a>
