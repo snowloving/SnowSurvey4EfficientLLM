@@ -46,6 +46,7 @@
 |![Publish](https://img.shields.io/badge/Conference-ICLR'20-red) <br>[Reformer: The Efficient Transformer](https://arxiv.org/abs/2001.04451) <br> Nikita Kitaev, Łukasz Kaiser, Anselm Levskaya | |[Paper](https://arxiv.org/pdf/2001.04451)|
 |![Publish](https://img.shields.io/badge/Conference-ICML'20-blue) <br>[Sparse Sinkhorn Attention](https://proceedings.mlr.press/v119/tay20a.html) <br> Yi Tay, Dara Bahri, Liu Yang, Donald Metzler, Da-Cheng Juan | |[Paper](https://proceedings.mlr.press/v119/tay20a/tay20a.pdf)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'20-purple) <br>[Fast Transformers with Clustered Attention](https://arxiv.org/abs/2007.04825) <br> Apoorv Vyas, Angelos Katharopoulos, François Fleuret | |[Paper](https://arxiv.org/pdf/2007.04825)|
+|![Publish](https://img.shields.io/badge/Journal-TACL'21-orange) <br>[Efficient Content-Based Sparse Attention with Routing Transformers](https://arxiv.org/abs/2003.05997) <br> Aurko Roy, Mohammad Saffar, Ashish Vaswani, David Grangier | |[Paper](https://arxiv.org/pdf/2003.05997)|
 
 ---
 
