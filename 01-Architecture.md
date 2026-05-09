@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-8-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-18-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -14,8 +14,8 @@
 ## 📖 目录
 
 - [📊 本领域综述论文](#-survey)
-- [🔥 本领域经典论文](#-important)
-- [📄 论文清单](#-list)
+- [🔥 本领域经典论文之Efficient Attention Mechanisms](#-efficentAttention)
+- [🏆 本领域经典论文之Mixture of Experts](#-MoE)
 
 
 ---
@@ -32,7 +32,7 @@
 ---
 -->
 
-<a id="important"></a>
+<a id="efficentAttention"></a>
 ## 🔥 本领域经典论文之Efficient Attention Mechanisms
 
 | Title & Authors | Introduction | Links |
@@ -57,8 +57,8 @@
 |![Publish](https://img.shields.io/badge/Conference-ICLR'21-red) <br>[Rethinking Attention with Performers](https://arxiv.org/abs/2009.14794) <br> Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin, Lukasz Kaiser, et al. | |[Paper](https://arxiv.org/pdf/2009.14794)|
 ---
 
-<a id="list"></a>
-## 📄 论文清单
+<a id="MoE"></a>
+🏆 本领域经典论文之Mixture of Experts
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
