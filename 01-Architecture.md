@@ -62,10 +62,10 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
-
+|![Publish](https://img.shields.io/badge/Conference-ICLR'17-red) <br>[Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer](https://arxiv.org/abs/1701.06538) <br> Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, Jeff Dean | |[Paper](https://arxiv.org/pdf/1701.06538)|
 
 ---
 
 <p align="center">
-  <sub>⭐ 持续更新中 · 欢迎提交 Issue 或 PR 补充论文 ⭐</sub>
+  <sub>⭐ 持续更新中 · 缺少的图片精读之后会补 · 欢迎提交 Issue 或 PR 补充论文 ⭐</sub>
 </p>
