@@ -63,6 +63,8 @@
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'17-red) <br>[Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer](https://arxiv.org/abs/1701.06538) <br> Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, Jeff Dean | |[Paper](https://arxiv.org/pdf/1701.06538)|
+|![Publish](https://img.shields.io/badge/Journal-JMLR'22-blue) <br>[Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](https://arxiv.org/abs/2101.03961) <br> William Fedus, Barret Zoph, Noam Shazeer | |[Paper](https://arxiv.org/pdf/2101.03961)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'21-red) <br>[GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding](https://arxiv.org/abs/2006.16668) <br> Dmitry Lepikhin, HyoukJoong Lee, Yuanzhong Xu, Dehao Chen, Orhan Firat, Yanping Huang, Maxim Krikun, Noam Shazeer, Zhifeng Chen | |[Paper](https://arxiv.org/pdf/2006.16668)|
 
 ---
 
