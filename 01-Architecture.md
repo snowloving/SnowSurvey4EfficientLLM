@@ -68,6 +68,8 @@
 |![Publish](https://img.shields.io/badge/Conference-ICML'21-blue) <br>[BASE Layers: Simplifying Training of Large, Sparse Models](https://arxiv.org/abs/2103.16716) <br> Mike Lewis, Shruti Bhosale, Tim Dettmers, Naman Goyal, Luke Zettlemoyer | |[Paper](https://arxiv.org/pdf/2103.16716)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'22-purple) <br>[Mixture-of-Experts with Expert Choice Routing](https://arxiv.org/abs/2202.09368) <br> Yanqi Zhou, Tao Lei, Hanxiao Liu, Nan Du, Yanping Huang, Vincent Zhao, Andrew M. Dai, Quoc V. Le, James Laudon | |[Paper](https://arxiv.org/pdf/2202.09368)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[From Sparse to Soft Mixtures of Experts](https://arxiv.org/abs/2308.00951) <br> Joan Puigcerver, Carlos Riquelme Ruiz, Basil Mustafa, Neil Houlsby | |[Paper](https://arxiv.org/pdf/2308.00951)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'22-blue) <br>[DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale](https://arxiv.org/abs/2201.05596) <br> Samyam Rajbhandari, Conglong Li, Zhewei Yao, Minjia Zhang, Reza Yazdani Aminabadi, Ammar Ahmad Awan, Jeff Rasley, Yuxiong He | |[Paper](https://arxiv.org/pdf/2201.05596)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24-brightgreen) <br>[DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models](https://arxiv.org/abs/2401.06066) <br> Damai Dai, Chengqi Deng, Chenggang Zhao, RX Xu, Huazuo Gao, Deli Chen, Jiashi Li, Wangding Zeng, Xingkai Yu, Yu Wu, et al. | |[Paper](https://arxiv.org/pdf/2401.06066)|
 ---
 
 <p align="center">
