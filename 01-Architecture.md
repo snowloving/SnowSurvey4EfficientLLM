@@ -65,7 +65,8 @@
 |![Publish](https://img.shields.io/badge/Conference-ICLR'17-red) <br>[Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer](https://arxiv.org/abs/1701.06538) <br> Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, Jeff Dean | |[Paper](https://arxiv.org/pdf/1701.06538)|
 |![Publish](https://img.shields.io/badge/Journal-JMLR'22-blue) <br>[Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](https://arxiv.org/abs/2101.03961) <br> William Fedus, Barret Zoph, Noam Shazeer | |[Paper](https://arxiv.org/pdf/2101.03961)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'21-red) <br>[GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding](https://arxiv.org/abs/2006.16668) <br> Dmitry Lepikhin, HyoukJoong Lee, Yuanzhong Xu, Dehao Chen, Orhan Firat, Yanping Huang, Maxim Krikun, Noam Shazeer, Zhifeng Chen | |[Paper](https://arxiv.org/pdf/2006.16668)|
-
+|![Publish](https://img.shields.io/badge/Conference-ICML'21-blue) <br>[BASE Layers: Simplifying Training of Large, Sparse Models](https://arxiv.org/abs/2103.16716) <br> Mike Lewis, Shruti Bhosale, Tim Dettmers, Naman Goyal, Luke Zettlemoyer | |[Paper](https://arxiv.org/pdf/2103.16716)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[From Sparse to Soft Mixtures of Experts](https://arxiv.org/abs/2308.00951) <br> Joan Puigcerver, Carlos Riquelme Ruiz, Basil Mustafa, Neil Houlsby | |[Paper](https://arxiv.org/pdf/2308.00951)|
 ---
 
 <p align="center">
