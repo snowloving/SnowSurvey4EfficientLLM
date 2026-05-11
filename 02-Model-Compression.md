@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-0-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-3-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -28,10 +28,9 @@
 
 | # | 论文标题 | 年份 | 出处 | 核心分类框架 | 💡 一句话洞察 |
 |:--:|---------|:----:|------|-------------|--------------|
-| 1 | 🔥 **A Comprehensive Survey of Compression Algorithms for Language Models** | 2024 | arXiv | `剪枝` / `量化` / `KD` / `低秩近似` / `参数共享` / `高效架构` | 系统区分高成本与低成本算法，强调迭代压缩与直接优化目标函数是LLM时代的关键 |
-| 2 | 🔥 **A Survey on Model Compression for Large Language Models** | 2024 | TACL | `量化(QAT/PTQ)` / `剪枝(非结构化/结构化/半结构化)` / `KD(黑盒/白盒)` / `低秩分解` | 聚焦压缩技术本身，按压缩类型系统梳理，附带标准化指标与基准评估体系 |
-| 3 | 🏆 **A Survey of Low-Bit Large Language Models: Basics, Systems, and Algorithms** | 2025 | Neural Networks `IF=6.3` | `基础(数据格式/粒度/动静)` / `系统(框架/硬件支持)` / `算法(QAT/PTQ/等效变换/补偿/混合精度)` 三维度 | 迄今最全面的LLM低位量化综述，首创基础-系统-算法三维框架，覆盖量化全技术栈 |
-| 4 | 🔥 **A Survey on Symbolic Knowledge Distillation of LLMs** | 2024 | IEEE TAI | `直接蒸馏` / `多级蒸馏` / `RL策略蒸馏` 三类 | 首篇LLM符号化知识蒸馏综述，系统梳理将隐式知识转化为可解释符号规则的全流程方法 |
+| 1 | **A Survey on Model Compression for Transformer-Based LLMs** | 2026 | IEEE TETCI `IF=11.8` | `压缩方法`：剪枝/量化/蒸馏/低秩分解 + `新视角`：KV Cache压缩/NAS | 首篇将KV Cache压缩与NAS纳入LLM模型压缩统一框架的综述；混合压缩是工业落地主流范式 |
+| 2 | **A Survey of Model Compression Techniques: Past, Present, and Future** | 2025 | Front. Rob. AI `IF=3.0` | `压缩总论`：量化/剪枝/蒸馏/低秩分解 + 轻量级架构设计(NAS/Transformer变体) | 横跨CV与NLP的压缩全景综述，从LeNet到LLM的通透演进梳理，包含未来趋势（LLM压缩/硬件感知/AutoML） |
+| 3 | **A Survey on Model Compression for Large Language Models** | 2024 | TACL `IF=6.9` | `量化(QAT/PTQ)` / `剪枝(非结构化/结构化/半结构化)` / `KD(黑盒/白盒)` / `低秩分解` | 聚焦压缩技术本身，按压缩类型（量化/剪枝/KD/低秩）系统梳理，附带标准化指标与基准评估体系 |
 
 ---
 
