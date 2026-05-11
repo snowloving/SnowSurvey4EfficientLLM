@@ -56,6 +56,7 @@
 |![Publish](https://img.shields.io/badge/Conference-ICML'19-blue) <br>[Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks](https://arxiv.org/abs/1810.00825) <br> Juho Lee, Yoonho Lee, Jungtaek Kim, Adam Kosiorek, Seungjin Choi, Yee Whye Teh | |[Paper](https://arxiv.org/pdf/1810.00825)|
 |![Publish](https://img.shields.io/badge/Conference-ICML'20-blue) <br>[Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention](https://arxiv.org/abs/2006.16236) <br> Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas, François Fleuret | |[Paper](https://arxiv.org/pdf/2006.16236)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'21-red) <br>[Rethinking Attention with Performers](https://arxiv.org/abs/2009.14794) <br> Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin, Lukasz Kaiser, et al. | |[Paper](https://arxiv.org/pdf/2009.14794)|
+
 ---
 
 <a id="MoE"></a>
@@ -72,6 +73,7 @@
 |![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[From Sparse to Soft Mixtures of Experts](https://arxiv.org/abs/2308.00951) <br> Joan Puigcerver, Carlos Riquelme Ruiz, Basil Mustafa, Neil Houlsby | |[Paper](https://arxiv.org/pdf/2308.00951)|
 |![Publish](https://img.shields.io/badge/Conference-ICML'22-blue) <br>[DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale](https://arxiv.org/abs/2201.05596) <br> Samyam Rajbhandari, Conglong Li, Zhewei Yao, Minjia Zhang, Reza Yazdani Aminabadi, Ammar Ahmad Awan, Jeff Rasley, Yuxiong He | |[Paper](https://arxiv.org/pdf/2201.05596)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'24-brightgreen) <br>[DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models](https://arxiv.org/abs/2401.06066) <br> Damai Dai, Chengqi Deng, Chenggang Zhao, RX Xu, Huazuo Gao, Deli Chen, Jiashi Li, Wangding Zeng, Xingkai Yu, Yu Wu, et al. | |[Paper](https://arxiv.org/pdf/2401.06066)|
+
 ---
 
 <a id="alter"></a>
@@ -79,8 +81,9 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
-|![Publish](https://img.shields.io/badge/Conference-ICLR'22-brightgreen) <br>[Efficiently Modeling Long Sequences with Structured State Spaces](https://arxiv.org/abs/2111.00396) <br> Albert Gu, Karan Goel, Christopher Ré | |[Paper](https://arxiv.org/pdf/2111.00396)|
+|![Publish](https://img.shields.io/badge/Conference-Conference-ICLR'22-red) <br>[Efficiently Modeling Long Sequences with Structured State Spaces](https://arxiv.org/abs/2111.00396) <br> Albert Gu, Karan Goel, Christopher Ré | |[Paper](https://arxiv.org/pdf/2111.00396)|
 
+---
 <p align="center">
   <sub>⭐ 持续更新中 · 缺少的图片精读之后会补 · 欢迎提交 Issue 或 PR 补充论文 ⭐</sub>
 </p>
