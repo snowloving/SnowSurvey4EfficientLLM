@@ -16,6 +16,7 @@
 - [📊 本领域综述论文](#-survey)
 - [🔥 本领域经典论文之Efficient Attention Mechanisms](#-efficentAttention)
 - [🏆 本领域经典论文之Mixture of Experts](#-MoE)
+- [🥇 本领域经典论文之Alternative-Architectures](#-alter)
 
 
 ---
@@ -72,6 +73,12 @@
 |![Publish](https://img.shields.io/badge/Conference-ICML'22-blue) <br>[DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale](https://arxiv.org/abs/2201.05596) <br> Samyam Rajbhandari, Conglong Li, Zhewei Yao, Minjia Zhang, Reza Yazdani Aminabadi, Ammar Ahmad Awan, Jeff Rasley, Yuxiong He | |[Paper](https://arxiv.org/pdf/2201.05596)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'24-brightgreen) <br>[DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models](https://arxiv.org/abs/2401.06066) <br> Damai Dai, Chengqi Deng, Chenggang Zhao, RX Xu, Huazuo Gao, Deli Chen, Jiashi Li, Wangding Zeng, Xingkai Yu, Yu Wu, et al. | |[Paper](https://arxiv.org/pdf/2401.06066)|
 ---
+
+<a id="alter"></a>
+🥇 本领域经典论文之Alternative-Architectures
+| Title & Authors | Introduction | Links |
+|:--|  :----: | :---:|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'21-b31b1b) <br>[Efficiently Modeling Long Sequences with Structured State Spaces](https://arxiv.org/abs/2111.00396) <br> Albert Gu, Karan Goel, Christopher Ré | |[Paper](https://arxiv.org/pdf/2111.00396)|
 
 <p align="center">
   <sub>⭐ 持续更新中 · 缺少的图片精读之后会补 · 欢迎提交 Issue 或 PR 补充论文 ⭐</sub>
