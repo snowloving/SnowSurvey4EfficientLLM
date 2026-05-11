@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://img.shields.io/badge/Papers-33-critical?style=flat-square" alt="Paper Count">
+   <img src="https://img.shields.io/badge/Papers-34-critical?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -555,6 +555,25 @@
   6. **跨领域应用潜力巨大**：LSKD将文本符号知识注入视觉模型提升可解释性，医疗/法律/金融领域专用模型（HuatuoGPT/ChatDoctor/LawyerLLaMA/XuanYuan）已展现领域适配效能。
   7. **神经符号AI评估基准急缺**：当前借用传统KD/LLM基准，需开发专门针对神经符号系统（神经+符号双组件）的验证测试框架。
 - **附带资源**：图1：LLM与知识蒸馏七十年里程碑时间线（1950-2024）、图2：传统知识蒸馏三种类型示意（响应式/特征式/关系式）、图3：符号化知识蒸馏五步流程可视化、图4-6：直接/多级/RL蒸馏流程图、图7：相关研究全景图（KB→一致性→编辑→推理→可解释→符号蒸馏），该综述是LLM符号化知识蒸馏领域首篇系统性综述，聚焦于将LLM黑盒知识转化为透明、可解释、可复用的符号表示，为构建可信任AI系统提供了方法论全景图和未来研究路线。同时因其专注于知识蒸馏中的可解释符号化路径，可与纯模型压缩导向的LLM压缩综述形成互补。
+<br>
+
+### 1. A Survey of Model Compression Techniques: Past, Present, and Future (2025)
+[![Paper](https://img.shields.io/badge/Journal-ACM_CSUR'25-blue)]()
+[![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
+[![Paper](https://img.shields.io/badge/IF=5.8-important)]()
+
+[A Survey of Model Compression Techniques: Past, Present, and Future]()
+
+- **分类方式**：按 **压缩总论**（量化/剪枝/蒸馏/低秩分解 + 轻量级架构设计）组织，横跨CV与NLP，提供从LeNet到LLM的完整技术演进脉络
+- **覆盖子方向**：
+  - `量化` → PTQ/QAT/混合精度量化/极端低比特量化
+  - `剪枝` → 非结构化剪枝/结构化剪枝/半结构化剪枝/动态稀疏
+  - `知识蒸馏` → 白盒蒸馏/黑盒蒸馏/自蒸馏/多教师蒸馏
+  - `低秩分解` → 矩阵分解/张量分解/LoRA及其变体
+  - `轻量级架构设计` → NAS/Transformer高效变体/硬件感知搜索
+- **核心洞察补充**：横跨CV与NLP的压缩全景综述，从LeNet到LLM的通透演进梳理，包含未来趋势（LLM压缩/硬件感知/AutoML）
+- **附带资源**：系统梳理各类压缩技术的代表性算法与里程碑工作，提供完整的技术分类树与演进时间线
+
 <br>
 
 </details>
