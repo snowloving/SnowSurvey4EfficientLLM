@@ -27,6 +27,7 @@ This repository is designed for:
 ## 🔗 Full List
 - [Surveys](00-Surveys.md)
 - [Architecture-Optimization](01-Architecture.md)
+- [Model-Compression](02-Model-Compression.md)
 
 ---
 
