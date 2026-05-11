@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
 
-# 📚 Awesome-Efficient-LLM-Surveys
+# 📖 Awesome-Efficient-LLM-Surveys
 
 > 一份高质量、持续更新的**大语言模型（LLM）效率优化**综述导航。  
 > 按**通用综述**与**特定领域**两大类别组织，每篇论文附带核心分类方式、覆盖方向、关键洞察及代码资源，便于研究者快速定位。
