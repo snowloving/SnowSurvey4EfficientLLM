@@ -85,7 +85,10 @@
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'22-purple) <br>[Diagonal State Spaces are as Effective as Structured State Spaces](https://arxiv.org/abs/2203.14343) <br> Ankit Gupta, Albert Gu, Jonathan Berant | |[Paper](https://arxiv.org/pdf/2203.14343)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'23-red) <br>[Hungry Hungry Hippos: Towards Language Modeling with State Space Models](https://arxiv.org/abs/2212.14052) <br> Daniel Y. Fu, Tri Dao, Khaled K. Saab, Armin W. Thomas, Atri Rudra, Christopher Ré | |[Paper](https://arxiv.org/pdf/2212.14052)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Mamba: Linear-Time Sequence Modeling with Selective State Spaces](https://arxiv.org/abs/2312.00752) <br> Albert Gu, Tri Dao | |[Paper](https://arxiv.org/pdf/2312.00752)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'24-blue) <br>[Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality](https://arxiv.org/abs/2405.21060) <br> Tri Dao, Albert Gu | |[Paper](https://arxiv.org/pdf/2405.21060)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'25-red) <br>[Jamba: A Hybrid Transformer-Mamba Language Model](https://arxiv.org/abs/2403.19887) <br> Opher Lieber, Barak Lenz, Hofit Bata, Gal Cohen, Jhonathan Osin, Itay Dalmedigos, Erez Safahi, Shaked Meirom, Yonatan Belinkov, Shai Shalev-Shwartz, et al. | |[Paper](https://arxiv.org/pdf/2403.19887)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23_Findings-green) <br>[RWKV: Reinventing RNNs for the Transformer Era](https://arxiv.org/abs/2305.13048) <br> Bo Peng, Eric Alcaide, Quentin Anthony, Alon Albalak, Samuel Arcadinho, Stella Biderman, Huanqi Cao, Xin Cheng, Michael Chung, Leon Derczynski, et al. | |[Paper](https://arxiv.org/pdf/2305.13048)|
+
 
 ---
 <p align="center">
