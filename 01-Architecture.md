@@ -81,7 +81,8 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
-|![Publish](https://img.shields.io/badge/Conference-Conference-ICLR'22-red) <br>[Efficiently Modeling Long Sequences with Structured State Spaces](https://arxiv.org/abs/2111.00396) <br> Albert Gu, Karan Goel, Christopher Ré | |[Paper](https://arxiv.org/pdf/2111.00396)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'22-red) <br>[Efficiently Modeling Long Sequences with Structured State Spaces](https://arxiv.org/abs/2111.00396) <br> Albert Gu, Karan Goel, Christopher Ré | |[Paper](https://arxiv.org/pdf/2111.00396)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'22-purple) <br>[Diagonal State Spaces are as Effective as Structured State Spaces](https://arxiv.org/abs/2203.14343) <br> Ankit Gupta, Albert Gu, Jonathan Berant | |[Paper](https://arxiv.org/pdf/2203.14343)|
 
 ---
 <p align="center">
