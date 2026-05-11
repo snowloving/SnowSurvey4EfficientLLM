@@ -88,7 +88,9 @@
 |![Publish](https://img.shields.io/badge/Conference-ICML'24-blue) <br>[Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality](https://arxiv.org/abs/2405.21060) <br> Tri Dao, Albert Gu | |[Paper](https://arxiv.org/pdf/2405.21060)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'25-red) <br>[Jamba: A Hybrid Transformer-Mamba Language Model](https://arxiv.org/abs/2403.19887) <br> Opher Lieber, Barak Lenz, Hofit Bata, Gal Cohen, Jhonathan Osin, Itay Dalmedigos, Erez Safahi, Shaked Meirom, Yonatan Belinkov, Shai Shalev-Shwartz, et al. | |[Paper](https://arxiv.org/pdf/2403.19887)|
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'23_Findings-green) <br>[RWKV: Reinventing RNNs for the Transformer Era](https://arxiv.org/abs/2305.13048) <br> Bo Peng, Eric Alcaide, Quentin Anthony, Alon Albalak, Samuel Arcadinho, Stella Biderman, Huanqi Cao, Xin Cheng, Michael Chung, Leon Derczynski, et al. | |[Paper](https://arxiv.org/pdf/2305.13048)|
-
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[xLSTM: Extended Long Short-Term Memory](https://arxiv.org/abs/2405.04517) <br> Maximilian Beck, Korbinian Pöppel, Markus Spanring, Andreas Auer, Oleksandra Prudnikova, Michael Kopp, Günter Klambauer, Johannes Brandstetter, Sepp Hochreiter | |[Paper](https://arxiv.org/pdf/2405.04517)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'23-blue) <br>[Hyena Hierarchy: Towards Larger Convolutional Language Models](https://arxiv.org/abs/2302.10866) <br> Michael Poli, Stefano Massaroli, Eric Nguyen, Daniel Y. Fu, Tri Dao, Stephen Baccus, Yoshua Bengio, Stefano Ermon, Christopher Ré | |[Paper](https://arxiv.org/pdf/2302.10866)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'25-blue) <br>[Learning to (Learn at Test Time): RNNs with Expressive Hidden States](https://arxiv.org/abs/2407.04620) <br> Yu Sun, Xinhao Li, Karan Dalal, Jiarui Xu, Arjun Vikram, Genghan Zhang, Yann Dubois, Xinlei Chen, Xiaolong Wang, Sanmi Koyejo, et al. | |[Paper](https://arxiv.org/pdf/2407.04620)|
 
 ---
 <p align="center">
