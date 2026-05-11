@@ -389,6 +389,8 @@
 | 5 | 🔥 **A Survey of Low-Bit Large Language Models: Basics, Systems, and Algorithms** | 2025 | Neural Networks `IF=6.3` | `基础(数据格式/粒度/动静)` / `系统(框架/硬件支持)` / `算法(QAT/PTQ/等效变换/补偿/混合精度)` 三维度 | 迄今最全面的LLM低位量化综述，首创基础-系统-算法三维框架，覆盖量化全技术栈从底层格式到上层部署 |
 | 6 | 📖 **A Survey on Symbolic Knowledge Distillation of LLMs** | 2024 | IEEE TAI | `直接蒸馏` / `多级蒸馏` / `RL策略蒸馏` 三类 | 首篇LLM符号化知识蒸馏综述，系统梳理将隐式知识转化为可解释符号规则（知识图谱/决策树/逻辑规则）的全流程方法 |
 | 7 | 📖 **A Survey of Model Compression Techniques: Past, Present, and Future** | 2025 | Front. Rob. AI `IF=3.0` | `压缩总论`：量化/剪枝/蒸馏/低秩分解 + 轻量级架构设计(NAS/Transformer变体) | 横跨CV与NLP的压缩全景综述，从LeNet到LLM的通透演进梳理，包含未来趋势（LLM压缩/硬件感知/AutoML） |
+| 8 | 📖 **Contemporary Advances in Neural Network Quantization: A Survey** | 2024 | IJCNN | `量化技术体系`：QAT/PTQ/混合精度/硬件加速，CNN→Transformer→LLM | 系统梳理神经网络量化从传统CNN到LLM时代的完整演进，重点分析Transformer量化中激活离群值问题与混合精度策略 |
+| 9 | 📖 **A Comprehensive Study on Quantization Techniques for Large Language Models** | 2024 | ICAIRC | `权重量化`(NF4/GPTQ/SpQR/AWQ) + `激活量化`(SmoothQuant/动态量化) + `混合精度`(QLoRA) + `LLM-QBench基准` | 提出LLM-QBench统一评估基准，对6种主流量化技术在LLaMA/OPT/BLOOM/Falcon上标准化评测；发现仅权重量化(4-bit)可保留99%精度但需激活量化才能实现实际推理加速 |
 
 <details>
 <summary><b>📄 展开详情</b></summary>
@@ -557,7 +559,7 @@
 - **附带资源**：图1：LLM与知识蒸馏七十年里程碑时间线（1950-2024）、图2：传统知识蒸馏三种类型示意（响应式/特征式/关系式）、图3：符号化知识蒸馏五步流程可视化、图4-6：直接/多级/RL蒸馏流程图、图7：相关研究全景图（KB→一致性→编辑→推理→可解释→符号蒸馏），该综述是LLM符号化知识蒸馏领域首篇系统性综述，聚焦于将LLM黑盒知识转化为透明、可解释、可复用的符号表示，为构建可信任AI系统提供了方法论全景图和未来研究路线。同时因其专注于知识蒸馏中的可解释符号化路径，可与纯模型压缩导向的LLM压缩综述形成互补。
 <br>
 
-### 1. A Survey of Model Compression Techniques: Past, Present, and Future (2025)
+### 7. A Survey of Model Compression Techniques: Past, Present, and Future (2025)
 [![Paper](https://img.shields.io/badge/Journal-ACM_CSUR'25-blue)]()
 [![Paper](https://img.shields.io/badge/SCI_Q1-red)]()
 [![Paper](https://img.shields.io/badge/IF=5.8-important)]()
@@ -576,6 +578,38 @@
 
 <br>
 
+### 8. Contemporary Advances in Neural Network Quantization: A Survey (2024)
+[![Paper](https://img.shields.io/badge/Conference-IJCNN'24-blue)]()
+
+[Contemporary Advances in Neural Network Quantization: A Survey]()
+
+- **分类方式**：按 **量化技术体系**（QAT/PTQ/混合精度/硬件加速）组织，覆盖CNN→Transformer→LLM的量化前沿进展
+- **覆盖子方向**：
+  - `QAT` → 基于梯度的量化训练/STE改进/量化感知初始化
+  - `PTQ` → 校准集优化/量化参数搜索/离群值处理
+  - `混合精度量化` → 硬件感知位宽分配/强化学习搜索/微分搜索
+  - `Transformer量化` → 激活量化/注意力量化/LayerNorm量化
+  - `LLM量化` → GPTQ/AWQ/SmoothQuant/QLoRA等前沿方法
+- **核心洞察补充**：系统梳理神经网络量化从传统CNN到LLM时代的完整演进，重点分析Transformer量化中激活离群值问题与LLM量化中混合精度策略的最新解决方案
+- **附带资源**：提供QAT与PTQ方法的系统性对比表格，覆盖精度损失-加速比-内存节省三维度
+
+<br>
+
+### 9. A Comprehensive Study on Quantization Techniques for Large Language Models (2024)
+[![Paper](https://img.shields.io/badge/Conference-ICAIRC'24-blue)]()
+
+[A Comprehensive Study on Quantization Techniques for Large Language Models]()
+
+- **分类方式**：按 **量化方法**（训练感知/后训练/权重/激活）与 **评价维度**（精度-效率权衡/基准测试）双轴组织
+- **覆盖子方向**：
+  - `权重公式化量化` → NormalFloat量化(NF4)/近似二阶优化(GPTQ)/层次化量化
+  - `权重免数据量化` → 稀疏量化(SpQR)/自适应舍入(AWQ)/免校准量化
+  - `激活量化` → 零样本量化(SmoothQuant)/动态激活量化/异常值平滑
+  - `低秩适应与混合精度` → QLoRA/多精度融合/选择性量化
+- **核心洞察补充**：提出统一量化评估基准(LLM-QBench)，对GPTQ/AWQ/SmoothQuant/SpQR/QLoRA/ZeroQuant等主流技术在LLaMA/OPT/BLOOM/Falcon等主流架构上进行标准化评测；发现仅权重量化(4-bit)可保留99%精度但需要激活量化才能实现实际推理加速；异常值处理是LLM量化的核心瓶颈
+- **附带资源**：论文Table 2-4提供各量化方法在困惑度/精度/推理延迟/内存占用方面的标准化对比(覆盖LLaMA-7B/13B/30B/65B)，提供LLM-QBench标准化评估框架
+
+<br>
 </details>
 
 ---
