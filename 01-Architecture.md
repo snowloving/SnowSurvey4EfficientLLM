@@ -59,7 +59,7 @@
 ---
 
 <a id="MoE"></a>
-🏆 本领域经典论文之Mixture of Experts
+## 🏆 本领域经典论文之Mixture of Experts
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
@@ -75,10 +75,11 @@
 ---
 
 <a id="alter"></a>
-🥇 本领域经典论文之Alternative-Architectures
+## 🥇 本领域经典论文之Alternative-Architectures
+
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
-|![Publish](https://img.shields.io/badge/Paper-arXiv'21-b31b1b) <br>[Efficiently Modeling Long Sequences with Structured State Spaces](https://arxiv.org/abs/2111.00396) <br> Albert Gu, Karan Goel, Christopher Ré | |[Paper](https://arxiv.org/pdf/2111.00396)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'22-brightgreen) <br>[Efficiently Modeling Long Sequences with Structured State Spaces](https://arxiv.org/abs/2111.00396) <br> Albert Gu, Karan Goel, Christopher Ré | |[Paper](https://arxiv.org/pdf/2111.00396)|
 
 <p align="center">
   <sub>⭐ 持续更新中 · 缺少的图片精读之后会补 · 欢迎提交 Issue 或 PR 补充论文 ⭐</sub>
