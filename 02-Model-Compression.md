@@ -36,9 +36,9 @@
 | 6 | **Art and Science of Quantizing Large-Scale Models: A Comprehensive Overview** | 2024 | arXiv | `量化范式`：PTQ(30+算法) + QAT(4类) + KV Cache压缩 + KD + 极端低比特 | 量化领域最深度的综述之一；详尽推导LLM-QAT/SmoothQuant/AWQ/GPTQ等核心公式，覆盖从二值网络到LLM量化的完整演进 |
 | 7 | **Contemporary Advances in Neural Network Quantization: A Survey** | 2024 | IJCNN | `量化技术体系`：QAT/PTQ/混合精度/硬件加速，CNN→Transformer→LLM | 系统梳理神经网络量化从传统CNN到LLM时代的完整演进，重点分析Transformer量化中激活离群值问题与混合精度策略 |
 | 8 | **A Comprehensive Study on Quantization Techniques for Large Language Models** | 2024 | ICAIRC | `权重量化`(NF4/GPTQ/SpQR/AWQ) + `激活量化`(SmoothQuant/动态量化) + `混合精度`(QLoRA) + `LLM-QBench基准` | 提出LLM-QBench统一评估基准，对6种主流量化技术在LLaMA/OPT/BLOOM/Falcon上标准化评测；发现仅权重量化(4-bit)可保留99%精度但需激活量化才能实现实际推理加速 |
-| 9 | **A Comprehensive Review of Binary Neural Network** | 2023 | Artificial Intelligence Review `IF=10.7` | `二值网络总论`：BNN基础/训练/架构/应用全景 | 从二值网络视角理解极致量化，为LLM极端压缩(1-bit)提供理论和方法论基础 |
-| 10 | **A Survey of Quantization Methods for Efficient Neural Network Inference** | 2022 | Low-Power Computer Vision (CRC Press) | `量化基础`：PTQ/QAT/混合精度/硬件感知 | 量化领域经典入门综述，系统阐述从基础量化原理到硬件部署的完整知识体系 |
-| 11 | **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=5.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
+| 9 | **A Comprehensive Review of Binary Neural Network** | 2023 | Artificial Intelligence Review `IF=13.9` | `二值网络总论`：BNN基础/训练/架构/应用全景 | 从二值网络视角理解极致量化，为LLM极端压缩(1-bit)提供理论和方法论基础 |
+| 10 | **A Survey of Quantization Methods for Efficient Neural Network Inference** | 2021 | arXiv | `量化基础`：PTQ/QAT/混合精度/硬件感知 | 量化领域经典入门综述，系统阐述从基础量化原理到硬件部署的完整知识体系 |
+| 11 | **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
 
 ---
 
