@@ -64,6 +64,8 @@
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'22-purple) <br>[Optimal Brain Compression: A Framework for Accurate Post-Training Quantization and Pruning](https://arxiv.org/abs/2208.11580) <br> Elias Frantar, Dan Alistarh | |[Paper](https://arxiv.org/pdf/2208.11580)|
 |![Publish](https://img.shields.io/badge/Conference-AAAI'24-red) <br>[OWQ: Outlier-Aware Weight Quantization for Efficient Fine-Tuning and Inference of Large Language Models](https://arxiv.org/abs/2306.02272) <br> Changhun Lee, Jungyu Jin, Taesu Kim, Hyungjun Kim, Eunhyeok Park | |[Paper](https://arxiv.org/pdf/2306.02272)|
 |![Publish](https://img.shields.io/badge/Conference-MLSys'24-orange) <br>[AWQ: Activation-Aware Weight Quantization for On-Device LLM Compression and Acceleration](https://arxiv.org/abs/2306.00978) <br> Ji Lin, Jiaming Tang, Haotian Tang, Shang Yang, Wei-Ming Chen, Wei-Chen Wang, Guangxuan Xiao, Xingyu Dang, Chuang Gan, Song Han | |[Paper](https://arxiv.org/pdf/2306.00978)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[QuaRot: Outlier-Free 4-bit Inference in Rotated LLMs](https://arxiv.org/abs/2404.00456) <br> Saleh Ashkboos, Amirkeivan Mohtashami, Maximilian L. Croci, Bo Li, Pashmina Cameron, Martin Jaggi, Dan Alistarh, Torsten Hoefler, James Hensman | |[Paper](https://arxiv.org/pdf/2404.00456)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'25-red) <br>[SpinQuant: LLM Quantization with Learned Rotations](https://arxiv.org/abs/2405.16406) <br> Zechun Liu, Changsheng Zhao, Igor Fedorov, Bilge Soran, Dhruv Choudhary, Raghuraman Krishnamoorthi, Vikas Chandra, Yuandong Tian, Tijmen Blankevoort | |[Paper](https://arxiv.org/pdf/2405.16406)|
 
 ---
 
