@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-41-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-43-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -41,6 +41,8 @@
 | 11 | **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
 | 12 | **Structured Pruning for Deep Convolutional Neural Networks: A Survey** | 2023 | IEEE TPAMI `IF=18.6` | `结构化剪枝`：滤波器/通道/层/块级剪枝 + 重要性评估准则 + 训练/免训练范式 | CNN结构化剪枝领域最权威综述之一，系统梳理从权重重要性到架构搜索的剪枝方法论，为LLM结构化剪枝提供扎实的理论与技术基础 |
 | 13 | **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
+| 14 | 🔥 **Survey on Knowledge Distillation for LLMs: Methods, Evaluation, and Application** | 2025 | ACM TIST `IF=6.6` | `KD范式`：白盒(Logits/Hint) + 黑盒(ICL/CoT/Instruction Following) + `鲁棒性评估` | 首次提出白盒/黑盒二分法用于LLM KD分类，清晰区分了可访问内部参数（白盒）和仅可访问API输出（黑盒）的两类方法；首篇从鲁棒性视角统一评估LLM蒸馏算法的综述；MiniLLM在GPT-2上对抗及OOD鲁棒性最优 |
+| 15 | 📖 **A Survey on Symbolic Knowledge Distillation of LLMs** | 2024 | IEEE TAI | `直接蒸馏` / `多级蒸馏` / `RL策略蒸馏` 三类 | 首篇LLM符号化知识蒸馏综述，系统梳理将隐式知识转化为可解释符号规则（知识图谱/决策树/逻辑规则）的全流程方法 |
 
 ---
 
