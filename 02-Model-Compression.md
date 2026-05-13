@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-30-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-32-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -39,6 +39,8 @@
 | 9 | **A Comprehensive Review of Binary Neural Network** | 2023 | Artificial Intelligence Review `IF=13.9` | `二值网络总论`：BNN基础/训练/架构/应用全景 | 从二值网络视角理解极致量化，为LLM极端压缩(1-bit)提供理论和方法论基础 |
 | 10 | **A Survey of Quantization Methods for Efficient Neural Network Inference** | 2021 | arXiv | `量化基础`：PTQ/QAT/混合精度/硬件感知 | 量化领域经典入门综述，系统阐述从基础量化原理到硬件部署的完整知识体系 |
 | 11 | **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
+| 12 | **Structured Pruning for Deep Convolutional Neural Networks: A Survey** | 2023 | IEEE TPAMI `IF=18.6` | `结构化剪枝`：滤波器/通道/层/块级剪枝 + 重要性评估准则 + 训练/免训练范式 | CNN结构化剪枝领域最权威综述之一，系统梳理从权重重要性到架构搜索的剪枝方法论，为LLM结构化剪枝提供扎实的理论与技术基础 |
+| 13 | 📖 **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
 
 ---
 
