@@ -76,6 +76,11 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
+|![Publish](https://img.shields.io/badge/Conference-ICML'23-blue) <br>[SparseGPT: Massive Language Models Can Be Accurately Pruned in One-Shot](https://arxiv.org/abs/2301.00774) <br> Elias Frantar, Dan Alistarh | |[Paper](https://arxiv.org/pdf/2301.00774)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[Wanda: A Simple and Effective Pruning Approach for Large Language Models](https://arxiv.org/abs/2306.11695) <br> Mingjie Sun, Zhuang Liu, Anna Bair, J. Zico Kolter | |[Paper](https://arxiv.org/pdf/2306.11695)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'24-blue) <br>[OWL: Outlier Weighed Layerwise Sparsity - A Missing Secret Sauce for Pruning LLMs to High Sparsity](https://arxiv.org/abs/2310.05175) <br> Lu Yin, You Wu, Zhenyu Zhang, Cheng-Yu Hsieh, Yaqing Wang, Yiling Jia, Gen Li, Ajay Jaiswal, Mykola Pechenizkiy, Yi Liang, et al. | |[Paper](https://arxiv.org/pdf/2310.05175)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[BESA: Pruning Large Language Models with Blockwise Parameter-Efficient Sparsity Allocation](https://arxiv.org/abs/2402.16880) <br> Peng Xu, Wenqi Shao, Mengzhao Chen, Shitao Tang, Kaipeng Zhang, Peng Gao, Fengwei An, Yu Qiao, Ping Luo | |[Paper](https://arxiv.org/pdf/2402.16880)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[E-Sparse: Boosting the Large Language Model Inference Through Entropy-Based N:M Sparsity](https://arxiv.org/abs/2310.15929) <br> Yun Li, Lin Niu, Xipeng Zhang, Kai Liu, Jianchen Zhu, Zhanhui Kang | |[Paper](https://arxiv.org/pdf/2310.15929)|
 
 ---
 
