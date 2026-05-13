@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-43-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-51-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -95,6 +95,14 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[MiniLLM: Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2306.08543) <br> Yuxian Gu, Li Dong, Furu Wei, Minlie Huang | |[Paper](https://arxiv.org/pdf/2306.08543)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[GKD: On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br> Rishabh Agarwal, Nino Vieillard, Yongchao Zhou, Piotr Stanczyk, Sabela Ramos Garea, Matthieu Geist, Olivier Bachem | |[Paper](https://arxiv.org/pdf/2306.13649)|
+|![Publish](https://img.shields.io/badge/Workshop-CoNLL'23_BabyLM-orange) <br>[Baby Llama: Knowledge Distillation from an Ensemble of Teachers Trained on a Small Dataset with No Performance Penalty](https://arxiv.org/abs/2308.02019) <br> Inar Timiryasov, Jean-Loup Tastet | |[Paper](https://arxiv.org/pdf/2308.02019)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'26-purple) <br>[Zeroth-Order Optimization Finds Flat Minima](https://arxiv.org/abs/2410.18769) <br> Liang Zhang, Bingcong Li, Kiran Thekumparampil, Sewoong Oh, Michael Muehlebach, Niao He | |[Paper](https://arxiv.org/pdf/2410.18769)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'23_Findings-brightgreen) <br>[Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) <br> Cheng-Yu Hsieh, Chun-Liang Li, Chih-Kuan Yeh, Hootan Nakhost, Yasuhisa Fujii, Alex Ratner, Ranjay Krishna, Chen-Yu Lee, Tomas Pfister | |[Paper](https://arxiv.org/pdf/2305.02301)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Zephyr: Direct Distillation of LM Alignment](https://arxiv.org/abs/2310.16944) <br> Lewis Tunstall, Edward Beeching, Nathan Lambert, Nazneen Rajani, Kashif Rasul, Younes Belkada, Shengyi Huang, Leandro Von Werra, Clémentine Fourrier, Nathan Habib, et al. | |[Paper](https://arxiv.org/pdf/2310.16944)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[Lion: Adversarial Distillation of Proprietary Large Language Models](https://arxiv.org/abs/2305.12870) <br> Yuxin Jiang, Chunkit Chan, Mingyang Chen, Wei Wang | |[Paper](https://arxiv.org/pdf/2305.12870)|
+|![Publish](https://img.shields.io/badge/Conference-NAACL'24-blue) <br>[PaD: Program-aided Distillation Can Teach Small Models Reasoning Better than Chain-of-Thought Fine-Tuning](https://arxiv.org/abs/2405.04787) <br> Xuekai Zhu, Biqing Qi, Kaiyan Zhang, Xinwei Long, Zhouhan Lin, Bowen Zhou | |[Paper](https://arxiv.org/pdf/2405.04787)|
 
 ---
 
