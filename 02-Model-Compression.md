@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-32-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-41-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -81,6 +81,10 @@
 |![Publish](https://img.shields.io/badge/Conference-ICML'24-blue) <br>[OWL: Outlier Weighed Layerwise Sparsity - A Missing Secret Sauce for Pruning LLMs to High Sparsity](https://arxiv.org/abs/2310.05175) <br> Lu Yin, You Wu, Zhenyu Zhang, Cheng-Yu Hsieh, Yaqing Wang, Yiling Jia, Gen Li, Ajay Jaiswal, Mykola Pechenizkiy, Yi Liang, et al. | |[Paper](https://arxiv.org/pdf/2310.05175)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[BESA: Pruning Large Language Models with Blockwise Parameter-Efficient Sparsity Allocation](https://arxiv.org/abs/2402.16880) <br> Peng Xu, Wenqi Shao, Mengzhao Chen, Shitao Tang, Kaipeng Zhang, Peng Gao, Fengwei An, Yu Qiao, Ping Luo | |[Paper](https://arxiv.org/pdf/2402.16880)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[E-Sparse: Boosting the Large Language Model Inference Through Entropy-Based N:M Sparsity](https://arxiv.org/abs/2310.15929) <br> Yun Li, Lin Niu, Xipeng Zhang, Kai Liu, Jianchen Zhu, Zhanhui Kang | |[Paper](https://arxiv.org/pdf/2310.15929)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'23-purple) <br>[LLM-Pruner: On the Structural Pruning of Large Language Models](https://arxiv.org/abs/2305.11627) <br> Xinyin Ma, Gongfan Fang, Xinchao Wang | |[Paper](https://arxiv.org/pdf/2305.11627)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[SliceGPT: Compress Large Language Models by Deleting Rows and Columns](https://arxiv.org/abs/2401.15024) <br> Saleh Ashkboos, Maximilian L. Croci, Marcelo Gennari do Nascimento, Torsten Hoefler, James Hensman | |[Paper](https://arxiv.org/pdf/2401.15024)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Shortened LLaMA: Depth Pruning for Large Language Models with Comparison of Retraining Methods](https://arxiv.org/abs/2402.02834) <br> Bo-Kyeong Kim, Geonmin Kim, Tae-Ho Kim, Thibault Castells, Shinkook Choi, Junho Shin, Hyoung-Kyu Song | |[Paper](https://arxiv.org/pdf/2402.02834)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'25_Findings-brightgreen) <br>[ShortGPT: Layers in Large Language Models are More Redundant Than You Expect](https://arxiv.org/abs/2403.03853) <br> Xin Men, Mingyu Xu, Qingyu Zhang, Qianhao Yuan, Bingning Wang, Hongyu Lin, Yaojie Lu, Xianpei Han, Weipeng Chen | |[Paper](https://arxiv.org/pdf/2403.03853)|
 
 ---
 
