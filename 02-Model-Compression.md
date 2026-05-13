@@ -40,7 +40,7 @@
 | 10 | **A Survey of Quantization Methods for Efficient Neural Network Inference** | 2021 | arXiv | `量化基础`：PTQ/QAT/混合精度/硬件感知 | 量化领域经典入门综述，系统阐述从基础量化原理到硬件部署的完整知识体系 |
 | 11 | **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
 | 12 | **Structured Pruning for Deep Convolutional Neural Networks: A Survey** | 2023 | IEEE TPAMI `IF=18.6` | `结构化剪枝`：滤波器/通道/层/块级剪枝 + 重要性评估准则 + 训练/免训练范式 | CNN结构化剪枝领域最权威综述之一，系统梳理从权重重要性到架构搜索的剪枝方法论，为LLM结构化剪枝提供扎实的理论与技术基础 |
-| 13 | 📖 **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
+| 13 | **Pruning and Quantization for Deep Neural Network Acceleration: A Survey** | 2021 | Neurocomputing `IF=6.5` | `剪枝+量化联合`：结构化/非结构化/量化感知/硬件加速 | 系统整合剪枝与量化两大压缩路线，覆盖从算法原理到硬件加速的端到端优化流程 |
 
 ---
 
