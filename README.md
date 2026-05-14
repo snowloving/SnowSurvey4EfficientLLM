@@ -56,8 +56,6 @@ Efficient-LLM-Literature/
 ├── 03-Inference-Optimization/       # 推理阶段优化（运行时）
 │   ├── KV-Cache-Compression/        # PagedAttention, RadixAttention, KV缓存压缩
 │   ├── Speculative-Decoding/        # Medusa, Eagle, Lookahead
-│   ├── FlashAttention/              # FA1/2/3, 高效注意力内核
-│   ├── System-Level-Serving/        # vLLM, TensorRT-LLM, SGLang, 调度
 │   └── Text-Compression/            # 提示压缩, Prompt压缩
 │
 ├── 04-Parameter-Efficient-Finetuning/         # 高效微调
