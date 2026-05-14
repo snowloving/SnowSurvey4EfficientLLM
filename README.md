@@ -54,7 +54,10 @@ Efficient-LLM-Literature/
 │   └── Neural-Architecture-Search/  
 │
 ├── 03-Parameter-Efficient-Finetuning/       
-│   ├── LoRA/      
+│   ├── Adapter-based/
+│   ├── Prompt-based/
+│   ├── Selective-tuning/
+│   ├── LoRA/   
 │   └── Other/
 │
 ├── 04-Inference-Optimization/      
