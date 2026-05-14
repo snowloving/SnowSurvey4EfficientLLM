@@ -36,29 +36,29 @@ This repository is designed for:
 
 ```text
 Efficient-LLM-Literature/
-├── 00-Surveys/                      # 综述（含Benchmark综述）
-│   ├── General-Surveys/             # 通用效率综述
-│   └── Domain-Specific/             # 长文本/多模态/代码等
+├── 00-Surveys/                      
+│   ├── General-Surveys/             
+│   └── Domain-Specific/           
 │
-├── 01-Architecture-Optimization/    # 架构级优化
-│   ├── Attention-Mechanisms/        # GQA, MQA, Sliding Window, etc.
-│   ├── Mixture-of-Experts/          # MoE routing, load balancing
-│   ├── Alternative-Architectures/   # Mamba, RWKV, Hyena, etc.
-│   └── Other/                       # FFN-and-Activation-Optimization: SwiGLU, Parallel, etc.
+├── 01-Architecture-Optimization/   
+│   ├── Attention-Mechanisms/      
+│   ├── Mixture-of-Experts/          
+│   ├── Alternative-Architectures/   
+│   └── Other/                      
 │
-├── 02-Model-Compression/            # 模型压缩
-│   ├── Quantization/                # GPTQ, AWQ, SmoothQuant, LLM.int8()
-│   ├── Pruning-Sparsity/            # SparseGPT, Wanda, 半结构化稀疏
-│   ├── Knowledge-Distillation/      # MiniLLM, GKD, 上下文蒸馏
-│   ├── Low-Rank-Decomposition/      # LoRA及其变体, SVD等
-│   └── Neural-Architecture-Search/  # （可选）LLM专用NAS
+├── 02-Model-Compression/          
+│   ├── Quantization/               
+│   ├── Pruning-Sparsity/            
+│   ├── Knowledge-Distillation/     
+│   ├── Low-Rank-Decomposition/     
+│   └── Neural-Architecture-Search/  
 │
-├── 03-Inference-Optimization/       # 推理阶段优化（运行时）
-│   ├── KV-Cache-Compression/        # PagedAttention, RadixAttention, KV缓存压缩
-│   ├── Speculative-Decoding/        # Medusa, Eagle, Lookahead
-│   └── Text-Compression/            # 提示压缩, Prompt压缩
+├── 03-Inference-Optimization/      
+│   ├── KV-Cache-Compression/        
+│   ├── Speculative-Decoding/        
+│   └── Text-Compression/           
 │
-├── 04-Parameter-Efficient-Finetuning/         # 高效微调
+├── 04-Parameter-Efficient-Finetuning/       
 │   ├── LoRA/      
 │   └── Other/
 │
