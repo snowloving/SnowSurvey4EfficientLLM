@@ -28,6 +28,7 @@ This repository is designed for:
 - [Surveys](00-Surveys.md)
 - [Architecture-Optimization](01-Architecture.md)
 - [Model-Compression](02-Model-Compression.md)
+- [Parameter-Efficient-Finetuning](04-Parameter-Efficient-Finetuning.md)
 
 ---
 
@@ -59,18 +60,11 @@ Efficient-LLM-Literature/
 │   ├── System-Level-Serving/        # vLLM, TensorRT-LLM, SGLang, 调度
 │   └── Text-Compression/            # 提示压缩, Prompt压缩
 │
-├── 04-Training-Optimization/        # 训练阶段优化
-│   ├── Efficient-Pretraining/       # 数据筛选, 模型并行, MeZO等
-│   └── Efficient-Finetuning/        # LoRA, Prefix Tuning, P-Tuning, QLoRA
+├── 04-Parameter-Efficient-Finetuning/         # 高效微调
+│   ├── LoRA/      
+│   └── Other/
 │
-├── 05-Routing-and-Cascade/          # 多模型路由与级联
-│
-├── 06-Multimodal/    # 多模态
-│
-└── 07-Code-and-Tools/               # 开源代码与工具库
-    ├── Inference-Engines/           # vLLM, TensorRT-LLM, llama.cpp
-    ├── Optimization-Libraries/      # FlashAttention, SpecForge, unsloth
-    └── Awesome-Lists/               # Awesome-LLM-Inference等
+└── 
 ```
 
 Each subdirectory contains:
