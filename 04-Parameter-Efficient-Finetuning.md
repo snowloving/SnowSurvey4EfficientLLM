@@ -17,7 +17,7 @@
 - [🔥 本领域经典论文之LoRA系列 (Low-Rank Adaptation)](#-lora)
 - [🏆 本领域经典论文之Adapter系列](#-adapter)
 - [🥇 本领域经典论文之前缀/提示调优 (Prefix/Prompt Tuning)](#-prompt)
-- [🎯 本领域经典论文之部分参数微调 (Partial Fine-Tuning)](#-partial)
+- [🎯 本领域经典论文之部分参数微调 (Selective Fine-Tuning)](#-partial)
 - [💎 本领域经典论文之内存高效微调 (Memory-Efficient Fine-Tuning)](#-meft)
 
 ---
@@ -62,7 +62,7 @@
 ---
 
 <a id="partial"></a>
-## 🎯 本领域经典论文之部分参数微调 (Partial Fine-Tuning)
+## 🎯 本领域经典论文之部分参数微调 (Selective Fine-Tuning)
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
