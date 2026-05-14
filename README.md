@@ -28,7 +28,7 @@ This repository is designed for:
 - [Surveys](00-Surveys.md)
 - [Architecture-Optimization](01-Architecture.md)
 - [Model-Compression](02-Model-Compression.md)
-- [Parameter-Efficient-Finetuning](04-Parameter-Efficient-Finetuning.md)
+- [Parameter-Efficient-Finetuning](03-Parameter-Efficient-Finetuning.md)
 
 ---
 
@@ -53,15 +53,14 @@ Efficient-LLM-Literature/
 │   ├── Low-Rank-Decomposition/     
 │   └── Neural-Architecture-Search/  
 │
-├── 03-Inference-Optimization/      
-│   ├── KV-Cache-Compression/        
-│   ├── Speculative-Decoding/        
-│   └── Text-Compression/           
-│
-├── 04-Parameter-Efficient-Finetuning/       
+├── 03-Parameter-Efficient-Finetuning/       
 │   ├── LoRA/      
 │   └── Other/
 │
+├── 04-Inference-Optimization/      
+│   ├── KV-Cache-Compression/        
+│   ├── Speculative-Decoding/        
+│   └── Text-Compression/           
 └── 
 ```
 
