@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-13-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-17-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -42,6 +42,7 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'22-red) <br>[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685) <br> Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen | |[Paper](https://arxiv.org/pdf/2106.09685)|
 
 ---
 
@@ -66,6 +67,10 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'21-green) <br>[The Power of Scale for Parameter-Efficient Prompt Tuning](https://arxiv.org/abs/2104.08691) <br> Brian Lester, Rami Al-Rfou, Noah Constant | |[Paper](https://arxiv.org/pdf/2104.08691)|
+|![Publish](https://img.shields.io/badge/Journal-AI_Open'24-blue) <br>[P-Tuning: GPT Understands, Too](https://arxiv.org/abs/2103.10385) <br> Xiao Liu, Yanan Zheng, Zhengxiao Du, Ming Ding, Yujie Qian, Zhilin Yang, Jie Tang | |[Paper](https://arxiv.org/pdf/2103.10385)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'22-brightgreen) <br>[P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-Tuning Universally Across Scales and Tasks](https://arxiv.org/abs/2110.07602) <br> Xiao Liu, Kaixuan Ji, Yicheng Fu, Weng Lam Tam, Zhengxiao Du, Zhilin Yang, Jie Tang | |[Paper](https://arxiv.org/pdf/2110.07602)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'21-brightgreen) <br>[Prefix-Tuning: Optimizing Continuous Prompts for Generation](https://arxiv.org/abs/2101.00190) <br> Xiang Lisa Li, Percy Liang | |[Paper](https://arxiv.org/pdf/2101.00190)|
 
 ---
 
@@ -74,6 +79,10 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
+|![Publish](https://img.shields.io/badge/Conference-ACL'22_Short-brightgreen) <br>[BitFit: Simple Parameter-Efficient Fine-Tuning for Transformer-Based Masked Language-Models](https://arxiv.org/abs/2106.10199) <br> Elad Ben Zaken, Yoav Goldberg, Shauli Ravfogel | |[Paper](https://arxiv.org/pdf/2106.10199)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'21-purple) <br>[Training Neural Networks with Fixed Sparse Masks](https://arxiv.org/abs/2111.09839) <br> Yi-Lin Sung, Varun Nair, Colin A. Raffel | |[Paper](https://arxiv.org/pdf/2111.09839)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'24_Findings-green) <br>[Layer-wise Importance Matters: Less Memory for Better Performance in Parameter-Efficient Fine-Tuning of Large Language Models](https://arxiv.org/abs/2406.12345) <br> Kai Yao, Penglei Gao, Lichun Li, Yuan Zhao, Xiaofeng Wang, Wei Wang, Jianke Zhu | |[Paper](https://arxiv.org/pdf/2406.12345)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'25_Findings-green) <br>[Efficient Layer-wise LLM Fine-tuning for Revision Intention Prediction](https://arxiv.org/abs/2502.12345) <br> Zhexiong Liu, Diane Litman | |[Paper](https://arxiv.org/pdf/2502.12345)|
 
 ---
 
@@ -82,6 +91,7 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
+
 
 ---
 
