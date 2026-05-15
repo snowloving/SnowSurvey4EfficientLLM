@@ -50,6 +50,14 @@
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
+|![Publish](https://img.shields.io/badge/Conference-ICML'19-blue) <br>[Parameter-Efficient Transfer Learning for NLP](https://arxiv.org/abs/1902.00751) <br> Neil Houlsby, Andrei Giurgiu, Stanislaw Jastrzebski, Bruna Morrone, Quentin De Laroussilhe, Andrea Gesmundo, Mona Attariyan, Sylvain Gelly | |[Paper](https://arxiv.org/pdf/1902.00751)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'22-red) <br>[Towards a Unified View of Parameter-Efficient Transfer Learning](https://arxiv.org/abs/2110.04366) <br> Junxian He, Chunting Zhou, Xuezhe Ma, Taylor Berg-Kirkpatrick, Graham Neubig | |[Paper](https://arxiv.org/pdf/2110.04366)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'21_Findings-green) <br>[Counter-Interference Adapter for Multilingual Machine Translation](https://arxiv.org/abs/2104.08154) <br> Yaoming Zhu, Jiangtao Feng, Chengqi Zhao, Mingxuan Wang, Lei Li | |[Paper](https://arxiv.org/pdf/2104.08154)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'23-purple) <br>[Conditional Adapters: Parameter-Efficient Transfer Learning with Fast Inference](https://arxiv.org/abs/2304.01362) <br> Tao Lei, Junwen Bai, Siddhartha Brahma, Joshua Ainslie, Kenton Lee, Yanqi Zhou, Nan Du, Vincent Zhao, Yuexin Wu, Bo Li, et al. | |[Paper](https://arxiv.org/pdf/2304.01362)|
+|![Publish](https://img.shields.io/badge/Book-LLM_Techniques'25-lightgrey) <br>[KronA: Parameter-Efficient Tuning with Kronecker Adapter](https://arxiv.org/abs/2212.10650) <br> Ali Edalati, Marzieh Tahaei, Ivan Kobyzev, Vahid Partovi Nia, James J. Clark, Mehdi Rezagholizadeh | |[Paper](https://arxiv.org/pdf/2212.10650)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'21-purple) <br>[Compacter: Efficient Low-Rank Hypercomplex Adapter Layers](https://arxiv.org/abs/2106.04647) <br> Rabeeh Karimi Mahabadi, James Henderson, Sebastian Ruder | |[Paper](https://arxiv.org/pdf/2106.04647)|
+|![Publish](https://img.shields.io/badge/Conference-EACL'21-blue) <br>[AdapterFusion: Non-Destructive Task Composition for Transfer Learning](https://arxiv.org/abs/2005.00247) <br> Jonas Pfeiffer, Aishwarya Kamath, Andreas Rücklé, Kyunghyun Cho, Iryna Gurevych | |[Paper](https://arxiv.org/pdf/2005.00247)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'22-green) <br>[AdaMix: Mixture-of-Adapter for Parameter-Efficient Tuning of Large Language Models](https://arxiv.org/abs/2205.12410) <br> Yaqing Wang, Subhabrata Mukherjee, Xiaodong Liu, Jing Gao, Ahmed Hassan Awadallah, Jianfeng Gao | |[Paper](https://arxiv.org/pdf/2205.12410)|
 
 ---
 
