@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-17-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-21-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -44,6 +44,8 @@
 |:--|  :----: | :---:|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'22-red) <br>[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685) <br> Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen | |[Paper](https://arxiv.org/pdf/2106.09685)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'23-red) <br>[AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2303.10512) <br> Qingru Zhang, Minshuo Chen, Alexander Bukharin, Nikos Karampatziakis, Pengcheng He, Yu Cheng, Weizhu Chen, Tuo Zhao | |[Paper](https://arxiv.org/pdf/2303.10512)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[SoRA: Sparse Low-Rank Adaptation of Pre-trained Language Models](https://arxiv.org/abs/2311.11696) <br> Ning Ding, Xingtai Lv, Qiaosen Wang, Yulin Chen, Bowen Zhou, Zhiyuan Liu, Maosong Sun | |[Paper](https://arxiv.org/pdf/2311.11696)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'24-blue) <br>[DoRA: Weight-Decomposed Low-Rank Adaptation](https://arxiv.org/abs/2402.09353) <br> Shih-Yang Liu, Chien-Yi Wang, Hongxu Yin, Pavlo Molchanov, Yu-Chiang Frank Wang, Kwang-Ting Cheng, Min-Hung Chen | |[Paper](https://arxiv.org/pdf/2402.09353)|
 
 ---
 
