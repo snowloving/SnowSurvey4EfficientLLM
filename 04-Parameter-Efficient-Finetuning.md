@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-35-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-42-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -50,6 +50,13 @@
 |![Publish](https://img.shields.io/badge/Conference-EACL'23-blue) <br>[DyLoRA: Parameter-Efficient Tuning of Pre-trained Models Using Dynamic Search-Free Low-Rank Adaptation](https://arxiv.org/abs/2210.07558) <br> Mojtaba Valipour, Mehdi Rezagholizadeh, Ivan Kobyzev, Ali Ghodsi | |[Paper](https://arxiv.org/pdf/2210.07558)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[IncreLoRA: Incremental Parameter Allocation Method for Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2308.12043) <br> Feiyu Zhang, Liangzhi Li, Junhao Chen, Zhouqiang Jiang, Bowen Wang, Yiming Qian | |[Paper](https://arxiv.org/pdf/2308.12043)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Increasing Model Capacity for Free: A Simple Strategy for Parameter Efficient Fine-Tuning](https://arxiv.org/abs/2407.01320) <br> Haobo Song, Hao Zhao, Soumajit Majumder, Tao Lin | |[Paper](https://arxiv.org/pdf/2407.01320)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[LoRA-FA: Memory-Efficient Low-Rank Adaptation for Large Language Models Fine-Tuning](https://arxiv.org/abs/2308.03303) <br> Longteng Zhang, Lin Zhang, Shaohuai Shi, Xiaowen Chu, Bo Li | |[Paper](https://arxiv.org/pdf/2308.03303)|
+|![Publish](https://img.shields.io/badge/Conference-NAACL'24-blue) <br>[Tied-LoRA: Enhancing Parameter Efficiency of LoRA with Weight Tying](https://arxiv.org/abs/2311.09578) <br> Adithya Renduchintala, Tugrul Konuk, Oleksii Kuchaiev | |[Paper](https://arxiv.org/pdf/2311.09578)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[LoRA+: Efficient Low Rank Adaptation of Large Models](https://arxiv.org/abs/2402.12354) <br> Soufiane Hayou, Nikhil Ghosh, Bin Yu | |[Paper](https://arxiv.org/pdf/2402.12354)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models](https://arxiv.org/abs/2404.02948) <br> Fanxu Meng, Zhaohui Wang, Muhan Zhang | |[Paper](https://arxiv.org/pdf/2404.02948)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Delta-LoRA: Fine-Tuning High-Rank Parameters with the Delta of Low-Rank Matrices](https://arxiv.org/abs/2309.02411) <br> Bojia Zi, Xianbiao Qi, Lingzhi Wang, Jianan Wang, Kam-Fai Wong, Lei Zhang | |[Paper](https://arxiv.org/pdf/2309.02411)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[HydraLoRA: An Asymmetric LoRA Architecture for Efficient Fine-Tuning](https://arxiv.org/abs/2404.19245) <br> Chunlin Tian, Zhan Shi, Zhijiang Guo, Li Li, Chengzhong Xu | |[Paper](https://arxiv.org/pdf/2404.19245)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24_Findings-brightgreen) <br>[LoRAPrune: Structured Pruning Meets Low-Rank Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2305.18403) <br> Mingyang Zhang, Hao Chen, Chunhua Shen, Zhen Yang, Linlin Ou, Xinyi Yu, Bohan Zhuang | |[Paper](https://arxiv.org/pdf/2305.18403)|
 
 ---
 
