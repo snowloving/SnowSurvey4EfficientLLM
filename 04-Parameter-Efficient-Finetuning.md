@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-21-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-23-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -74,6 +74,8 @@
 |![Publish](https://img.shields.io/badge/Journal-AI_Open'24-blue) <br>[P-Tuning: GPT Understands, Too](https://arxiv.org/abs/2103.10385) <br> Xiao Liu, Yanan Zheng, Zhengxiao Du, Ming Ding, Yujie Qian, Zhilin Yang, Jie Tang | |[Paper](https://arxiv.org/pdf/2103.10385)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'22-brightgreen) <br>[P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-Tuning Universally Across Scales and Tasks](https://arxiv.org/abs/2110.07602) <br> Xiao Liu, Kaixuan Ji, Yicheng Fu, Weng Lam Tam, Zhengxiao Du, Zhilin Yang, Jie Tang | |[Paper](https://arxiv.org/pdf/2110.07602)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'21-brightgreen) <br>[Prefix-Tuning: Optimizing Continuous Prompts for Generation](https://arxiv.org/abs/2101.00190) <br> Xiang Lisa Li, Percy Liang | |[Paper](https://arxiv.org/pdf/2101.00190)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'23_Short-brightgreen) <br>[Prefix Propagation: Parameter-Efficient Tuning for Long Sequences](https://arxiv.org/abs/2305.05933) <br> Jonathan Li, Will Aitken, Rohan Bhambhoria, Xiaodan Zhu | |[Paper](https://arxiv.org/pdf/2305.05933)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'23_Short-brightgreen) <br>[Towards Adaptive Prefix Tuning for Parameter-Efficient Language Model Fine-Tuning](https://arxiv.org/abs/2305.14744) <br> Zhen-Ru Zhang, Chuanqi Tan, Haiyang Xu, Chengyu Wang, Jun Huang, Songfang Huang | |[Paper](https://arxiv.org/pdf/2305.14744)|
 
 ---
 
