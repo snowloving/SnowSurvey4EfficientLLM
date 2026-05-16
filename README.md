@@ -62,7 +62,7 @@ Efficient-LLM-Literature/
 │
 ├── 04-Inference-Optimization/      
 │   ├── Speculative-Decoding/         
-│   ├── Prompt Compression/
+│   ├── Prompt-Compression/
 │   ├── KV-Cache-Compression/   
 │   └── KV-Cache-Sparsification/          
 └── 
