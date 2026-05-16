@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-32-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-35-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -47,6 +47,9 @@
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[SoRA: Sparse Low-Rank Adaptation of Pre-trained Language Models](https://arxiv.org/abs/2311.11696) <br> Ning Ding, Xingtai Lv, Qiaosen Wang, Yulin Chen, Bowen Zhou, Zhiyuan Liu, Maosong Sun | |[Paper](https://arxiv.org/pdf/2311.11696)|
 |![Publish](https://img.shields.io/badge/Conference-ICML'24-blue) <br>[DoRA: Weight-Decomposed Low-Rank Adaptation](https://arxiv.org/abs/2402.09353) <br> Shih-Yang Liu, Chien-Yi Wang, Hongxu Yin, Pavlo Molchanov, Yu-Chiang Frank Wang, Kwang-Ting Cheng, Min-Hung Chen | |[Paper](https://arxiv.org/pdf/2402.09353)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[VeRA: Vector-based Random Matrix Adaptation](https://arxiv.org/abs/2310.11454) <br> Dawid Jan Kopiczko, Tijmen Blankevoort, Yuki M. Asano | |[Paper](https://arxiv.org/pdf/2310.11454)|
+|![Publish](https://img.shields.io/badge/Conference-EACL'23-blue) <br>[DyLoRA: Parameter-Efficient Tuning of Pre-trained Models Using Dynamic Search-Free Low-Rank Adaptation](https://arxiv.org/abs/2210.07558) <br> Mojtaba Valipour, Mehdi Rezagholizadeh, Ivan Kobyzev, Ali Ghodsi | |[Paper](https://arxiv.org/pdf/2210.07558)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[IncreLoRA: Incremental Parameter Allocation Method for Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2308.12043) <br> Feiyu Zhang, Liangzhi Li, Junhao Chen, Zhouqiang Jiang, Bowen Wang, Yiming Qian | |[Paper](https://arxiv.org/pdf/2308.12043)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Increasing Model Capacity for Free: A Simple Strategy for Parameter Efficient Fine-Tuning](https://arxiv.org/abs/2407.01320) <br> Haobo Song, Hao Zhao, Soumajit Majumder, Tao Lin | |[Paper](https://arxiv.org/pdf/2407.01320)|
 
 ---
 
