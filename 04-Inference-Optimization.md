@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-0-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-12-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -49,6 +49,18 @@
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
 | | | |
+|![Publish](https://img.shields.io/badge/Conference-ICML'23-blue) <br>[Fast Inference from Transformers via Speculative Decoding](https://arxiv.org/abs/2211.17192) <br> Yaniv Leviathan, Matan Kalman, Yossi Matias | |[Paper](https://arxiv.org/pdf/2211.17192)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Accelerating Large Language Model Decoding with Speculative Sampling](https://arxiv.org/abs/2302.01318) <br> Charlie Chen, Sebastian Borgeaud, Geoffrey Irving, Jean-Baptiste Lespiau, Laurent Sifre, John Jumper | |[Paper](https://arxiv.org/pdf/2302.01318)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br> Yongchao Zhou, Kaifeng Lyu, Ankit Singh Rawat, Aditya Krishna Menon, Afshin Rostamizadeh, Sanjiv Kumar, Jean-François Kagy, Rishabh Agarwal | |[Paper](https://arxiv.org/pdf/2310.08461)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'23-purple) <br>[Speculative Decoding with Big Little Decoder](https://arxiv.org/abs/2302.07863) <br> Sehoon Kim, Karttikeya Mangalam, Suhong Moon, Jitendra Malik, Michael W. Mahoney, Amir Gholami, Kurt Keutzer | |[Paper](https://arxiv.org/pdf/2302.07863)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[LLMA: Inference with Reference: Lossless Acceleration of Large Language Models](https://arxiv.org/abs/2304.04487) <br> Nan Yang, Tao Ge, Liang Wang, Binxing Jiao, Daxin Jiang, Linjun Yang, Rangan Majumder, Furu Wei | |[Paper](https://arxiv.org/pdf/2304.04487)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads](https://arxiv.org/abs/2401.10774) <br> Tianle Cai, Yuhong Li, Zhengyang Geng, Hongwu Peng, Jason D. Lee, Deming Chen, Tri Dao | |[Paper](https://arxiv.org/pdf/2401.10774)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/abs/2401.15077) <br> Yuhui Li, Fangyun Wei, Chao Zhang, Hongyang Zhang | |[Paper](https://arxiv.org/pdf/2401.15077)|
+|![Publish](https://img.shields.io/badge/Conference-KDD'24-blue) <br>[Lookahead: An Inference Acceleration Framework for Large Language Model with Lossless Generation Accuracy](https://arxiv.org/abs/2312.12728) <br> Yao Zhao, Zhitian Xie, Chen Liang, Chenyi Zhuang, Jinjie Gu | |[Paper](https://arxiv.org/pdf/2312.12728)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24-brightgreen) <br>[Draft & Verify: Lossless Large Language Model Acceleration via Self-Speculative Decoding](https://arxiv.org/abs/2309.08168) <br> Jun Zhang, Jue Wang, Huan Li, Lidan Shou, Ke Chen, Gang Chen, Sharad Mehrotra | |[Paper](https://arxiv.org/pdf/2309.08168)|
+|![Publish](https://img.shields.io/badge/Conference-ASPLOS'24-orange) <br>[SpecInfer: Accelerating Large Language Model Serving with Tree-Based Speculative Inference and Verification](https://arxiv.org/abs/2305.09781) <br> Xupeng Miao, Gabriele Oliaro, Zhihao Zhang, Xinhao Cheng, Zeyu Wang, Zhengxin Zhang, Rae Ying Yee Wong, Alan Zhu, Lijie Yang, Xiaoxiang Shi, et al. | |[Paper](https://arxiv.org/pdf/2305.09781)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[Cascade Speculative Drafting for Even Faster LLM Inference](https://arxiv.org/abs/2312.11462) <br> Ziyi Chen, Xiaocong Yang, Jiacheng Lin, Chenkai Sun, Kevin C. Chang, Jie Huang | |[Paper](https://arxiv.org/pdf/2312.11462)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Accelerating LLM Inference with Staged Speculative Decoding](https://arxiv.org/abs/2308.04623) <br> Benjamin Spector, Chris Re | |[Paper](https://arxiv.org/pdf/2308.04623)|
 
 ---
 
