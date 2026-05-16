@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-25-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-29-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -90,6 +90,10 @@
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'21-purple) <br>[Training Neural Networks with Fixed Sparse Masks](https://arxiv.org/abs/2111.09839) <br> Yi-Lin Sung, Varun Nair, Colin A. Raffel | |[Paper](https://arxiv.org/pdf/2111.09839)|
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'24_Findings-green) <br>[Layer-wise Importance Matters: Less Memory for Better Performance in Parameter-Efficient Fine-Tuning of Large Language Models](https://arxiv.org/abs/2406.12345) <br> Kai Yao, Penglei Gao, Lichun Li, Yuan Zhao, Xiaofeng Wang, Wei Wang, Jianke Zhu | |[Paper](https://arxiv.org/pdf/2406.12345)|
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'25_Findings-green) <br>[Efficient Layer-wise LLM Fine-tuning for Revision Intention Prediction](https://arxiv.org/abs/2502.12345) <br> Zhexiong Liu, Diane Litman | |[Paper](https://arxiv.org/pdf/2502.12345)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'23_Findings-brightgreen) <br>[Neural Architecture Search for Parameter-Efficient Fine-Tuning of Large Pre-trained Language Models](https://arxiv.org/abs/2305.13597) <br> Neal Lawton, Anoop Kumar, Govind Thattai, Aram Galstyan, Greg Ver Steeg | |[Paper](https://arxiv.org/pdf/2305.13597)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'21-green) <br>[Raise a Child in Large Language Model: Towards Effective and Generalizable Fine-Tuning](https://arxiv.org/abs/2109.05687) <br> Runxin Xu, Fuli Luo, Zhiyuan Zhang, Chuanqi Tan, Baobao Chang, Songfang Huang, Fei Huang | |[Paper](https://arxiv.org/pdf/2109.05687)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'21-brightgreen) <br>[Parameter-Efficient Transfer Learning with Diff Pruning](https://arxiv.org/abs/2012.07463) <br> Demi Guo, Alexander M. Rush, Yoon Kim | |[Paper](https://arxiv.org/pdf/2012.07463)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'23-brightgreen) <br>[Parameter-Efficient Fine-Tuning without Introducing New Latency](https://arxiv.org/abs/2305.13442) <br> Baohao Liao, Yan Meng, Christof Monz | |[Paper](https://arxiv.org/pdf/2305.13442)|
 
 ---
 
