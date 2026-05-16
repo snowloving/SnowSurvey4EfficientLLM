@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-23-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-25-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -76,6 +76,8 @@
 |![Publish](https://img.shields.io/badge/Conference-ACL'21-brightgreen) <br>[Prefix-Tuning: Optimizing Continuous Prompts for Generation](https://arxiv.org/abs/2101.00190) <br> Xiang Lisa Li, Percy Liang | |[Paper](https://arxiv.org/pdf/2101.00190)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'23_Short-brightgreen) <br>[Prefix Propagation: Parameter-Efficient Tuning for Long Sequences](https://arxiv.org/abs/2305.05933) <br> Jonathan Li, Will Aitken, Rohan Bhambhoria, Xiaodan Zhu | |[Paper](https://arxiv.org/pdf/2305.05933)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'23_Short-brightgreen) <br>[Towards Adaptive Prefix Tuning for Parameter-Efficient Language Model Fine-Tuning](https://arxiv.org/abs/2305.14744) <br> Zhen-Ru Zhang, Chuanqi Tan, Haiyang Xu, Chengyu Wang, Jun Huang, Songfang Huang | |[Paper](https://arxiv.org/pdf/2305.14744)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'22-purple) <br>[Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning](https://arxiv.org/abs/2205.05638) <br> Haokun Liu, Derek Tam, Mohammed Muqeeth, Jay Mohta, Tenghao Huang, Mohit Bansal, Colin A. Raffel | |[Paper](https://arxiv.org/pdf/2205.05638)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'22-purple) <br>[SSF: Scaling & Shifting Your Features: A New Baseline for Efficient Model Tuning](https://arxiv.org/abs/2210.08823) <br> Dongze Lian, Daquan Zhou, Jiashi Feng, Xinchao Wang | |[Paper](https://arxiv.org/pdf/2210.08823)|
 
 ---
 
