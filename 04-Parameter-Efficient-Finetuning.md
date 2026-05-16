@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-42-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-47-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -57,6 +57,11 @@
 |![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Delta-LoRA: Fine-Tuning High-Rank Parameters with the Delta of Low-Rank Matrices](https://arxiv.org/abs/2309.02411) <br> Bojia Zi, Xianbiao Qi, Lingzhi Wang, Jianan Wang, Kam-Fai Wong, Lei Zhang | |[Paper](https://arxiv.org/pdf/2309.02411)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[HydraLoRA: An Asymmetric LoRA Architecture for Efficient Fine-Tuning](https://arxiv.org/abs/2404.19245) <br> Chunlin Tian, Zhan Shi, Zhijiang Guo, Li Li, Chengzhong Xu | |[Paper](https://arxiv.org/pdf/2404.19245)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'24_Findings-brightgreen) <br>[LoRAPrune: Structured Pruning Meets Low-Rank Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2305.18403) <br> Mingyang Zhang, Hao Chen, Chunhua Shen, Zhen Yang, Linlin Ou, Xinyi Yu, Bohan Zhuang | |[Paper](https://arxiv.org/pdf/2305.18403)|
+|![Publish](https://img.shields.io/badge/Journal-Knowledge--Based_Systems'26-blue) <br>[MeLoRA: Probability Measures-based Low-Rank Adaptation with Gaussian Variational Inference](https://doi.org/10.1016/j.knosys.2026.115318) <br> Xue He, Xue Geng, Tiancheng Zhang, Minghe Yu, Yuhai Zhao, Xulei Yang, Min Wu, Ge Yu | |[Paper](https://doi.org/10.1016/j.knosys.2026.115318)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[Bayesian Low-Rank Adaptation for Large Language Models](https://arxiv.org/abs/2306.18341) <br> Adam Yang, Maxime Robeyns, Xi Wang, Laurence Aitchison | |[Paper](https://arxiv.org/pdf/2306.18341)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Variational Learning is Effective for Large Deep Networks](https://arxiv.org/abs/2402.17641) <br> Yuesong Shen, Nico Daheim, Bai Cong, Peter Nickl, Gian Maria Marconi, Clement Bazan, Rio Yokota, Iryna Gurevych, Daniel Cremers, Mohammad Emtiyaz Khan, et al. | |[Paper](https://arxiv.org/pdf/2402.17641)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[LoRA Dropout as a Sparsity Regularizer for Overfitting Control](https://arxiv.org/abs/2404.09610) <br> Yang Lin, Xinyu Ma, Xu Chu, Yujie Jin, Zhibang Yang, Yasha Wang, Hong Mei | |[Paper](https://arxiv.org/pdf/2404.09610)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[PeriodicLoRA: Breaking the Low-Rank Bottleneck in LoRA Optimization](https://arxiv.org/abs/2402.16141) <br> Xiangdi Meng, Damai Dai, Weiyao Luo, Zhe Yang, Shaoxiang Wu, Xiaochen Wang, Peiyi Wang, Qingxiu Dong, Liang Chen, Zhifang Sui | |[Paper](https://arxiv.org/pdf/2402.16141)|
 
 ---
 
