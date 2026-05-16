@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-29-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-31-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -94,6 +94,8 @@
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'21-green) <br>[Raise a Child in Large Language Model: Towards Effective and Generalizable Fine-Tuning](https://arxiv.org/abs/2109.05687) <br> Runxin Xu, Fuli Luo, Zhiyuan Zhang, Chuanqi Tan, Baobao Chang, Songfang Huang, Fei Huang | |[Paper](https://arxiv.org/pdf/2109.05687)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'21-brightgreen) <br>[Parameter-Efficient Transfer Learning with Diff Pruning](https://arxiv.org/abs/2012.07463) <br> Demi Guo, Alexander M. Rush, Yoon Kim | |[Paper](https://arxiv.org/pdf/2012.07463)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'23-brightgreen) <br>[Parameter-Efficient Fine-Tuning without Introducing New Latency](https://arxiv.org/abs/2305.13442) <br> Baohao Liao, Yan Meng, Christof Monz | |[Paper](https://arxiv.org/pdf/2305.13442)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'21-green) <br>[Cross-Attention is All You Need: Adapting Pretrained Transformers for Machine Translation](https://arxiv.org/abs/2104.08771) <br> Mozhdeh Gheini, Xiang Ren, Jonathan May | |[Paper](https://arxiv.org/pdf/2104.08771)|
+|![Publish](https://img.shields.io/badge/Conference-ISCAS'22-blue) <br>[Efficient Fine-Tuning of BERT Models on the Edge](https://ieeexplore.ieee.org/document/9937817) <br> Danilo Vucetic, Mohammadreza Tayaranian, Maryam Ziaeefard, James J. Clark, Brett H. Meyer, Warren J. Gross | |[Paper](https://ieeexplore.ieee.org/document/9937817)|
 
 ---
 
