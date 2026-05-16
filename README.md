@@ -62,9 +62,9 @@ Efficient-LLM-Literature/
 │
 ├── 04-Inference-Optimization/      
 │   ├── Speculative-Decoding/         
-│   ├── KV-Cache-Compression/
-│   ├── Dynamic Token Pruning/    
-│   └── Text-Compression/           
+│   ├── Prompt Compression/
+│   ├── KV-Cache-Compression/   
+│   └── KV-Cache-Sparsification/          
 └── 
 ```
 
