@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-47-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-54-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -62,6 +62,13 @@
 |![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Variational Learning is Effective for Large Deep Networks](https://arxiv.org/abs/2402.17641) <br> Yuesong Shen, Nico Daheim, Bai Cong, Peter Nickl, Gian Maria Marconi, Clement Bazan, Rio Yokota, Iryna Gurevych, Daniel Cremers, Mohammad Emtiyaz Khan, et al. | |[Paper](https://arxiv.org/pdf/2402.17641)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[LoRA Dropout as a Sparsity Regularizer for Overfitting Control](https://arxiv.org/abs/2404.09610) <br> Yang Lin, Xinyu Ma, Xu Chu, Yujie Jin, Zhibang Yang, Yasha Wang, Hong Mei | |[Paper](https://arxiv.org/pdf/2404.09610)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[PeriodicLoRA: Breaking the Low-Rank Bottleneck in LoRA Optimization](https://arxiv.org/abs/2402.16141) <br> Xiangdi Meng, Damai Dai, Weiyao Luo, Zhe Yang, Shaoxiang Wu, Xiaochen Wang, Peiyi Wang, Qingxiu Dong, Liang Chen, Zhifang Sui | |[Paper](https://arxiv.org/pdf/2402.16141)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[MoELoRA: An MoE-based Parameter Efficient Fine-Tuning Method for Multi-Task Medical Applications](https://arxiv.org/abs/2310.18339) <br> Qidong Liu, Xian Wu, Xiangyu Zhao, Yuanshao Zhu, Derong Xu, Feng Tian, Yefeng Zheng | |[Paper](https://arxiv.org/pdf/2310.18339)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning](https://arxiv.org/abs/2309.05444) <br> Ted Zadouri, Ahmet Üstün, Arash Ahmadian, Beyza Ermiş, Acyr Locatelli, Sara Hooker | |[Paper](https://arxiv.org/pdf/2309.05444)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[MixLoRA: Enhancing Large Language Models Fine-Tuning with LoRA-based Mixture of Experts](https://arxiv.org/abs/2404.15159) <br> Dengchun Li, Yingzi Ma, Naizheng Wang, Zhengmao Ye, Zhiyuan Cheng, Yinghao Tang, Yan Zhang, Lei Duan, Jie Zuo, Cal Yang, et al. | |[Paper](https://arxiv.org/pdf/2404.15159)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition](https://arxiv.org/abs/2307.13269) <br> Chengsong Huang, Qian Liu, Bill Yuchen Lin, Tianyu Pang, Chao Du, Min Lin | |[Paper](https://arxiv.org/pdf/2307.13269)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[Mixture of LoRA Experts](https://arxiv.org/abs/2312.15228) <br> Shaohan Huang, Furu Wei, et al. | |[Paper](https://arxiv.org/pdf/2312.15228)|
+|![Publish](https://img.shields.io/badge/Journal-APL_Machine_Learning'24-blue) <br>[X-LoRA: Mixture of Low-Rank Adapter Experts, a Flexible Framework for Large Language Models with Applications in Protein Mechanics and Molecular Design](https://arxiv.org/abs/2402.07148) <br> Eric L. Buehler, Markus J. Buehler | |[Paper](https://arxiv.org/pdf/2402.07148)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[Parameter-Efficient Multi-Task Model Fusion with Partial Linearization](https://arxiv.org/abs/2310.04742) <br> Anke Tang, Li Shen, Yong Luo, Yibing Zhan, Han Hu, Bo Du, Yixin Chen, Dacheng Tao | |[Paper](https://arxiv.org/pdf/2310.04742)|
 
 ---
 
