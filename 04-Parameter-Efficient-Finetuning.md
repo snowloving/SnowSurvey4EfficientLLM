@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-54-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-55-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -119,6 +119,7 @@
 |![Publish](https://img.shields.io/badge/Conference-ACL'23-brightgreen) <br>[Parameter-Efficient Fine-Tuning without Introducing New Latency](https://arxiv.org/abs/2305.13442) <br> Baohao Liao, Yan Meng, Christof Monz | |[Paper](https://arxiv.org/pdf/2305.13442)|
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'21-green) <br>[Cross-Attention is All You Need: Adapting Pretrained Transformers for Machine Translation](https://arxiv.org/abs/2104.08771) <br> Mozhdeh Gheini, Xiang Ren, Jonathan May | |[Paper](https://arxiv.org/pdf/2104.08771)|
 |![Publish](https://img.shields.io/badge/Conference-ISCAS'22-blue) <br>[Efficient Fine-Tuning of BERT Models on the Edge](https://ieeexplore.ieee.org/document/9937817) <br> Danilo Vucetic, Mohammadreza Tayaranian, Maryam Ziaeefard, James J. Clark, Brett H. Meyer, Warren J. Gross | |[Paper](https://ieeexplore.ieee.org/document/9937817)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[LLaMA-Adapter: Efficient Fine-Tuning of Large Language Models with Zero-Initialized Attention](https://arxiv.org/abs/2303.16199) <br> Renrui Zhang, Jiaming Han, Chris Liu, Aojun Zhou, Pan Lu, Yu Qiao, Hongsheng Li, Peng Gao | |[Paper](https://arxiv.org/pdf/2303.16199)|
 
 ---
 
