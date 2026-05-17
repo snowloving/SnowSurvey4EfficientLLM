@@ -78,7 +78,7 @@
 |![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[RECOMP: Improving Retrieval-Augmented LMs with Context Compression and Selective Augmentation](https://arxiv.org/abs/2310.04408) <br> Fangyuan Xu, Weijia Shi, Eunsol Choi | |[Paper](https://arxiv.org/pdf/2310.04408)|
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[Adapting Language Models to Compress Contexts](https://arxiv.org/abs/2305.14788) <br> Alexis Chevalier, Alexander Wettig, Anirudh Ajith, Danqi Chen | |[Paper](https://arxiv.org/pdf/2305.14788)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'23-purple) <br>[Learning to Compress Prompts with Gist Tokens](https://arxiv.org/abs/2304.08467) <br> Jesse Mu, Xiang Lisa Li, Noah Goodman | |[Paper](https://arxiv.org/pdf/2304.08467)|
-
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[In-context Autoencoder for Context Compression in a Large Language Model](https://arxiv.org/abs/2307.06945) <br> Tao Ge, Jing Hu, Lei Wang, Xun Wang, Si-Qing Chen, Furu Wei | |[Paper](https://arxiv.org/pdf/2307.06945)|
 
 ---
 
