@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-12-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-21-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -16,9 +16,9 @@
 - [📊 本领域综述论文](#-survey)
 - [🔥 本领域经典论文之KV Cache优化](#-kv-cache)
 - [🏆 本领域经典论文之投机解码 (Speculative Decoding)](#-speculative-decoding)
+- [💎 本领域经典论文之提示词压缩](#-prompt)
 - [🥇 本领域经典论文之注意力加速 (FlashAttention系列)](#-flash-attention)
 - [🎯 本领域经典论文之模型并行与分布式推理](#-parallel)
-- [💎 本领域经典论文之批处理与调度](#-batching)
 - [⚡ 本领域经典论文之算子融合与编译优化](#-compilation)
 
 ---
@@ -64,6 +64,24 @@
 
 ---
 
+<a id="prompt"></a>
+## 💎 本领域经典论文之提示词压缩
+
+| Title & Authors | Introduction | Links |
+|:--|  :----: | :---:|
+| | | |
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[Compressing Context to Enhance Inference Efficiency of Large Language Models](https://arxiv.org/abs/2310.06201) <br> Yucheng Li, Bo Dong, Frank Guerin, Chenghua Lin | |[Paper](https://arxiv.org/pdf/2310.06201)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](https://arxiv.org/abs/2310.05736) <br> Huiqiang Jiang, Qianhui Wu, Chin-Yew Lin, Yuqing Yang, Lili Qiu | |[Paper](https://arxiv.org/pdf/2310.05736)|
+|![Publish](https://img.shields.io/badge/Conference-ICML'20-blue) <br>[PoWER-BERT: Accelerating BERT Inference via Progressive Word-vector Elimination](https://arxiv.org/abs/2001.08950) <br> Saurabh Goyal, Anamitra Roy Choudhury, Saurabh Raje, Venkatesan Chakaravarthy, Yogish Sabharwal, Ashish Verma | |[Paper](https://arxiv.org/pdf/2001.08950)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'21-brightgreen) <br>[Length-Adaptive Transformer: Train Once with Length Drop, Use Anytime with Search](https://arxiv.org/abs/2010.07003) <br> Gyuwan Kim, Kyunghyun Cho | |[Paper](https://arxiv.org/pdf/2010.07003)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24-brightgreen) <br>[LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression](https://arxiv.org/abs/2310.06839) <br> Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, Lili Qiu | |[Paper](https://arxiv.org/pdf/2310.06839)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[RECOMP: Improving Retrieval-Augmented LMs with Context Compression and Selective Augmentation](https://arxiv.org/abs/2310.04408) <br> Fangyuan Xu, Weijia Shi, Eunsol Choi | |[Paper](https://arxiv.org/pdf/2310.04408)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[Adapting Language Models to Compress Contexts](https://arxiv.org/abs/2305.14788) <br> Alexis Chevalier, Alexander Wettig, Anirudh Ajith, Danqi Chen | |[Paper](https://arxiv.org/pdf/2305.14788)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'23-purple) <br>[Learning to Compress Prompts with Gist Tokens](https://arxiv.org/abs/2304.08467) <br> Jesse Mu, Xiang Lisa Li, Noah Goodman | |[Paper](https://arxiv.org/pdf/2304.08467)|
+
+
+---
+
 <a id="flash-attention"></a>
 ## 🥇 本领域经典论文之注意力加速 (FlashAttention系列)
 
@@ -82,14 +100,6 @@
 
 ---
 
-<a id="batching"></a>
-## 💎 本领域经典论文之批处理与调度
-
-| Title & Authors | Introduction | Links |
-|:--|  :----: | :---:|
-| | | |
-
----
 
 <a id="compilation"></a>
 ## ⚡ 本领域经典论文之算子融合与编译优化
