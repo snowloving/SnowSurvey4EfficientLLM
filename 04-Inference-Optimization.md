@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-22-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-24-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -62,6 +62,7 @@
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[Cascade Speculative Drafting for Even Faster LLM Inference](https://arxiv.org/abs/2312.11462) <br> Ziyi Chen, Xiaocong Yang, Jiacheng Lin, Chenkai Sun, Kevin C. Chang, Jie Huang | |[Paper](https://arxiv.org/pdf/2312.11462)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Accelerating LLM Inference with Staged Speculative Decoding](https://arxiv.org/abs/2308.04623) <br> Benjamin Spector, Chris Re | |[Paper](https://arxiv.org/pdf/2308.04623)|
 |![Publish](https://img.shields.io/badge/Conference-NAACL'24-blue) <br>[REST: Retrieval-Based Speculative Decoding](https://arxiv.org/abs/2311.08252) <br> Zhenyu He, Zexuan Zhong, Tianle Cai, Jason Lee, Di He | |[Paper](https://arxiv.org/pdf/2311.08252)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Sequoia: Scalable, Robust, and Hardware-Aware Speculative Decoding](https://arxiv.org/abs/2402.12374) <br> Zhuoming Chen, Avner May, Ruslan Svirschevski, Yuhsun Huang, Max Ryabinin, Zhihao Jia, Beidi Chen | |[Paper](https://arxiv.org/pdf/2402.12374)|
 
 ---
 
@@ -80,6 +81,7 @@
 |![Publish](https://img.shields.io/badge/Conference-EMNLP'23-green) <br>[Adapting Language Models to Compress Contexts](https://arxiv.org/abs/2305.14788) <br> Alexis Chevalier, Alexander Wettig, Anirudh Ajith, Danqi Chen | |[Paper](https://arxiv.org/pdf/2305.14788)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'23-purple) <br>[Learning to Compress Prompts with Gist Tokens](https://arxiv.org/abs/2304.08467) <br> Jesse Mu, Xiang Lisa Li, Noah Goodman | |[Paper](https://arxiv.org/pdf/2304.08467)|
 |![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[In-context Autoencoder for Context Compression in a Large Language Model](https://arxiv.org/abs/2307.06945) <br> Tao Ge, Jing Hu, Lei Wang, Xun Wang, Si-Qing Chen, Furu Wei | |[Paper](https://arxiv.org/pdf/2307.06945)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24_Findings-brightgreen) <br>[LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression](https://arxiv.org/abs/2403.12968) <br> Zhuoshi Pan, Qianhui Wu, Huiqiang Jiang, Menglin Xia, Xufang Luo, Jue Zhang, Qingwei Lin, Victor Rühle, Yuqing Yang, Chin-Yew Lin, et al. | |[Paper](https://arxiv.org/pdf/2403.12968)|
 
 ---
 
