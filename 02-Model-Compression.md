@@ -13,11 +13,11 @@
 
 ## 📖 目录
 
-- [📊 本领域综述论文](#-survey)
-- [🔥 本领域经典论文之量化 (Quantization)](#-quantization)
-- [🏆 本领域经典论文之剪枝 (Pruning)](#-pruning)
-- [🥇 本领域经典论文之知识蒸馏 (Knowledge Distillation)](#-kd)
-- [🎯 本领域经典论文之低秩分解 (Low-Rank Approximation)](#-lowrank)
+- [📊 本领域综述论文](#survey)
+- [🔥 本领域经典论文之量化 (Quantization)](#quantization)
+- [🏆 本领域经典论文之剪枝 (Pruning)](#pruning)
+- [🥇 本领域经典论文之知识蒸馏 (Knowledge Distillation)](#kd)
+- [🎯 本领域经典论文之低秩分解 (Low-Rank Approximation)](#lowrank)
 
 ---
 
