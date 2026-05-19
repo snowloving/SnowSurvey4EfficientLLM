@@ -13,10 +13,10 @@
 
 ## 📖 目录
 
-- [📊 本领域综述论文](#-survey)
-- [🔥 本领域经典论文之Efficient Attention Mechanisms](#-efficentAttention)
-- [🏆 本领域经典论文之Mixture of Experts](#-MoE)
-- [🥇 本领域经典论文之Alternative-Architectures](#-alter)
+- [📊 本领域综述论文](#survey)
+- [🔥 本领域经典论文之Efficient Attention Mechanisms](#efficentAttention)
+- [🏆 本领域经典论文之Mixture of Experts](#MoE)
+- [🥇 本领域经典论文之Alternative-Architectures](#alter)
 
 
 ---
