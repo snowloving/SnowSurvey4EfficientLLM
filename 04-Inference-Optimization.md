@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-21-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-22-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -61,6 +61,7 @@
 |![Publish](https://img.shields.io/badge/Conference-ASPLOS'24-orange) <br>[SpecInfer: Accelerating Large Language Model Serving with Tree-Based Speculative Inference and Verification](https://arxiv.org/abs/2305.09781) <br> Xupeng Miao, Gabriele Oliaro, Zhihao Zhang, Xinhao Cheng, Zeyu Wang, Zhengxin Zhang, Rae Ying Yee Wong, Alan Zhu, Lijie Yang, Xiaoxiang Shi, et al. | |[Paper](https://arxiv.org/pdf/2305.09781)|
 |![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[Cascade Speculative Drafting for Even Faster LLM Inference](https://arxiv.org/abs/2312.11462) <br> Ziyi Chen, Xiaocong Yang, Jiacheng Lin, Chenkai Sun, Kevin C. Chang, Jie Huang | |[Paper](https://arxiv.org/pdf/2312.11462)|
 |![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Accelerating LLM Inference with Staged Speculative Decoding](https://arxiv.org/abs/2308.04623) <br> Benjamin Spector, Chris Re | |[Paper](https://arxiv.org/pdf/2308.04623)|
+|![Publish](https://img.shields.io/badge/Conference-NAACL'24-blue) <br>[REST: Retrieval-Based Speculative Decoding](https://arxiv.org/abs/2311.08252) <br> Zhenyu He, Zexuan Zhong, Tianle Cai, Jason Lee, Di He | |[Paper](https://arxiv.org/pdf/2311.08252)|
 
 ---
 
