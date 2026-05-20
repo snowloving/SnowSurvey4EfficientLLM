@@ -30,6 +30,7 @@ This repository is designed for:
 - [Model-Compression](02-Model-Compression.md)
 - [Parameter-Efficient-Finetuning](03-Parameter-Efficient-Finetuning.md)
 - [Inference-Optimization](04-Inference-Optimization.md)
+- [Technique Co-optimization](05-Technique-Co-optimization.md)
 
 ---
 
