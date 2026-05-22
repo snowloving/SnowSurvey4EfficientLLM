@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-18-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-27-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -15,8 +15,8 @@
 - [🔥 本领域经典论文之PEFT+Quantization](#peft-quant)
 - [🏆 本领域经典论文之PEFT+Pruning](#peft-pruning)
 - [💎 本领域经典论文之KD+Quantization](#kd-quant)
-- [🥇 本领域经典论文之4](#flash-attention)
-- [🎯 本领域经典论文之5](#parallel)
+- [🥇 本领域经典论文之KD+Pruning](#kd-pruning)
+- [🎯 本领域经典论文之KD+PEFT](#kd-peft)
 - [⚡ 本领域经典论文之6](#compilation)
 
 ---
@@ -66,21 +66,30 @@
 
 ---
 
-<a id="flash-attention"></a>
-## 🥇 本领域经典论文之4
+<a id="kd-pruning"></a>
+## 🥇 本领域经典论文之KD+Pruning
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
 | | | |
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'23-purple) <br>[LLM-Pruner: On the Structural Pruning of Large Language Models](https://arxiv.org/abs/2305.11627) <br> Xinyin Ma, Gongfan Fang, Xinchao Wang | |[Paper](https://arxiv.org/pdf/2305.11627)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[Compresso: Structured Pruning with Collaborative Prompting Learns Compact Large Language Models](https://arxiv.org/abs/2310.05015) <br> Song Guo, Jiahang Xu, Li Lyna Zhang, Mao Yang | |[Paper](https://arxiv.org/pdf/2310.05015)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'25_Findings-brightgreen) <br>[ShortGPT: Layers in Large Language Models are More Redundant Than You Expect](https://arxiv.org/abs/2403.03853) <br> Xin Men, Mingyu Xu, Qingyu Zhang, Qianhao Yuan, Bingning Wang, Hongyu Lin, Yaojie Lu, Xianpei Han, Weipeng Chen | |[Paper](https://arxiv.org/pdf/2403.03853)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Shortened LLaMA: Depth Pruning for Large Language Models with Comparison of Retraining Methods](https://arxiv.org/abs/2402.02834) <br> Bo-Kyeong Kim, Geonmin Kim, Tae-Ho Kim, Thibault Castells, Shinkook Choi, Junho Shin, Hyoung-Kyu Song | |[Paper](https://arxiv.org/pdf/2402.02834)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[Sheared LLaMA: Accelerating Language Model Pre-training via Structured Pruning](https://arxiv.org/abs/2310.06694) <br> Mengzhou Xia, Tianyu Gao, Zhiyuan Zeng, Danqi Chen | |[Paper](https://arxiv.org/pdf/2310.06694)|
 
 ---
 
-<a id="parallel"></a>
-## 🎯 本领域经典论文之5
+<a id="kd-peft"></a>
+## 🎯 本领域经典论文之KD+PEFT
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
 | | | |
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[MiniLLM: Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2306.08543) <br> Yuxian Gu, Li Dong, Furu Wei, Minlie Huang | |[Paper](https://arxiv.org/pdf/2306.08543)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'21-b31b1b) <br>[Distilling Large Language Models into Tiny and Effective Students using PQRnn](https://arxiv.org/abs/2101.08890) <br> Prabhu Kaliamoorthi, Aditya Siddhant, Edward Li, Melvin Johnson | |[Paper](https://arxiv.org/pdf/2101.08890)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[GKD: On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br> Rishabh Agarwal, Nino Vieillard, Yongchao Zhou, Piotr Stanczyk, Sabela Ramos Garea, Matthieu Geist, Olivier Bachem | |[Paper](https://arxiv.org/pdf/2306.13649)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'23_Findings-brightgreen) <br>[Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) <br> Cheng-Yu Hsieh, Chun-Liang Li, Chih-Kuan Yeh, Hootan Nakhost, Yasuhisa Fujii, Alex Ratner, Ranjay Krishna, Chen-Yu Lee, Tomas Pfister | |[Paper](https://arxiv.org/pdf/2305.02301)|
 
 ---
 
