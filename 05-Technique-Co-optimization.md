@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-27-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-29-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -16,8 +16,8 @@
 - [🏆 本领域经典论文之PEFT+Pruning](#peft-pruning)
 - [💎 本领域经典论文之KD+Quantization](#kd-quant)
 - [🥇 本领域经典论文之KD+Pruning](#kd-pruning)
-- [🎯 本领域经典论文之KD+PEFT](#kd-peft)
-- [⚡ 本领域经典论文之6](#compilation)
+- [🎯 本领域经典论文之KD+Other](#kd-other)
+- [⚡ 本领域经典论文之Architecture+Inference](#arch-infer)
 
 ---
 
@@ -80,22 +80,24 @@
 
 ---
 
-<a id="kd-peft"></a>
-## 🎯 本领域经典论文之KD+PEFT
+<a id="kd-other"></a>
+## 🎯 本领域经典论文之KD+Other
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
 | | | |
-|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[MiniLLM: Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2306.08543) <br> Yuxian Gu, Li Dong, Furu Wei, Minlie Huang | |[Paper](https://arxiv.org/pdf/2306.08543)|
-|![Publish](https://img.shields.io/badge/Paper-arXiv'21-b31b1b) <br>[Distilling Large Language Models into Tiny and Effective Students using PQRnn](https://arxiv.org/abs/2101.08890) <br> Prabhu Kaliamoorthi, Aditya Siddhant, Edward Li, Melvin Johnson | |[Paper](https://arxiv.org/pdf/2101.08890)|
-|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[GKD: On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br> Rishabh Agarwal, Nino Vieillard, Yongchao Zhou, Piotr Stanczyk, Sabela Ramos Garea, Matthieu Geist, Olivier Bachem | |[Paper](https://arxiv.org/pdf/2306.13649)|
 |![Publish](https://img.shields.io/badge/Conference-ACL'23_Findings-brightgreen) <br>[Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) <br> Cheng-Yu Hsieh, Chun-Liang Li, Chih-Kuan Yeh, Hootan Nakhost, Yasuhisa Fujii, Alex Ratner, Ranjay Krishna, Chen-Yu Lee, Tomas Pfister | |[Paper](https://arxiv.org/pdf/2305.02301)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[GKD: On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br> Rishabh Agarwal, Nino Vieillard, Yongchao Zhou, Piotr Stanczyk, Sabela Ramos Garea, Matthieu Geist, Olivier Bachem | |[Paper](https://arxiv.org/pdf/2306.13649)|
+|![Publish](https://img.shields.io/badge/Conference-ICLR'24-red) <br>[DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br> Yongchao Zhou, Kaifeng Lyu, Ankit Singh Rawat, Aditya Krishna Menon, Afshin Rostamizadeh, Sanjiv Kumar, Jean-François Kagy, Rishabh Agarwal | |[Paper](https://arxiv.org/pdf/2310.08461)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'24-green) <br>[Ouroboros: Generating Longer Drafts Phrase by Phrase for Faster Speculative Decoding](https://arxiv.org/abs/2406.12345) <br> Weilin Zhao, Yuxiang Huang, Xu Han, Wang Xu, Chaojun Xiao, Xinrong Zhang, Yewei Fang, Kaihuo Zhang, Zhiyuan Liu, Maosong Sun | |[Paper](https://arxiv.org/pdf/2406.12345)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'22-b31b1b) <br>[Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints](https://arxiv.org/abs/2212.05055) <br> Aran Komatsuzaki, Joan Puigcerver, James Lee-Thorp, Carlos Riquelme Ruiz, Basil Mustafa, Joshua Ainslie, Yi Tay, Mostafa Dehghani, Neil Houlsby | |[Paper](https://arxiv.org/pdf/2212.05055)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24_Findings-brightgreen) <br>[LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression](https://arxiv.org/abs/2403.12968) <br> Zhuoshi Pan, Qianhui Wu, Huiqiang Jiang, Menglin Xia, Xufang Luo, Jue Zhang, Qingwei Lin, Victor Rühle, Yuqing Yang, Chin-Yew Lin, et al. | |[Paper](https://arxiv.org/pdf/2403.12968)|
 
 ---
 
 
-<a id="compilation"></a>
-## ⚡ 本领域经典论文之6
+<a id="arch-infer"></a>
+## ⚡ 本领域经典论文之Architecture+Inference
 
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
