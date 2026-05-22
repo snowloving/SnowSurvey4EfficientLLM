@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-14-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-18-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
@@ -59,6 +59,10 @@
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
 | | | |
+|![Publish](https://img.shields.io/badge/Conference-ACL'24_Findings-brightgreen) <br>[LLM-QAT: Data-Free Quantization Aware Training for Large Language Models](https://arxiv.org/abs/2305.17888) <br> Zechun Liu, Barlas Oguz, Changsheng Zhao, Ernie Chang, Pierre Stock, Yashar Mehdad, Yangyang Shi, Raghuraman Krishnamoorthi, Vikas Chandra | |[Paper](https://arxiv.org/pdf/2305.17888)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24-brightgreen) <br>[BitDistiller: Unleashing the Potential of Sub-4-Bit LLMs via Self-Distillation](https://arxiv.org/abs/2402.10631) <br> Dayou Du, Yijia Zhang, Shijie Cao, Jiaqi Guo, Ting Cao, Xiaowen Chu, Ningyi Xu | |[Paper](https://arxiv.org/pdf/2402.10631)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[OneBit: Towards Extremely Low-Bit Large Language Models](https://arxiv.org/abs/2402.11295) <br> Yuzhuang Xu, Xu Han, Zonghan Yang, Shuo Wang, Qingfu Zhu, Zhiyuan Liu, Weidong Liu, Wanxiang Che | |[Paper](https://arxiv.org/pdf/2402.11295)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'23-b31b1b) <br>[QFT: Quantized Full-Parameter Tuning of LLMs with Affordable Resources](https://arxiv.org/abs/2310.07147) <br> Zhikai Li, Xiaoxuan Liu, Banghua Zhu, Zhen Dong, Qingyi Gu, Kurt Keutzer | |[Paper](https://arxiv.org/pdf/2310.07147)|
 
 ---
 
