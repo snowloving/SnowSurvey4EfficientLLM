@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Papers-29-blue?style=flat-square" alt="Paper Count">
+  <img src="https://img.shields.io/badge/Papers-36-blue?style=flat-square" alt="Paper Count">
   <img src="https://img.shields.io/badge/Status-Actively%20Updating-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=flat-square" alt="PRs Welcome">
 </p>
 
 # 🚀 Technique Co-optimization
 
-> **涵盖领域**: PEFT+量化 · PEFT+KD
+> **涵盖领域**: PEFT + Quantization · PEFT + Pruning · KD + Quantization · KD + Pruning · KD + Other · Architecture + Inference
 \
 ---
 
@@ -102,6 +102,13 @@
 | Title & Authors | Introduction | Links |
 |:--|  :----: | :---:|
 | | | |
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads](https://arxiv.org/abs/2401.10774) <br> Tianle Cai, Yuhong Li, Zhengyang Geng, Hongwu Peng, Jason D. Lee, Deming Chen, Tri Dao | |[Paper](https://arxiv.org/pdf/2401.10774)|
+|![Publish](https://img.shields.io/badge/Paper-arXiv'24-b31b1b) <br>[EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/abs/2401.15077) <br> Yuhui Li, Fangyun Wei, Chao Zhang, Hongyang Zhang | |[Paper](https://arxiv.org/pdf/2401.15077)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'24-green) <br>[EAGLE-2: Faster Inference of Language Models with Dynamic Draft Trees](https://arxiv.org/abs/2406.16858) <br> Yuhui Li, Fangyun Wei, Chao Zhang, Hongyang Zhang | |[Paper](https://arxiv.org/pdf/2406.16858)|
+|![Publish](https://img.shields.io/badge/Conference-EMNLP'24-green) <br>[Ouroboros: Generating Longer Drafts Phrase by Phrase for Faster Speculative Decoding](https://arxiv.org/abs/2406.12345) <br> Weilin Zhao, Yuxiang Huang, Xu Han, Wang Xu, Chaojun Xiao, Xinrong Zhang, Yewei Fang, Kaihuo Zhang, Zhiyuan Liu, Maosong Sun | |[Paper](https://arxiv.org/pdf/2406.12345)|
+|![Publish](https://img.shields.io/badge/Conference-ACL'24-brightgreen) <br>[LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding](https://arxiv.org/abs/2404.16710) <br> Mostafa Elhoushi, Akshat Shrivastava, Diana Liskovich, Basil Hosmer, Bram Wasti, Liangzhen Lai, Anas Mahmoud, Bilge Acun, Saurabh Agarwal, Ahmed Roman, et al. | |[Paper](https://arxiv.org/pdf/2404.16710)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[YOCO: You Only Cache Once: Decoder-Decoder Architectures for Language Models](https://arxiv.org/abs/2405.05254) <br> Yutao Sun, Li Dong, Yi Zhu, Shaohan Huang, Wenhui Wang, Shuming Ma, Quanlu Zhang, Jianyong Wang, Furu Wei | |[Paper](https://arxiv.org/pdf/2405.05254)|
+|![Publish](https://img.shields.io/badge/Conference-NeurIPS'24-purple) <br>[Reducing Transformer Key-Value Cache Size with Cross-Layer Attention](https://arxiv.org/abs/2405.12981) <br> William Brandon, Mayank Mishra, Aniruddha Nrusimha, Rameswar Panda, Jonathan Ragan-Kelley | |[Paper](https://arxiv.org/pdf/2405.12981)|
 
 ---
 
